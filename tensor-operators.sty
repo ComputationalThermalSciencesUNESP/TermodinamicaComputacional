@@ -1,0 +1,132 @@
+% List of operators for dealing with tensor notation
+
+% Include this package in your mai document to use 4th order tensors
+\usepackage{amsfonts} % for the \mathbb command fro 4th order tensors
+\usepackage{bm}
+
+% Tensors styles
+
+% Vectors of the Euclidean space using Latin letters
+\renewcommand{\vec}[1]{\ensuremath{\bm #1}}
+
+% Vectors of the Euclidean space using Greek letters
+\newcommand{\gvec}[1]{\ensuremath{\bm #1}}
+
+% Tensors of the Euclidean space
+\newcommand{\tensor}[1]{\ensuremath{\bm #1}}
+
+% 4th order tensors of the Euclidean space
+\newcommand{\fourthTensor}[1]{\ensuremath{\mathbb{#1}}}
+
+% Computational matrices of R{mxn} and vectors of R{m}
+\renewcommand{\matrix}[1] {\ensuremath{\bm{\mathrm{#1}}}}
+\newcommand{\cvec}[1]{\ensuremath{\bm{\mathrm{#1}}}}
+
+
+% Command for invariant of a second order tensor:
+% arg1 -> order
+% arg2 -> tensor label (from glossaries) - optional
+% Note that the tensor is indicated by its symbol in a glossary
+\usepackage{xifthen}% provides \isempty test
+\newcommand{\invariant}[2]{%
+    \ifthenelse{\isempty{#2}}%
+        {\ensuremath{I_{#1}}}% if #2 is empty
+        {\ensuremath{I_{#1,\gls{#2}}}}% if #2 is not empty
+}
+
+
+% Products
+\newcommand{\anyprod}{\star}
+\newcommand{\cprod}{\times}
+\newcommand{\dprod}{\,{\scriptscriptstyle \stackrel{\bullet}{{}}}\,}
+\newcommand{\ddprod}{\,{\scriptscriptstyle \stackrel{\bullet}{\bullet}}\,}
+\newcommand{\tdprod}{\,{\scriptscriptstyle \stackrel{3}{\bullet}}\,}
+\newcommand{\tprod}{\,{\scriptscriptstyle \stackrel{\otimes}{{}}}\,}
+
+% Operations
+\newcommand{\adj}{\ensuremath{\operatorname{adj}}}
+\newcommand{\cof}{\ensuremath{\operatorname{cof}}}
+\newcommand{\diag}{\ensuremath{\operatorname{diag}}}
+\newcommand{\dev}{\ensuremath{\operatorname{dev}}}
+
+\renewcommand{\max}{\ensuremath{\operatorname{max}}}
+\renewcommand{\min}{\ensuremath{\operatorname{min}}}
+\newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
+\newcommand{\sym}{\ensuremath{\operatorname{symm}}}
+\newcommand{\skw}{\ensuremath{\operatorname{skew}}}
+\newcommand{\tr}{\ensuremath{\operatorname{tr}}}
+\newcommand{\trans}[1] {\ensuremath{#1^{\operatorname{T}}}}
+\newcommand{\transinv}[1] {\ensuremath{#1^{\mathrm{-T}}}}
+
+% Spatial operators
+\newcommand{\curl}{\ensuremath{\nabla\cprod}}
+\renewcommand{\div}{\ensuremath{\nabla\dprod}}
+\newcommand{\grad}{\ensuremath{\nabla}}
+\newcommand{\tgrad}{\ensuremath{\nabla_t}}
+\newcommand{\ngrad}{\ensuremath{\nabla_n}}
+\newcommand{\laplacian}{\ensuremath{\nabla^{2}}}
+\newcommand{\partDeriv}[2]{\ensuremath{\frac{\partial #1}{\partial #2 }}}
+\newcommand{\ddx}[2]{\ensuremath{\frac{\partial #1}{\partial #2 }}}
+\newcommand{\dsdxs}[2]{\ensuremath{\frac{\partial ^2 #1}{\partial {#2}^2}}}
+\newcommand{\DDx}[2]{\ensuremath{\frac{\mathrm{d} #1}{\mathrm{d} #2}}}
+
+\newcommand{\ddxconsty}[3]{%
+    \ensuremath{%
+        \left.
+        \frac{%
+            \partial #1%
+        }{%
+            \partial #2%
+        }\right)_{#3}%
+    }
+}
+
+% Material derivatives
+\newcommand{\mcurl}{\ensuremath{\nabla_0\cprod}}
+\newcommand{\mdiv}{\ensuremath{\nabla_0\dprod}}
+\newcommand{\mgrad}{\ensuremath{\nabla_0}}
+\newcommand{\mlaplacian}{\ensuremath{\nabla_{0}^{2}}}
+
+% Temporal derivatives
+\newcommand{\ddt}[1]{\ensuremath{\frac{\partial #1}{\partial t }}}
+\newcommand{\DDt}[1]{\ensuremath{\frac{\mathrm{d} #1}{\mathrm{d} t}}}
+\newcommand{\DpDt}[2]{\ensuremath{\frac{d_{#1} #2}{d t }}}
+\newcommand{\dsdts}[1]{\ensuremath{\frac{\partial ^2 #1}{\partial t^2}}}
+\newcommand{\rate}[1]{\ensuremath{\dot{#1}}}
+\newcommand{\diff}[1]{\ensuremath{\mathrm{d}#1}}
+\newcommand{\idiff}[1]{\ensuremath{\delta#1}}
+
+\newcommand{\genDer}{\mathcal{L}}
+
+% Time average symbols
+\newcommand{\avg}[1] {\ensuremath{\overline{#1}}}
+
+% Time or spatial average operators
+\newcommand{\tavg}[1] {\ensuremath{\overline{#1}}}
+\newcommand{\savg}[1] {\ensuremath{\left \langle {#1} \right \rangle}}
+
+% The operators themselves as defined by their operations
+\newcommand{\temporalavg}[2]{%
+    \ensuremath{%
+        \displaystyle
+        \frac{1}{#1}
+        \int_{0}^{#1}{%
+            #2
+        }\mathrm{d}t%
+    }%
+}
+
+\newcommand{\surfaceavg}[2]{%
+    \ensuremath{%
+        \displaystyle
+        \frac{1}{A{(#1)}}
+        \int\displaylimits_{#1}{%
+            #2
+        }\mathrm{d}#1%
+    }%
+}
+
+% Other commands
+\newcommand{\functionOf}[1]{\ensuremath{(#1)}}
+\newcommand{\realnumbers}{\ensuremath{{\rm I\!R}}}
+\renewcommand{\exp}[1]{\ensuremath{\mathrm{e}^{#1}}}

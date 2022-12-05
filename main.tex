@@ -1,0 +1,139 @@
+\documentclass[brazilian,a4paper,12pt,two-sided]{book}
+
+    \usepackage{titling}
+
+    \title{%
+        Termodinâmica Computacional%
+    }
+
+    \author{%
+        Prof. Dr. Emanuel Rocha Woiski%
+    }
+
+    \usepackage[%
+        hidelinks,
+        %pdftex,
+        xetex,
+        unicode,
+        pdfauthor   = {\theauthor},
+        pdftitle    = {\thetitle},
+        pdfsubject  = {Termodinâmica Clássica Computacional},
+        pdfproducer = {LaTeX with hyperref},
+        pdfcreator  = {pdflatex}%
+    ]   {hyperref}
+
+    \usepackage{book-thermo-style}
+
+    % List of folders with the figures and plots
+    \graphicspath{
+        {img/}
+        {img/introduction/}
+        {img/pureSubstances/}
+        {img/theFirstLaw/}
+        {img/theSecondLaw/}
+        {img/exergyAnalaysis/}
+        {img/thermodynamicProperties/}
+        {img/thermodynamicPropComputation/}
+        {img/homogeneousMixtures/}
+        {img/heterogeneousMixtures/}
+        {img/annexes/}
+    }
+
+    % New commands
+    \usepackage{thermo-commands}
+    \usepackage{tikz-local-config}
+    \usepackage{tensor-operators}
+
+    \makeglossaries
+
+    \loadglsentries{thermo-glossary.tex}
+    \loadglsentries{thermo-acronyms.tex}
+
+    \usepackage[%
+        type={CC},
+        modifier={by-nc-sa},
+        version={4.0},
+        lang=brazilian
+    ]{doclicense}
+
+    \usepackage[capitalise]{cleveref}
+
+\begin{document}
+
+\frontmatter
+
+    \input{cover/cover2.tex}
+
+    \begin{dedication}
+        À Tânia, \\
+        meu amor, \\
+        pela infinita paciência e compreensão
+    \end{dedication}
+
+    % Termodinamica Computacional © 2022 by Emanuel Rocha Woiski is licensed
+    % under CC BY-NC-SA 4.0. To view a copy of this license, visit
+    % http://creativecommons.org/licenses/by-nc-sa/4.0/
+    \doclicenseThis
+
+    \doublespacing
+    \tableofcontents
+
+\mainmatter
+
+    \import{tex/}{foreword.tex}
+    \import{tex/}{introduction.tex}
+    \import{tex/}{pureSubstances.tex}
+    \import{tex/}{theFirstLaw.tex}
+    \import{tex/}{theSecondLaw.tex}
+    \import{tex/}{exergyAnalysis.tex}
+    \import{tex/}{thermodynamicProperties.tex}
+    \import{tex/}{thermodynamicPropComputation.tex}
+
+    \import{tex/}{equationsList.tex}
+
+    \import{tex/}{homogeneousMixtures.tex}
+    \import{tex/}{homogeneousReactiveMixtures.tex}
+    \import{tex/}{heterogeneousMixtures.tex}
+    \import{tex/}{thermodynamicCycles.tex}
+
+    \includepdf[%
+        pages=-,
+        pagecommand={\pagestyle{fancy}},
+        scale=0.9
+    ]   {tex/annexes.pdf}
+
+\backmatter
+
+    % To include all entries in the bibliography
+    \nocite{*}
+
+    \defbibnote{commentOnBibliography}{%
+        Todos os livros de Termodinâmica são muito parecidos entre si, embora a
+        abordagem deste ou daquele tópico seja feita com maior ou menor
+        aprofundamento. Em nível de graduação em Engenharia Mecânica,
+        destacamos o \textcite{VanWylen1994} em sua antiga quarta edição, a
+        qual vem com um disquete cujo conteúdo não apenas substitui com
+        vantagem todas as tabelas do livro, mas também inclui um aplicativo que
+        facilita tremendamente a utilização das coordenadas generalizadas de
+        Lee-Kesler, com fator acêntrico e tudo e, até mesmo, rotinas em Fortran
+        77, para incluir em programas desenvolvidos pelo leitor. Mas por que a
+        quarta edição? Porque esta é a última edição que ainda continha a mais
+        completa abordagem de misturas ideais que já encontramos em graduação
+        em Engenharia Mecânica. Temos ainda \textcite{Moran1992}, um
+        livro-texto que tem sido muito adotado nas escolas. Três outros livros,
+        para além da graduação, são: \textcite{Callen1960}, com a sua abordagem
+        axiomática geral, \textcite{Modell1983}, que tratam muito bem a questão
+        das restrições internas a um sistema e \textcite{Bejan1997}, que, além
+        de uma revisão rigorosa da Termodinâmica Clássica, analisa a eficiência
+        do ponto de vista exergético e da minimização da geração irreversível
+        da entropia, para modelos de sistemas de potência e refrigeração
+        típicos.
+    }
+
+    \printbibliography[%
+        prenote=commentOnBibliography,
+        title={Bibliografia Comentada},
+        heading=bibintoc
+    ]
+
+\end{document}

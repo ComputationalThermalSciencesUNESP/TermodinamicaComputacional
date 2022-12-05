@@ -1,0 +1,5887 @@
+\chapter{Misturas Homogêneas Reativas}
+\label{chap:homogeneousReactiveMixtures}
+
+    Até agora lidamos com misturas cujos componentes não reagem entre si. Se
+    existir esta possibilidade para a mistura, então novos componentes poderão
+    surgir magicamente. Embora o processo deva atender à conservação de massa e
+    às leis da Termodinâmica, poderá haver uma alteração significativa das
+    propriedades termodinâmicas e da composição da mistura ao seu fim. Então o
+    problema-chave aqui é: se algumas substâncias puras da mistura reagirem
+    entre si, como aplicaremos as leis da termodinâmica e da conservação da
+    massa? Como seremos capazes de escrever as equações das diferenças das
+    propriedades termodinâmicas, se as substâncias puras envolvidas poderão ser
+    completamente substituídas por outras distintas?
+
+    A resposta está na conservação da identidade de todas as espécies químicas
+    envolvidas, pois as reações químicas sempre preservam os núcleos dos
+    átomos. Devemos ser capazes, também por causa disso, de desenvolver bases
+    para as propriedades termodinâmicas, cujo grau de arbitrariedade deve
+    refletir e ser consistente com esta conservação.
+
+
+    \section{Uma Questão de Massa} \label{sec:chemicalReactions}
+
+    As reações químicas representam, devido à conservação das espécies químicas
+    envolvidas, simplesmente uma proporção entre os integrantes da reação.
+    Sabe-se então que a modificação da quantidade de qualquer um dos
+    componentes da reação refletirá obrigatoriamente sobre a quantidade de
+    todos os outros exatamente na proporção dos seus coeficientes
+    estequiométricos naquela reação.
+
+    Portanto, é importante que fique claro que os coeficientes estequiométricos
+    da reação não têm, em princípio, nada a ver com a massa (ou número de
+    moles) instantânea dos componentes da mistura, sejam eles integrantes das
+    diversas reações que podem ocorrer entre eles na mistura ou completamente
+    inertes nas condições dadas da mistura.
+
+    Nas condições da mistura, uma reação pode ser irreversível, quando pelo
+    menos um dos reagentes se esgota ao fim do processo da reação química, ou
+    então reversível, quando todos os envolvidos na reação, sejam
+    \enquote{reagentes} e \enquote{produtos} passam ao final de um certo tempo
+    de relaxação, a coexistir em equilíbrio dinâmico e, para as restrições
+    estabelecidas, este representa o fim do processo. Equilíbrio dinâmico
+    significa que a taxa de destruição de cada componente da mistura torna-se
+    igual a sua taxa de produção, de forma que a composição macroscópica da
+    mistura não se altera. As condições para que exista um equilíbrio dinâmico
+    em uma reação química, ou seja, para que ela seja reversível, serão objeto
+    de nosso estudo. Iniciaremos trabalhando sobre o exemplo detalhado da
+    reação de combustão do metano, porém sem considerar que os produtos por sua
+    vez podem se converter em outros, dissociando-se ou se recombinando.
+
+
+    \section{O Grau de Reação} \label{sec:reactionExtent}
+
+    A qualquer reação química pode ser atribuído \emph{um grau (ou extensão) de
+    reação \gls{reactionExtent}}, através do qual se pode avaliar o avanço da
+    reação de reagentes para produtos, ou vice-versa.
+
+    Para exemplificar, seja uma mistura em um sistema fechado contendo
+    inicialmente \state{\propcomp{numberMoles}{\ch{CH4}}}{0} moles de \ch{CH4},
+    \state{\propcomp{numberMoles}{\ch{O2}}}{0} moles de \ch{O2}, associados à
+    quantidade adequada de ar puro seco,
+    \state{\propcomp{numberMoles}{\ch{CO2}}}{0} moles de \ch{CO2} e também
+    \state{\propcomp{numberMoles}{\ch{H2O}}}{0} kmoles de \ch{H2O}. Vamos
+    avaliar o avanço da reação e discutir o resultado final.
+
+    Consideremos a reação química de combustão do metano com oxigênio puro, nas
+    proporções estequiométricas, sem sobra de oxigênio no produtos e sem
+    dissociação dos produtos:
+    %
+    \begin{equation} \label{eq:8.1}
+        \ch{1 CH4 + 2 O2 -> 1 CO2 + 2 H2O}
+    \end{equation}
+
+    Quantos \gls{numberMoles} moles de ar são necessários para
+    \propcomp{numberMoles}{\ch{O2}} moles de \ch{O2}? O ar padrão é definido
+    como \SI{21}{\percent} de \ch{O2} e \SI{79}{\percent} de \ch{N2}, em base
+    molar. Para cada mol de \ch{O2} temos que ter \SI{4.76}{\mol} de ar (por
+    quê?). Portanto, $\gls{numberMoles} = \propcomp{numberMoles}{\ch{O2}} +
+    \num{3.76}\propcomp{numberMoles}{\ch{N2}} =
+    \num{4.76}\propcomp{numberMoles}{Ar}$ moles de ar .
+
+    Para analisar em detalhes, estudemos a \cref{tab:reactionProgress}.
+
+    \begin{table}[!htb]
+        \caption{%
+            Efeito do grau de avanço sobre cada componente da
+            reação
+        }
+
+        \begin{tabular}{c c c c c}
+            \toprule
+                {Coef.}
+            &   {1}
+            &   {2}
+            &   {1}
+            &   {2}\\
+            \midrule
+                {Inicial}
+            &   \state{\propcomp{numberMoles}{\ch{CH4}}}{0}
+            &   \state{\propcomp{numberMoles}{\ch{O2}}}{0}
+            &   \state{\propcomp{numberMoles}{\ch{CO2}}}{0}
+            &   \state{\propcomp{numberMoles}{\ch{H2O}}}{0}\\
+            \cmidrule(lr){1-5}
+                {Avanço}
+            &   -1\gls{reactionExtent}
+            &   -2\gls{reactionExtent}
+            &    1\gls{reactionExtent}
+            &    2\gls{reactionExtent}\\
+            \cmidrule(lr){1-5}
+                {Local}
+            &   \state{\propcomp{numberMoles}{\ch{CH4}}}{0} - 1\gls{reactionExtent}
+            &   \state{\propcomp{numberMoles}{\ch{O2}}}{0}  - 2\gls{reactionExtent}
+            &   \state{\propcomp{numberMoles}{\ch{CO2}}}{0} + 1\gls{reactionExtent}
+            &   \state{\propcomp{numberMoles}{\ch{H2O}}}{0} + 2\gls{reactionExtent}\\
+            \cmidrule(lr){1-5}
+                {Final}
+            &   0
+            &   $
+                    \state{\propcomp{numberMoles}{\ch{O2}}}{0}
+                    -
+                    2\state{\propcomp{numberMoles}{\ch{CH4}}}{0}
+                $
+            &   $
+                    \state{\propcomp{numberMoles}{\ch{CO2}}}{0}
+                    +
+                    \state{\propcomp{numberMoles}{\ch{CH4}}}{0}
+                $
+            &   $
+                    \state{\propcomp{numberMoles}{\ch{H2O}}}{0}
+                    +
+                    2\state{\propcomp{numberMoles}{\ch{CH4}}}{0}
+                $\\
+            \bottomrule
+        \end{tabular}
+        \label{tab:reactionProgress}
+    \end{table}
+
+    Na \cref{tab:reactionProgress} a linha \emph{Coef.} representa os
+    coeficientes estequiométricos da reação original \cref{eq:8.1}; a linha
+    \emph{Inicial}, os valores que iniciaram a reação química, fornecidos
+    externamente pelas condições iniciais da mistura; a linha \emph{Avanço}
+    representa o avanço da reação definido pelo produto dos coeficientes
+    estequiométricos e o grau de avanço \gls{reactionExtent}; a linha
+    \emph{Local}, os valores instantâneos dos números de moles de cada
+    componente da reação em função de \gls{reactionExtent}; a linha
+    \emph{Final}, os valores dos números de kmoles de cada componente da
+    reação, supondo-se que esta se deslocou totalmente para a direita,
+    caracterizando uma combustão completa, a qual esgotou pelo menos um dos
+    reagentes no processo, no caso, o metano.
+
+    O número instantâneo de moles, bem como a sua variação, para cada um dos
+    componentes da mistura será dado por:
+    %
+    \begin{equation} \label{eq:8.2}
+        \begin{aligned}
+        &\propcomp{numberMoles}{\ch{CH4}}
+        \functionOf{
+            \gls{reactionExtent}
+        }
+        =
+        \state{\propcomp{numberMoles}{\ch{CH4}}}{0}
+        -
+        \gls{reactionExtent}
+        \,\,\,\,
+        \rightarrow
+        \,\,\,\,
+        \diff{\propcomp{numberMoles}{\ch{CH4}}}
+        \functionOf{
+            \gls{reactionExtent}
+        }
+        =
+        -
+        \diff{\gls{reactionExtent}}\\
+        %
+        &\propcomp{numberMoles}{\ch{O2}}
+        \functionOf{
+            \gls{reactionExtent}
+        }
+        =
+        \state{\propcomp{numberMoles}{\ch{O2}}}{0}
+        -
+        2\gls{reactionExtent}
+        \,\,\,\,
+        \rightarrow
+        \,\,\,\,
+        \diff{\propcomp{numberMoles}{\ch{O2}}}
+        \functionOf{
+            \gls{reactionExtent}
+        }
+        =
+        -2\diff{\gls{reactionExtent}}\\
+        %
+        &\propcomp{numberMoles}{\ch{CO2}}
+        \functionOf{
+            \gls{reactionExtent}
+        }
+        =
+        \state{\propcomp{numberMoles}{\ch{CO2}}}{0}
+        +
+        \gls{reactionExtent}
+        \,\,\,\,
+        \rightarrow
+        \,\,\,\,
+        \diff{\propcomp{numberMoles}{\ch{CO2}}}
+        \functionOf{
+            \gls{reactionExtent}
+        }
+        =
+        \diff{\gls{reactionExtent}}\\
+        %
+        &\propcomp{numberMoles}{\ch{H2O}}
+        \functionOf{
+            \gls{reactionExtent}
+        }
+        =
+        \state{\propcomp{numberMoles}{\ch{H2O}}}{0}
+        +
+        2\gls{reactionExtent}
+        \,\,\,\,
+        \rightarrow
+        \,\,\,\,
+        \diff{\propcomp{numberMoles}{\ch{H2O}}}
+        \functionOf{
+            \gls{reactionExtent}
+        }
+        =
+        2\diff{\gls{reactionExtent}}\,.\\
+        \end{aligned}
+    \end{equation}
+
+    Como vemos, a variação do número de moles é proporcional ao grau de avanço
+    da reação, através do respectivo coeficiente estequiométrico.
+
+    O número instantâneo de moles da mistura será dado por:
+    %
+    \begin{equation} \label{eq:8.3}
+        \gsub{numberMoles}{mixture}(\gls{reactionExtent})
+        =
+        \state{\propcomp{numberMoles}{\ch{CH4}}}{\gls{standardState}}
+        +
+        \state{\propcomp{numberMoles}{\ch{O2}}}{\gls{standardState}}
+        +
+        \state{\propcomp{numberMoles}{\ch{CO2}}}{\gls{standardState}}
+        +
+        \state{\propcomp{numberMoles}{\ch{H2O}}}{\gls{standardState}}
+        +
+        3,76\propcomp{numberMoles}{\ch{O2}}
+        -
+        \gls{reactionExtent}
+        -
+        2\gls{reactionExtent}
+        +
+        \gls{reactionExtent}
+        +
+        2\gls{reactionExtent}\,.
+    \end{equation}
+
+    O número de moles instantâneo da mistura,
+    \gsub{numberMoles}{mixture}\functionOf{\gls{reactionExtent}}, deve incluir
+    também o número de moles de nitrogênio \ch{N2}, que, embora inerte na
+    reação química em questão, pertence também à mistura.
+
+    As frações molares dos componentes da mistura são dadas por:
+    %
+    \begin{equation} \label{eq:8.4}
+        \propcomp{moleFraction}{\ch{CH4}}
+        =
+        \frac{
+            \state{\propcomp{numberMoles}{\ch{CH4}}}{\gls{standardState}}
+            -
+            \gls{reactionExtent}
+        }{
+            \gsub{numberMoles}{mixture}
+            \functionOf{
+                \gls{reactionExtent}
+            }
+        }\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.5}
+        \propcomp{moleFraction}{\ch{O2}}
+        =
+        \frac{
+            \state{\propcomp{numberMoles}{\ch{O2}}}{\gls{standardState}}
+            -
+            2\gls{reactionExtent}
+        }{
+            \gsub{numberMoles}{mixture}
+            \functionOf{
+                \gls{reactionExtent}
+            }
+        }\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.6}
+        \propcomp{moleFraction}{\ch{CO2}}
+        =
+        \frac{
+            \state{\propcomp{numberMoles}{\ch{CO2}}}{\gls{standardState}}
+            +
+            \gls{reactionExtent}
+        }{
+            \gsub{numberMoles}{mixture}
+            \functionOf{
+                \gls{reactionExtent}
+            }
+        }\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.7}
+        \propcomp{moleFraction}{\ch{H2O}}
+        =
+        \frac{
+            \state{\propcomp{numberMoles}{\ch{H2O}}}{\gls{standardState}}
+            +
+            2\gls{reactionExtent}
+        }{
+            \gsub{numberMoles}{mixture}
+            \functionOf{
+                \gls{reactionExtent}
+            }
+        }\,,
+    \end{equation}
+    %
+    e, também,
+    %
+    \begin{equation} \label{eq:8.8}
+        \propcomp{moleFraction}{\ch{N2}}
+        =
+        \frac{
+            \num{3.76}
+            \state{\propcomp{numberMoles}{\ch{O2}}}{\gls{standardState}}
+        }{
+            \gsub{numberMoles}{mixture}
+            \functionOf{
+                \gls{reactionExtent}
+            }
+        }\,.
+    \end{equation}
+
+    Se todo o metano for queimado, então  $\state{\gls{reactionExtent}}{1} =
+    \state{\propcomp{numberMoles}{\ch{CH4}}}{\gls{standardState}}$ e basta
+    substituirmos este  valor de \gls{reactionExtent} para obtermos que o
+    oxigênio restante será
+    %
+    \begin{equation} \label{eq:8.9}
+        \state{\propcomp{numberMoles}{\ch{O2}}}{1}
+        =
+        \state{\propcomp{numberMoles}{\ch{O2}}}{\gls{standardState}}
+        -
+        2\state{\propcomp{numberMoles}{\ch{CH4}}}{\gls{standardState}}\,.
+    \end{equation}
+
+    Observe que qualquer que seja o número de moles, nunca pode ser negativo,
+    de modo que as frações molares das \cref{eq:8.4} a \cref{eq:8.8} bem como a
+    \cref{eq:8.9}, devem satisfazer essa restrição para qualquer valor de
+    \gls{reactionExtent}.
+
+    Define-se a relação ar-combustível molar (ou em massa) \gls{airFuelRatio}
+    como o número de moles (ou massa) de ar por mol (ou por unidade de massa)
+    de combustível. O mínimo número de moles \gls{numberMoles} de ar que
+    garante a combustão completa na reação fornecida será aquele que extingue
+    também o oxigênio. Este é denominado o \emph{ar teórico ou estequiométrico}
+    \gls{stoichiometricAirFuelRatio} desta reação. Portanto:
+
+    \begin{equation} \label{eq:8.10}
+        \gls{stoichiometricAirFuelRatio}
+        =
+        \min{
+            \left(
+                \frac{
+                    \gls{numberMoles}
+                }{
+                    \state{\propcomp{numberMoles}{\ch{CH4}}}{0}
+                }
+            \right)
+        }
+        =
+        \frac{
+            \num{4.76}
+            \left(
+                2\state{\propcomp{numberMoles}{\ch{CH4}}}{0}
+            \right)
+        }{
+                \state{\propcomp{numberMoles}{\ch{CH4}}}{0}
+        }
+        =
+        \num{9.52}\,\,\,\,
+        \text{moles de ar/mol de \ch{CH4}}\,.
+    \end{equation}
+
+    Naturalmente, se $\state{\propcomp{numberMoles}{\ch{CH4}}}{0} = 1$, então
+    $\min{\gls{numberMoles}} = \num{9.52}$ e o número inicial de moles de
+    oxigênio será simplesmente 2, como era de se esperar.
+
+    A relação combustível-ar \gls{fuelAirRatio} para uma dada reação de
+    combustão é implesmente a inversa de \gls{airFuelRatio}, assim como
+    \gls{stoichiometricFuelAirRatio} é a inversa de
+    \gls{stoichiometricAirFuelRatio}. Define-se adicionalmente a relação de
+    equivalência \gls{equivalenceRatio} como:
+    %
+    \begin{equation} \label{eq:8.11}
+        \gls{equivalenceRatio}
+        =
+        \frac{
+            \gls{fuelAirRatio}
+        }{
+            \gls{stoichiometricFuelAirRatio}
+        }
+        =
+        \frac{
+            \gls{stoichiometricAirFuelRatio}
+        }{
+            \gls{airFuelRatio}
+        }\,.
+    \end{equation}
+
+    O inverso da relação de equivalência \gls{equivalenceRatio} é conhecido na
+    indústria por \gls{rEquivalenceRatio}. A relação de equivalência,
+    \cref{eq:8.11}, é um parâmetro importante porque se \gls{equivalenceRatio}
+    é menor do que 1, a reação de combustão, qualquer que seja ela, contém mais
+    oxigênio do que o estequiométrico e portanto, haverá sobra de oxigênio nos
+    produtos. Se \gls{equivalenceRatio} for maior do que 1, por outro lado, o
+    número de moles de oxigênio será menor do que o estequiométrico e a reação
+    se torna muito mais complicada.
+
+    Na realidade, a Termodinâmica clássica é capaz de dizer se alguma reação
+    pode ou não ocorrer, mas não pode predizer o que vai acontecer, ou que
+    produtos serão formados.
+
+    Precisamos agora aplicar a conservação de massa e as Leis da Termodinâmica.
+    Para isso, vamos retomar o assunto das bases arbitrárias para as
+    propriedades termodinâmicas.
+
+
+    \section{A Base da Entalpia de Formação} \label{sec:formationEnthalpy}
+
+    Seja a seguinte reação química em regime permanente, com reagentes
+    separados à temperatura padrão \gls{standardTemperature} de
+    \SI{298.15}{\kelvin} e à pressão padrão \gls{standardPressure} de
+    \SI{0.1}{\mega\pascal} e o único produto também a \SI{298.15}{\kelvin} e
+    \SI{0.1}{\mega\pascal}:
+    %
+    \begin{equation} \label{eq:8.12}
+        \ch{C_{(s)} + O2_{g} -> CO2_{(g)}}\,.
+    \end{equation}
+
+    Se aplicarmos a primeira lei, obteremos
+    %
+    \begin{equation} \label{eq:8.13}
+        \gsub{heatTransfer}{controlVolume}
+        =
+        \propcomp{enthalpy}{\ch{CO2}}
+        -
+        \propcomp{enthalpy}{\ch{C(s)}}
+        -
+        \propcomp{enthalpy}{\ch{O2}}
+        =
+        \molalpropcomp{intEnthalpy}{\ch{CO2}}
+        -
+        \molalpropcomp{intEnthalpy}{\ch{C(s)}}
+        -
+        \molalpropcomp{intEnthalpy}{\ch{O2}}\,.
+    \end{equation}
+
+    Observe que \gsub{heatTransfer}{controlVolume}, que é mensurável e
+    tabelado, não pode depender das bases arbitrariamente escolhidas para as
+    entalpias. Então, se adotarmos uma base arbitrária para o carbono \ch{C(s)}
+    e outra para o oxigênio \ch{O2}, a entalpia do \ch{CO2} será fixada por
+    estas duas bases e pelo valor de \gsub{heatTransfer}{controlVolume}.
+
+    Ora, se podemos escolher as bases, vamos adotar
+    $\propcomp{formationEnthalpy}{\ch{C(s)}} =
+    \propcomp{formationEnthalpy}{\ch{O2}} = 0$, ou seja, vamos atribuir valor
+    zero à entalpia de todos os elementos (em sua forma isotópica mais comum) a
+    $\gls{standardTemperature} = \SI{25}{\celsius}$ e $\gls{standardPressure} =
+    \SI{0.1}{\mega\pascal}$. Além disso, o valor de \gls{formationEnthalpy}
+    será tabelado para os gases a \SI{25}{\celsius}, considerados perfeitos.
+    Esta é a fórmula que define a \emph{base da entalpia de formação
+    \gls{formationEnthalpy}}.
+
+    Em consequência da primeira lei e das bases escolhidas, a entalpia do
+    \ch{CO2} na base da entalpia de formação fica fixada e igual a
+    %
+    \begin{equation}   \label{eq:8.14}
+        \propcomp{formationEnthalpy}{\ch{CO2}}
+        =
+        \gsub{heatTransfer}{controlVolume}
+        =
+        \SI{-393522}{\kilo\joule\per\kilo\mol}\,.
+    \end{equation}
+
+    Os valores de \gls{formationEnthalpy} para as substâncias puras são
+    determinados por medidas calorimétricas e com a ajuda da termodinâmica
+    estatística e podem ser obtidos em tabelas. Para manter a consistência,
+    \emph{todas as entalpias envolvidas na reação precisam ser convertidas para
+    a mesma base da entalpia de formação}.
+
+    Como qualquer conversão de base, funciona da seguinte forma, onde a e b são
+    duas bases distintas para a propriedade termodinâmica
+    \gls{intThermodynamicProperty}:
+    %
+    \begin{equation} \label{eq:8.15}
+        {\Delta \gls{intThermodynamicProperty}}_\text{base a}
+        =
+        {\Delta \gls{intThermodynamicProperty}}_\text{base b}
+        \,\,\,\,
+        \text{ou}
+        \,\,\,\,
+        \left(
+           \state{\gls{intThermodynamicProperty}}{2}
+           -
+           \state{\gls{intThermodynamicProperty}}{1}
+        \right)_{\text{base a}}
+        =
+        \left(
+           \state{\gls{intThermodynamicProperty}}{2}
+           -
+           \state{\gls{intThermodynamicProperty}}{1}
+        \right)_{\text{base b}}\,.
+    \end{equation}
+
+    É muito importante que lembremos que na \cref{eq:8.15} existe um valor da
+    propriedade termodinâmica \state{\gls{intThermodynamicProperty}}{i} na base
+    a e um valor  distinto para a mesma propriedade
+    \state{\gls{intThermodynamicProperty}}{i} na base b, mas estas correspondem
+    ao mesmo estado termodinâmico $(i)$ e portanto, à mesma fase. Assim, se o
+    estado $(i)$ for considerado como gás perfeito, as duas propriedades
+    \gls{intThermodynamicProperty} devem se referir ao gás perfeito em $(i)$.
+
+    Para converter qualquer entalpia molar a
+    $(\gls{temperature},\gls{pressure})$ para a base da entalpia de formação
+    usamos então a expressão:
+    %
+    \begin{equation} \label{eq:8.16}
+        \molar{\gls{intEnthalpy}}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+        =
+        \gls{formationEnthalpy}
+        +
+        \underset{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+            \rightarrow
+            \gls{temperature},
+            \gls{pressure}
+        }{
+            \Delta\molar{\gls{intEnthalpy}}
+        }{}\,.
+    \end{equation}
+
+    Todas as transformações ficaram encerradas em $\Delta
+    \molar{\gls{intEnthalpy}}$ que, como já sabemos, pode ser expressa em
+    qualquer base. Vamos supor que o estado $\gls{temperature}, \gls{pressure}$
+    de uma determinada substância pura não esteja na região de gás perfeito.
+    Estamos interessados em expressar
+    $\molar{\gls{intEnthalpy}}\functionOf{\gls{temperature},\gls{pressure}}$ na
+    base da entalpia de formação. Sejam T0 e P0 os parâmetros para o estado
+    padrão.  Então, utilizando para $\Delta \molar{\gls{intEnthalpy}}$ a
+    expansão das entalpias em coordenadas generalizadas,
+    %
+    \begin{equation} \label{eq:8.17}
+        \molar{\gls{intEnthalpy}}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+        =
+        \gls{formationEnthalpy}
+        +
+        \left[
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{temperature}
+            }
+            -
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{standardTemperature}
+            }
+        \right]
+        -
+        \left(
+            \molalidealgasprop{intEnthalpy}
+            -
+            \molar{\gls{intEnthalpy}}
+        \right)
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }
+        +
+        \state{
+            \left(
+                \molalidealgasprop{intEnthalpy}
+                -
+                \molar{\gls{intEnthalpy}}
+            \right)
+        }{\gls{standardState}}
+        \functionOf{
+            \gsub{standardTemperature}{reduced},
+            \gsub{standardPressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }\,.
+    \end{equation}
+
+    Observe que na \cref{eq:8.17} todas as entalpias devem corresponder umas às
+    outras, de forma que %
+    $\molalidealgasprop{intEnthalpy}
+    \functionOf{
+        \gls{temperature}
+    }$ %
+    e %
+    $\molar{\gls{intEnthalpy}}
+    \functionOf{
+        \gls{temperature},
+        \gls{pressure}
+    }$%
+    ambas \enquote{cancelam} %
+    $(
+        \molalidealgasprop{intEnthalpy}
+        -
+        \molar{\gls{intEnthalpy}}
+    )
+    \functionOf{
+        \gsub{temperature}{reduced},
+        \gsub{pressure}{reduced},
+        \gls{PitzerAcentricFactor},
+        \gls{WuPolarFactor}
+    }$, %
+    ao passo que %
+    $
+        \state{{\molalidealgasprop{intEnthalpy}}}{\gls{standardState}}
+        \functionOf{\gls{standardTemperature}}
+    $ %
+    e %
+    $\gls{formationEnthalpy}
+    \functionOf{
+        \gls{standardTemperature},
+        \gls{standardPressure}
+    }$ %
+    ambas \enquote{cancelam} %
+    $\state{(
+        \molalidealgasprop{intEnthalpy}
+        -
+        \molar{\gls{intEnthalpy}}
+    )}{\gls{standardState}}
+    \functionOf{
+        \gsub{standardTemperature}{reduced},
+        \gsub{standardPressure}{reduced},
+        \gls{PitzerAcentricFactor},
+        \gls{WuPolarFactor}
+    }$. Por outro lado, o valor de
+    \gls{formationEnthalpy}\functionOf{\gls{standardTemperature},
+    \gls{standardPressure}} deve ser fornecido ou obtido de tabelas.
+
+    Você consegue modificar a \cref{eq:8.16} se consideramos
+    \idealgasprop{formationEnthalpy}\functionOf{\gls{standardTemperature}}? E
+    se adicionalmente
+    \molalidealgasprop{intEnthalpy}\functionOf{\gls{temperature}}, ou seja a
+    substância pura puder ser considerada como gás perfeito a
+    \gls{temperature},\gls{pressure}? Você precisa se sentir à vontade com cada
+    uma destas conversões antes de prosseguir (faça!).
+
+
+    \section{A Base da Entropia Absoluta} \label{sec:absoluteEntropy}
+
+    Nas reações químicas, ao aplicarmos a Segunda Lei, nos deparamos com uma
+    situação análoga a da entalpia. Poderíamos, então, utilizar uma solução
+    semelhante a da entalpia de formação. Entretanto, no caso da entropia,
+    costumamos adotar uma outra base: \emph{a da entropia absoluta}.
+
+    Sabemos que a entropia tem um valor \emph{nulo} para um cristal
+    absolutamente perfeito na temperatura de zero absoluto. Este é um dos
+    enunciados da \emph{Terceira Lei da Termodinâmica}, devido a Nernst e Max
+    Planck, no começo do século \romannumber{20}.
+
+    Portanto, se determinarmos o valor da entropia para os elementos químicos
+    empregando a base da entropia absoluta, poderíamos utilizar estes valores
+    para garantir a consistência da entropia dos componentes das reações
+    químicas.
+
+    Para efeito de tabelas, costuma-se adotar a referência padrão
+    $\gls{standardPressure} = \SI{0.1}{\mega\pascal}$ e a temperatura padrão
+    $\gls{standardTemperature} = \SI{25}{\celsius}$, da mesma forma que
+    procedemos para a entalpia de formação. Novamente, não se deve confundir
+    $(\gsub{pressure}{environmentState}, \gsub{temperature}{environmentState})$
+    condições do meio-ambiente padrão, com $(\gls{standardTemperature},
+    \gls{standardPressure})$, \emph{temperatura e pressão do estado padrão},
+    embora muitas vezes seus valores possam coincidir por conveniência.
+
+    A mudança de base para a entropia absoluta segue os mesmos princípios que
+    estabelecemos para a entalpia de formação. A conversão de base será
+    %
+    \begin{equation} \label{eq:8.18}
+        \molar{\gls{intEntropy}}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+        =
+        \gls{absoluteEntropy}
+        \functionOf{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+        }
+        +
+        \underset{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+            \rightarrow
+            \gls{temperature},
+            \gls{pressure}
+        }{
+            \Delta\molar{\gls{intEntropy}}
+        }{}\,.
+    \end{equation}
+
+    % Comment: não seria melhor indicar a entropia molar no estado padrao com a
+    % nomeclatura de estado? s^(0)? Isso evitaria confusão com a entropia
+    % absoluta não?
+    Da mesma forma que para a entalpia, a transformação da entropia está
+    encerrada em $\Delta \molar{\gls{intEntropy}}$. A formulação completa em
+    coordenadas generalizadas é a seguinte, para o caso em que
+    $\molar{\gls{intEntropy}}\functionOf{\gls{temperature},\gls{pressure}}$ e
+    $
+        \molar{\gls{intEntropy}}_{\gls{standardTemperature}}^{\gls{standardState}}
+        =
+        \molar{\gls{intEntropy}}
+        \functionOf{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+        }
+    $ não sejam gases perfeitos:
+    %
+    % Comment: a entropia absoluta deve mesmo ser indicada com subscrito T0?
+    \begin{equation} \label{eq:8.19}
+        \begin{aligned}
+        \molar{\gls{intEntropy}}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+        &=
+        \molar{\gls{intEntropy}}_{\gls{standardTemperature}}^{\gls{standardState}}
+        %\gls{absoluteEntropy}
+        \functionOf{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+        }
+        -
+        \left(
+            \molalidealgasprop{intEntropy}
+            -
+            \molar{\gls{intEntropy}}
+        \right)
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }
+        +
+        \state{
+            \left(
+                \molalidealgasprop{intEntropy}
+                -
+                \molar{\gls{intEntropy}}
+            \right)
+        }{\gls{standardState}}
+        \functionOf{
+            \gsub{standardTemperature}{reduced},
+            \gsub{standardPressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }\\
+        &+
+        \left[
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \gls{temperature},
+                \gls{pressure}
+            }
+            -
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \gls{standardTemperature},
+                \gls{standardPressure}
+            }
+        \right]\,.
+        \end{aligned}
+    \end{equation}
+
+    Devemos ficar particularmente atentos para as pressões envolvidas, pois a
+    entropia do gás perfeito, ao contrário da entalpia e energia interna,
+    depende da temperatura e da pressão. Da mesma forma que a expansão da
+    entalpia, para verificarmos se a Eq. 8.19 está correta deve haver uma
+    correspondência entre as entropias no mesmo estado. Assim, ambos os termos
+    $
+        \molar{\gls{intEntropy}}_{\gls{standardTemperature}}^{\gls{standardState}}
+        \functionOf{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+        }
+    $ e %
+    $
+        \molalidealgasprop{intEntropy}
+        \functionOf{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+        }
+    $ devem \enquote{cancelar} %
+    $\state{(
+        \molalidealgasprop{intEntropy}
+        -
+        \molar{\gls{intEntropy}}
+    }{\gls{standardState}}
+    \functionOf{
+        \gsub{standardTemperature}{reduced},
+        \gsub{standardPressure}{reduced},
+        \gls{PitzerAcentricFactor},
+        \gls{WuPolarFactor}
+    }$,
+    ao passo que, da mesma forma, os termos %
+    $
+        \molar{\gls{intEntropy}}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+    $ e %
+    $
+        \molalidealgasprop{intEntropy}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+    $ devem \enquote{cancelar} %
+    $(
+        \molalidealgasprop{intEntropy}
+        -
+        \molar{\gls{intEntropy}}
+    )\functionOf{
+        \gsub{temperature}{reduced},
+        \gsub{pressure}{reduced},
+        \gls{PitzerAcentricFactor},
+        \gls{WuPolarFactor}
+    }$. Como fica a \cref{eq:8.19} para %
+    $
+        {\molalidealgasprop{intEntropy}}_{\gls{standardTemperature}}^{\gls{standardState}}
+        \functionOf{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+        }
+    $? E se adicionalmente,
+    $\molalidealgasprop{intEntropy}\functionOf{\gls{temperature},
+    \gls{pressure}}$? Você não deveria prosseguir até se sentir confortável com
+    todas as conversões para a base da entropia absoluta.
+
+
+    \section{Revendo o Exemplo agora com Reações Químicas}
+
+    Seja o exemplo da \cref{fig:nonResistedExpansion}, agora com A = \ch{CH4} e
+    B = ar puro. Resolva novamente o problema da expansão não resistida,
+    incluindo agora a reação química de combustão de \propcomp{numberMoles}{A}
+    moles de metano com \propcomp{numberMoles}{B} moles de oxigênio
+    provenientes da quantidade adequada de ar puro, depois que se rompe a
+    membrana.
+
+    Da nossa discussão anterior sobre grau de reação (lembra-se?), já
+    determinamos que o número final de moles de \ch{O2} será
+    $\propcomp{numberMoles}{B} - 2\propcomp{numberMoles}{A}$. Então, a reação
+    completa, sem dissociação, será
+    %
+    \begin{equation} \label{eq:8.20}
+        \ch{
+            \propcomp{numberMoles}{A} CH4
+            +
+            \propcomp{numberMoles}{B} O2
+            +
+            3.76 \propcomp{numberMoles}{B} N2
+            ->
+            \propcomp{numberMoles}{A} CO2
+            +
+            (
+                \propcomp{numberMoles}{B}
+                -
+                2 \propcomp{numberMoles}{A}
+            ) O2
+            +
+            2 \propcomp{numberMoles}{A} H2O
+            +
+            3.76 \propcomp{numberMoles}{B} N2
+        }\,.
+    \end{equation}
+
+    Da mesma forma que antes, você deve mostrar que a Primeira Lei para o
+    processo neste sistema será dada pela \cref{eq:7.20} e a Segunda Lei pela
+    \cref{eq:7.21}. O lado A é composto de metano a
+    \state{\propcomp{temperature}{A}}{1},\state{\propcomp{pressure}{A}}{1} e o
+    lado B conterá ar puro seco a
+    \state{\propcomp{temperature}{B}}{1},\state{\propcomp{pressure}{B}}{1}. A
+    energia interna do sistema em 1 será, então
+    %
+    \begin{equation} \label{eq:8.21}
+        \state{\gls{internalEnergy}}{1}
+        =
+        \propcomp{numberMoles}{A}
+        \state{\molalpropcomp{intInternalEnergy}{\ch{CH4}}}{1}
+        \functionOf{
+            \state{\propcomp{temperature}{A}}{1},
+            \state{\propcomp{pressure}{A}}{1}
+        }
+        +
+        \propcomp{numberMoles}{B}
+        \state{\partmolalprop{internalEnergy}{\ch{O2}}}{1}
+        +
+        \num{3.76}\propcomp{numberMoles}{B}
+        \state{\partmolalprop{internalEnergy}{\ch{N2}}}{1}\,,
+    \end{equation}
+    %
+    ao passo que a energia interna do sistema em 2 ficará
+    %
+    \begin{equation} \label{eq:8.22}
+        \state{\gls{internalEnergy}}{2}
+        =
+        \propcomp{numberMoles}{A}
+        \state{\partmolalprop{internalEnergy}{\ch{CO2}}}{2}
+        +
+        (\propcomp{numberMoles}{B}-2\propcomp{numberMoles}{A})
+        \state{\partmolalprop{internalEnergy}{\ch{O2}}}{2}
+        +
+        2\propcomp{numberMoles}{A}
+        \state{\partmolalprop{internalEnergy}{\ch{H2O}}}{2}
+        +
+        \num{3.76}\propcomp{numberMoles}{B}
+        \state{\partmolalprop{internalEnergy}{\ch{N2}}}{2}\,.
+    \end{equation}
+
+    Vamos supor em 1 que o ar é um gás perfeito, uma hipótese bem realista para
+    o ar e que o metano é um gás real. Já a mistura no estado 2 será assumida
+    como uma solução ideal. Então:
+    %
+    \begin{equation} \label{eq:8.23}
+        \state{\gls{internalEnergy}}{1}
+        =
+        \propcomp{numberMoles}{A}
+        \state{\molalpropcomp{intInternalEnergy}{\ch{CH4}}}{1}
+        \functionOf{
+            \state{\propcomp{temperature}{A}}{1},
+            \state{\propcomp{pressure}{A}}{1}
+        }
+        +
+        \propcomp{numberMoles}{B}
+        \state{
+            {\molalidealgasprop{intInternalEnergy}}_{\ch{O2}}
+        }{1}
+        \functionOf{
+            \state{\propcomp{temperature}{B}}{1}
+        }
+        +
+        \num{3.76}\propcomp{numberMoles}{B}
+        \state{
+            {\molalidealgasprop{intInternalEnergy}}_{\ch{N2}}
+        }{1}
+        \functionOf{
+            \state{\propcomp{temperature}{B}}{1}
+        }\,.
+    \end{equation}
+
+    A energia interna no estado 2 será expressa como
+    %
+    \begin{equation} \label{eq:8.24}
+        \state{\gls{internalEnergy}}{2}
+        =
+        \propcomp{numberMoles}{A}
+        \state{\molalpropcomp{intInternalEnergy}{\ch{CO2}}}{2}
+        +
+        (\propcomp{numberMoles}{B}-2\propcomp{numberMoles}{A})
+        \state{\molalpropcomp{intInternalEnergy}{\ch{O2}}}{2}
+        +
+        2\propcomp{numberMoles}{A}
+        \state{\molalpropcomp{intInternalEnergy}{\ch{H2O}}}{2}
+        +
+        \num{3.76}\propcomp{numberMoles}{B}
+        \state{\molalpropcomp{intInternalEnergy}{\ch{N2}}}{2}\,.
+    \end{equation}
+
+    Substituindo-se as energias internas por entalpias, para o estado 1:
+    %
+    \begin{equation} \label{eq:8.25}
+        \begin{aligned}
+        \state{\gls{internalEnergy}}{1}
+        =&\,\,
+        \propcomp{numberMoles}{A}
+        \state{\molalpropcomp{intEnthalpy}{\ch{CH4}}}{1}
+        \functionOf{
+            \state{\propcomp{temperature}{A}}{1},
+            \state{\propcomp{pressure}{A}}{1}
+        }
+        +
+        \propcomp{numberMoles}{B}
+        \state{
+            {\molalidealgasprop{intEnthalpy}}_{\ch{O2}}
+        }{1}
+        \functionOf{
+            \state{\propcomp{temperature}{B}}{1}
+        }
+        +
+        \num{3.76}\propcomp{numberMoles}{B}
+        \state{
+            {\molalidealgasprop{intEnthalpy}}_{\ch{N2}}
+        }{1}
+        \functionOf{
+            \state{\propcomp{temperature}{B}}{1}
+        }\\
+        &-
+        \propcomp{numberMoles}{A}
+        \state{\propcomp{compressibilityFactor}{\ch{CH4}}}{1}
+        \functionOf{
+            \state{\propcomp{temperature}{A}}{1},
+            \state{\propcomp{pressure}{A}}{1}
+        }
+        \gls{universalGasConstant}
+        \state{\propcomp{temperature}{A}}{1}
+        -
+        \num{4.76}\propcomp{numberMoles}{B}
+        \gls{universalGasConstant}
+        \state{\propcomp{temperature}{B}}{1}\,,
+        \end{aligned}
+    \end{equation}
+
+    e para o estado 2:
+
+    \begin{equation} \label{eq:8.26}
+        \begin{aligned}
+        \state{\gls{internalEnergy}}{2}
+        =&\,\,
+        \propcomp{numberMoles}{A}
+        \state{\molalpropcomp{intEnthalpy}{\ch{CO2}}}{2}
+        +
+        (\propcomp{numberMoles}{B}-2\propcomp{numberMoles}{A})
+        \state{\molalpropcomp{intEnthalpy}{\ch{O2}}}{2}
+        +
+        2\propcomp{numberMoles}{A}
+        \state{\molalpropcomp{intEnthalpy}{\ch{H2O}}}{2}
+        +
+        \num{3.76}\propcomp{numberMoles}{B}
+        \state{\molalpropcomp{intEnthalpy}{\ch{N2}}}{2}\\
+        &-
+        \left[
+            \propcomp{numberMoles}{A}
+            \state{\propcomp{compressibilityFactor}{\ch{CO2}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+            +
+            (\propcomp{numberMoles}{B} - 2\propcomp{numberMoles}{B})
+            \state{\propcomp{compressibilityFactor}{\ch{O2}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+        \right]
+        \gls{universalGasConstant}
+        \state{\gls{temperature}}{2}\\
+        &-
+        \left[
+            2\propcomp{numberMoles}{A}
+            \state{\propcomp{compressibilityFactor}{\ch{H2O}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+            +
+            \num{3.76}\propcomp{numberMoles}{B}
+            \state{\propcomp{compressibilityFactor}{\ch{N2}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+        \right]
+        \gls{universalGasConstant}
+        \state{\gls{temperature}}{2}\,.
+        \end{aligned}
+    \end{equation}
+
+    Agora, como acabamos de aprender, cada entalpia nas \cref{eq:8.25,eq:8.26}
+    deve ser escrita em uma base comum, a base da entalpia de formação e na
+    forma das entalpias residuais e coordenadas reduzidas, conforme a
+    \cref{eq:8.17} de conversão de base:
+
+    \begin{equation} \label{eq:8.27}
+        \molalpropcomp{intEnthalpy}{\ch{CH4}}
+        \functionOf{
+            \state{\propcomp{temperature}{A}}{1},
+            \state{\propcomp{pressure}{A}}{1}
+        }
+        =
+        \idealgasprop{formationEnthalpy}_{\ch{CH4}}
+        -
+        \state{
+            \left(
+                \molalidealgasprop{intEnthalpy}
+                -
+                \molar{\gls{intEnthalpy}}
+            \right)
+        }{1}_{\ch{CH4}}
+        \functionOf{
+            \state{\gsub{temperature}{reduced}}{1},
+            \state{\gsub{pressure}{reduced}}{1},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\ch{CH4}}
+        +
+        \left[
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \state{\propcomp{temperature}{A}}{1}
+            }
+            -
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{standardTemperature}
+            }
+        \right]_{\ch{CH4}}\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.28}
+        \molalidealgasprop{intEnthalpy}_{\ch{O2}}
+        \functionOf{
+            \state{\propcomp{temperature}{B}}{1}
+        }
+        =
+        \left[
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \state{\propcomp{temperature}{B}}{1}
+            }
+            -
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{standardTemperature}
+            }
+        \right]_{\ch{O2}}\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.29}
+        \molalidealgasprop{intEnthalpy}_{\ch{N2}}
+        \functionOf{
+            \state{\propcomp{temperature}{B}}{1}
+        }
+        =
+        \left[
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \state{\propcomp{temperature}{B}}{1}
+            }
+            -
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{standardTemperature}
+            }
+        \right]_{\ch{N2}}\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.30}
+        \molalpropcomp{intEnthalpy}{\ch{CO2}}
+        \functionOf{
+            \state{\gls{temperature}}{2},
+            \state{\gls{pressure}}{2}
+        }
+        =
+        \idealgasprop{formationEnthalpy}_{\ch{CO2}}
+        -
+        \state{
+            \left(
+                \molalidealgasprop{intEnthalpy}
+                -
+                \molar{\gls{intEnthalpy}}
+            \right)
+        }{2}_{\ch{CO2}}
+        \functionOf{
+            \state{\gsub{temperature}{reduced}}{2},
+            \state{\gsub{pressure}{reduced}}{2},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\ch{CO2}}
+        +
+        \left[
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \state{\gls{temperature}}{2}
+            }
+            -
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{standardTemperature}
+            }
+        \right]_{\ch{CO2}}\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.31}
+        \molalpropcomp{intEnthalpy}{\ch{H2O}}
+        \functionOf{
+            \state{\gls{temperature}}{2},
+            \state{\gls{pressure}}{2}
+        }
+        =
+        \idealgasprop{formationEnthalpy}_{\ch{H2O}}
+        -
+        \state{
+            \left(
+                \molalidealgasprop{intEnthalpy}
+                -
+                \molar{\gls{intEnthalpy}}
+            \right)
+        }{2}_{\ch{H2O}}
+        \functionOf{
+            \state{\gsub{temperature}{reduced}}{2},
+            \state{\gsub{pressure}{reduced}}{2},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\ch{H2O}}
+        +
+        \left[
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \state{\gls{temperature}}{2}
+            }
+            -
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{standardTemperature}
+            }
+        \right]_{\ch{H2O}}\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.32}
+        \molalpropcomp{intEnthalpy}{\ch{O2}}
+        \functionOf{
+            \state{\gls{temperature}}{2},
+            \state{\gls{pressure}}{2}
+        }
+        =
+        -\state{
+            \left(
+                \molalidealgasprop{intEnthalpy}
+                -
+                \molar{\gls{intEnthalpy}}
+            \right)
+        }{2}_{\ch{O2}}
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\ch{O2}}^{(2)}
+        +
+        \left[
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \state{\gls{temperature}}{2}
+            }
+            -
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{standardTemperature}
+            }
+        \right]_{\ch{O2}}
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.33}
+        \molalpropcomp{intEnthalpy}{\ch{N2}}
+        \functionOf{
+            \state{\gls{temperature}}{2},
+            \state{\gls{pressure}}{2}
+        }
+        =
+        -\state{
+            \left(
+                \molalidealgasprop{intEnthalpy}
+                -
+                \molar{\gls{intEnthalpy}}
+            \right)
+        }{2}_{\ch{N2}}
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\ch{N2}}^{(2)}
+        +
+        \left[
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \state{\gls{temperature}}{2}
+            }
+            -
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{standardTemperature}
+            }
+        \right]_{\ch{N2}}\,,
+    \end{equation}
+    %
+    cujos valores devem ser substituídos nas \cref{eq:8.25,eq:8.26}. Em cada
+    uma das Eqs. (\ref{eq:8.27}) a (\ref{eq:8.33}), os valores de
+    \gsub{temperature}{reduced}, \gsub{pressure}{reduced} devem ser
+    determinados conhecendo-se os respectivos valores das propriedades críticas
+    \gsub{temperature}{critical} e \gsub{critical}, além, é claro, de
+    \gls{PitzerAcentricFactor}, \gls{WuPolarFactor}, \gls{molecularMass} e
+    \idealgasprop{constPressureSpecificHeat}\functionOf{\gls{temperature}},
+    para cada uma das substâncias puras.
+
+    Entretanto, da mesma forma que o problema original, não conhecemos os
+    valores de \state{\gls{temperature}}{2} e de \state{\gls{pressure}}{2} e,
+    se não considerarmos as equações das propriedades reduzidas (pois são
+    simplesmente proporcionais às propriedades criticas), resta-nos apenas a
+    \cref{eq:7.20}. Como anteriormente, a outra equação será dada pela
+    conservação do volume do sistema, \cref{eq:7.26}.
+
+    As equações para os volumes dos estados 1 e 2 respectivamente, ficarão:
+    %
+    \begin{equation} \label{eq:8.34}
+        \state{\gls{volume}}{1}
+        =
+        \state{\propcomp{volume}{A}}{1}
+        +
+        \state{\propcomp{volume}{B}}{1}
+        =
+        \frac{
+            \propcomp{numberMoles}{A}
+            \propcomp{compressibilityFactor}{\ch{CH4}}
+            \functionOf{
+                \gsub{temperature}{reduced},
+                \gsub{pressure}{reduced},
+                \gls{PitzerAcentricFactor},
+                \gls{WuPolarFactor}
+            }_{\ch{CH4}}^{(1)}
+            \gls{universalGasConstant}
+            \state{\propcomp{temperature}{A}}{1}
+        }{
+            \state{\propcomp{pressure}{A}}{1}
+        }
+        +
+        \frac{
+            \num{4.76}\propcomp{numberMoles}{B}
+            \gls{universalGasConstant}
+            \state{\propcomp{temperature}{B}}{1}
+        }{
+            \state{\propcomp{pressure}{B}}{1}
+        }\,,
+    \end{equation}
+
+    \begin{equation} \label{eq:8.35}
+        \begin{aligned}
+        &\left[
+            \propcomp{numberMoles}{A}
+            \state{\propcomp{compressibilityFactor}{\ch{CO2}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+            +
+            (\propcomp{numberMoles}{B} - 2\propcomp{numberMoles}{B})
+            \state{\propcomp{compressibilityFactor}{\ch{O2}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+        \right]
+        \frac{
+            \gls{universalGasConstant}
+            \state{\gls{temperature}}{2}
+        }{
+            \state{\gls{pressure}}{2}
+        }\\
+        -
+        &\left[
+            2\propcomp{numberMoles}{A}
+            \state{\propcomp{compressibilityFactor}{\ch{H2O}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+            +
+            \num{3.76}\propcomp{numberMoles}{B}
+            \state{\propcomp{compressibilityFactor}{\ch{N2}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+        \right]
+        \frac{
+            \gls{universalGasConstant}
+            \state{\gls{temperature}}{2}
+        }{
+            \state{\gls{pressure}}{2}
+        }
+        =
+        \state{\gls{volume}}{2}\,.
+        \end{aligned}
+    \end{equation}
+
+    Uma vez resolvidos os valores de \state{\gls{temperature}}{2} e
+    \state{\gls{pressure}}{2}, podemos aplicar na Segunda Lei da Termodinâmica,
+    \cref{eq:7.21}, para obtermos a produção irreversível de entropia
+    \fprocess{entropyCreated}{1}{2}{}. O processo é uma expansão não resistida,
+    que é irreversível, associada a uma reação de combustão, que também é
+    altamente irreversível. Estamos, portanto, interessados em avaliar a
+    produção irreversível de entropia (ou irreversibilidade). Para isto,
+    precisamos aplicar a Segunda Lei, cuja formulação básica não sofreu
+    alteração, pois nada foi alterado na fronteira do sistema. A entropia no
+    estado 1 será
+    %
+    \begin{equation} \label{eq:8.36}
+        \state{\gls{entropy}}{1}
+        =
+        \propcomp{numberMoles}{A}
+        \state{\molalpropcomp{intEntropy}{\ch{CH4}}}{1}
+        \functionOf{
+            \state{\propcomp{temperature}{A}}{1},
+            \state{\propcomp{pressure}{A}}{1}
+        }
+        +
+        \propcomp{numberMoles}{B}
+        \state{\partmolalprop{entropy}{\ch{O2}}}{1}
+        +
+        \num{3.76}\propcomp{numberMoles}{B}
+        \state{\partmolalprop{entropy}{\ch{N2}}}{1}\,,
+    \end{equation}
+    %
+    e no estado 2:
+    %
+    \begin{equation} \label{eq:8.37}
+        \state{\gls{entropy}}{2}
+        =
+        \propcomp{numberMoles}{A}
+        \state{\partmolalprop{entropy}{\ch{CO2}}}{2}
+        +
+        (\propcomp{numberMoles}{B}-2\propcomp{numberMoles}{A})
+        \state{\partmolalprop{entropy}{\ch{O2}}}{2}
+        +
+        2\propcomp{numberMoles}{A}
+        \state{\partmolalprop{entropy}{\ch{H2O}}}{2}
+        +
+        \num{3.76}\propcomp{numberMoles}{B}
+        \state{\partmolalprop{entropy}{\ch{N2}}}{2}\,.
+    \end{equation}
+
+    Considerando ar puro seco como gás perfeito e metano como gás real em 1 e
+    solução ideal em 2, obtemos para a entropia em 1:
+    %
+    \begin{equation} \label{eq:8.38}
+        \begin{aligned}
+        \state{\gls{entropy}}{1}
+        =
+        &\,\,\propcomp{numberMoles}{A}
+        \state{\molalpropcomp{intEntropy}{\ch{CH4}}}{1}
+        \functionOf{
+            \state{\propcomp{temperature}{A}}{1},
+            \state{\propcomp{pressure}{A}}{1}
+        }
+        +
+        \propcomp{numberMoles}{B}
+        \left[
+            \state{{\molalidealgasprop{intEntropy}}}{1}_{\ch{O2}}
+            \functionOf{
+                \state{\propcomp{temperature}{B}}{1},
+                \state{\propcomp{pressure}{B}}{1}
+            }
+            -
+            \gls{universalGasConstant}
+            \ln{
+                \state{\propcomp{moleFraction}{\ch{O2}}}{1}
+            }
+        \right]\\
+        &+
+        \num{3.76}\propcomp{numberMoles}{B}
+        \left[
+            \state{{\molalidealgasprop{intEntropy}}}{1}_{\ch{N2}}
+            \functionOf{
+                \state{\propcomp{temperature}{B}}{1},
+                \state{\propcomp{pressure}{B}}{1}
+            }
+            -
+            \gls{universalGasConstant}
+            \ln{
+                \state{\propcomp{moleFraction}{\ch{N2}}}{1}
+            }
+        \right]\,,
+    \end{aligned}
+    \end{equation}
+    %
+    e para a entropia em 2:
+
+    \begin{equation} \label{eq:8.39}
+    \begin{aligned}
+        \state{\gls{entropy}}{2}
+        =
+        &\,\,\propcomp{numberMoles}{A}
+        \left[
+            \state{\molalpropcomp{intEntropy}{\ch{CO2}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+            -
+            \gls{universalGasConstant}
+            \ln{
+                \state{\propcomp{moleFraction}{\ch{CO2}}}{2}
+            }
+        \right]
+        +
+        (\propcomp{numberMoles}{B} - 2\propcomp{numberMoles}{A})
+        \left[
+            \state{\molalpropcomp{intEntropy}{\ch{O2}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+            -
+            \gls{universalGasConstant}
+            \ln{
+                \state{\propcomp{moleFraction}{\ch{O2}}}{2}
+            }
+        \right]\\
+        &+
+        2\propcomp{numberMoles}{A}
+        \left[
+            \state{\molalpropcomp{intEntropy}{\ch{H2O}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+            -
+            \gls{universalGasConstant}
+            \ln{
+                \state{\propcomp{moleFraction}{\ch{H2O}}}{2}
+            }
+        \right]
+        +
+        \num{3.76}\propcomp{numberMoles}{B}
+        \left[
+            \state{\molalpropcomp{intEntropy}{\ch{N2}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+            -
+            \gls{universalGasConstant}
+            \ln{
+                \state{\propcomp{moleFraction}{\ch{N2}}}{2}
+            }
+        \right]\,.
+    \end{aligned}
+    \end{equation}
+
+    De forma semelhante às entalpias, precisamos converter cada uma das
+    entropias para a base da entropia absoluta.  Para isso, lançaremos mão das
+    entropias residuais. Assim,
+    %
+    \begin{equation} \label{eq:8.40}
+        \molalpropcomp{intEntropy}{\ch{CH4}}
+        \functionOf{
+            \state{\propcomp{temperature}{A}}{1},
+            \state{\propcomp{pressure}{A}}{1}
+        }
+        =
+        \idealgasprop{absoluteEntropy}_{\ch{CH4}}
+        -
+        \left(
+            \molalidealgasprop{intEntropy}
+            -
+            \molar{\gls{intEntropy}}
+        \right)_{\ch{CH4}}
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\ch{CH4}}^{(1)}
+        +
+        \left[
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \state{\propcomp{temperature}{A}}{1},
+                \state{\propcomp{pressure}{A}}{1}
+            }
+            -
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \gls{standardTemperature},
+                \gls{standardPressure}
+            }
+        \right]_{\ch{CH4}}\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.41}
+        \molalpropcomp{intEntropy}{\ch{O2}}
+        \functionOf{
+            \state{\propcomp{temperature}{B}}{1},
+            \state{\propcomp{pressure}{B}}{1}
+        }
+        =
+        \idealgasprop{absoluteEntropy}_{\ch{O2}}
+        -
+        \left(
+            \molalidealgasprop{intEntropy}
+            -
+            \molar{\gls{intEntropy}}
+        \right)_{\ch{O2}}
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\ch{O2}}^{(1)}
+        +
+        \left[
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \state{\propcomp{temperature}{B}}{1},
+                \state{\propcomp{pressure}{B}}{1}
+            }
+            -
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \gls{standardTemperature},
+                \gls{standardPressure}
+            }
+        \right]_{\ch{O2}}\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.42}
+        \molalpropcomp{intEntropy}{\ch{N2}}
+        \functionOf{
+            \state{\propcomp{temperature}{B}}{1},
+            \state{\propcomp{pressure}{B}}{1}
+        }
+        =
+        \idealgasprop{absoluteEntropy}_{\ch{N2}}
+        -
+        \left(
+            \molalidealgasprop{intEntropy}
+            -
+            \molar{\gls{intEntropy}}
+        \right)_{\ch{N2}}
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\ch{N2}}^{(1)}
+        +
+        \left[
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \state{\propcomp{temperature}{B}}{1},
+                \state{\propcomp{pressure}{B}}{1}
+            }
+            -
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \gls{standardTemperature},
+                \gls{standardPressure}
+            }
+        \right]_{\ch{N2}}\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.43}
+        \molalpropcomp{intEntropy}{\ch{CO2}}
+        \functionOf{
+            \state{\gls{temperature}}{2},
+            \state{\gls{pressure}}{2}
+        }
+        =
+        \idealgasprop{absoluteEntropy}_{\ch{CO2}}
+        -
+        \left(
+            \molalidealgasprop{intEntropy}
+            -
+            \molar{\gls{intEntropy}}
+        \right)_{\ch{CO2}}
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\ch{CO2}}^{(2)}
+        +
+        \left[
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}{B}}{2}
+            }
+            -
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \gls{standardTemperature},
+                \gls{standardPressure}
+            }
+        \right]_{\ch{CO2}}\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.44}
+        \molalpropcomp{intEntropy}{\ch{H2O}}
+        \functionOf{
+            \state{\gls{temperature}}{2},
+            \state{\gls{pressure}}{2}
+        }
+        =
+        \idealgasprop{absoluteEntropy}_{\ch{H2O}}
+        -
+        \left(
+            \molalidealgasprop{intEntropy}
+            -
+            \molar{\gls{intEntropy}}
+        \right)_{\ch{H2O}}
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\ch{H2O}}^{(2)}
+        +
+        \left[
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}{B}}{2}
+            }
+            -
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \gls{standardTemperature},
+                \gls{standardPressure}
+            }
+        \right]_{\ch{H2O}}\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.45}
+        \molalpropcomp{intEntropy}{\ch{O2}}
+        \functionOf{
+            \state{\gls{temperature}}{2},
+            \state{\gls{pressure}}{2}
+        }
+        =
+        \idealgasprop{absoluteEntropy}_{\ch{O2}}
+        -
+        \left(
+            \molalidealgasprop{intEntropy}
+            -
+            \molar{\gls{intEntropy}}
+        \right)_{\ch{O2}}
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\ch{O2}}^{(2)}
+        +
+        \left[
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}{B}}{2}
+            }
+            -
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \gls{standardTemperature},
+                \gls{standardPressure}
+            }
+        \right]_{\ch{O2}}\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.46}
+        \molalpropcomp{intEntropy}{\ch{N2}}
+        \functionOf{
+            \state{\gls{temperature}}{2},
+            \state{\gls{pressure}}{2}
+        }
+        =
+        \idealgasprop{absoluteEntropy}_{\ch{N2}}
+        -
+        \left(
+            \molalidealgasprop{intEntropy}
+            -
+            \molar{\gls{intEntropy}}
+        \right)_{\ch{N2}}
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\ch{N2}}^{(2)}
+        +
+        \left[
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}{B}}{2}
+            }
+            -
+            \molalidealgasprop{intEntropy}
+            \functionOf{
+                \gls{standardTemperature},
+                \gls{standardPressure}
+            }
+        \right]_{\ch{N2}}\,,
+    \end{equation}
+    %
+    cujos valores devem ser substituídos nas \cref{eq:8.38,eq:8.39}. A
+    propósito, se pudéssemos separar a irreversibilidade causada somente pela
+    expansão não resistida, poderíamos avaliar os efeitos da combustão sobre a
+    irreversibilidade total (Como você poderia realizar essa separação?).
+
+    Se a mistura em 2 fosse uma mistura de gases perfeitos, então todos os
+    termos $(\molalidealgasprop{intEnthalpy} -
+    \molar{\gls{intEnthalpy}})\functionOf{\gsub{temperature}{reduced},
+        \gsub{pressure}{reduced}, \gls{PitzerAcentricFactor},
+    \gls{WuPolarFactor}}$ e $(\molalidealgasprop{intEntropy} -
+    \molar{\gls{intEntropy}})\functionOf{\gsub{temperature}{reduced},
+        \gsub{pressure}{reduced}, \gls{PitzerAcentricFactor},
+    \gls{WuPolarFactor}}$ seriam nulos e todos os \gls{compressibilityFactor}
+    seriam iguais a 1 (faça como um exercício).
+
+    Agora, vamos considerar a mistura em 2 como uma pseudo-substância pura,
+    então a energia interna, a entropia e o volume do estado 1 não se alteram.
+    A equação da energia interna em 2 ficará:
+    %
+    \begin{equation} \label{eq:8.47}
+        \begin{aligned}
+        \state{\gls{internalEnergy}}{2}
+        =&\,\,
+        \propcomp{numberMoles}{A}
+        \state{{\molalidealgasprop{intEnthalpy}}}{2}_{\ch{CO2}}
+        \functionOf{
+            \state{\gls{temperature}}{2}
+        }
+        +
+        (\propcomp{numberMoles}{B}-2\propcomp{numberMoles}{A})
+        \state{{\molalidealgasprop{intEnthalpy}}}{2}_{\ch{O2}}
+        \functionOf{
+            \state{\gls{temperature}}{2}
+        }
+        +
+        2\propcomp{numberMoles}{A}
+        \state{{\molalidealgasprop{intEnthalpy}}}{2}_{\ch{H2O}}
+        \functionOf{
+            \state{\gls{temperature}}{2}
+        }
+        +
+        \num{3.76}\propcomp{numberMoles}{B}
+        \state{{\molalidealgasprop{intEnthalpy}}}{2}_{\ch{N2}}
+        \functionOf{
+            \state{\gls{temperature}}{2}
+        }\\
+        &+
+        \left[
+            \propcomp{numberMoles}{A}
+            +
+            (\propcomp{numberMoles}{B}-2\propcomp{numberMoles}{A})
+            +
+            2\propcomp{numberMoles}{A}
+            +
+            \num{3.76}\propcomp{numberMoles}{B}
+        \right]
+        \left[
+            -\gls{universalGasConstant}
+            \state{\gls{temperature}}{2}
+            +
+            \left(
+                \molalidealgasprop{intEnthalpy}
+                -
+                \molar{\gls{intEnthalpy}}
+            \right)_{\gls{mixture}}
+            \functionOf{
+                \gsub{temperature}{reduced},
+                \gsub{pressure}{reduced},
+                \gls{PitzerAcentricFactor},
+                \gls{WuPolarFactor}
+            }_{\gls{mixture}}^{(2)}
+        \right]\,.
+        \end{aligned}
+    \end{equation}
+
+    Como em todos os casos de modelos pseudo-críticos, consideramos uma mistura
+    de gases perfeitos em 2 e corrigimos para a mistura como se fosse uma
+    pseudo-substância pura. Uma vez determinados os valores de
+    \gsub{temperature}{critical,mixture}, \gsub{pressure}{critical,mixture},
+    \gsub{molecularMass}{mixture}, \gsub{PitzerAcentricFactor}{mixture}
+    e \gsub{WuPolarFactor}{mixture}, avaliamos as propriedades reduzidas com
+    subscrito \gls{mixture}.
+
+    A equação para a igualdade dos volumes se torna:
+    %
+    \begin{equation} \label{eq:8.48}
+        \begin{aligned}
+        &\left[
+            \propcomp{numberMoles}{A}
+            \propcomp{compressibilityFactor}{\ch{CH4}}
+            \functionOf{
+                \gsub{temperature}{reduced},
+                \gsub{pressure}{reduced},
+                \gls{PitzerAcentricFactor},
+                \gls{WuPolarFactor}
+            }
+            \frac{
+                \gls{universalGasConstant}
+                \state{\propcomp{temperature}{A}}{1}
+            }{
+                \state{\propcomp{pressure}{A}}{1}
+            }
+            +
+            \num{4.76}\propcomp{numberMoles}{B}
+            \frac{
+                \gls{universalGasConstant}
+                \state{\propcomp{temperature}{B}}{1}
+            }{
+                \state{\propcomp{pressure}{B}}{1}
+            }
+        \right]\\
+        =
+        &\left[
+            \propcomp{numberMoles}{A}
+            +
+            (\propcomp{numberMoles}{B}-2\propcomp{numberMoles}{A})
+            +
+            2\propcomp{numberMoles}{A}
+            +
+            \num{3.76}\propcomp{numberMoles}{B}
+        \right]
+        \propcomp{compressibilityFactor}{\gls{mixture}}
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\gls{mixture}}^{(2)}
+        \frac{
+            \gls{universalGasConstant}
+            \state{\gls{temperature}}{2}
+        }{
+            \state{\gls{pressure}}{2}
+        }\,.
+        \end{aligned}
+    \end{equation}
+
+    A entropia no estado 2 se torna
+    %
+    \begin{equation} \label{eq:8.49}
+    \begin{aligned}
+        \state{\gls{entropy}}{2}
+        =
+        &\,\,\propcomp{numberMoles}{A}
+        \left[
+            \state{{\molalidealgasprop{intEntropy}}_{\ch{CO2}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+            -
+            \gls{universalGasConstant}
+            \ln{
+                \state{\propcomp{moleFraction}{\ch{CO2}}}{2}
+            }
+        \right]
+        +
+        (\propcomp{numberMoles}{B} - 2\propcomp{numberMoles}{A})
+        \left[
+            \state{{\molalidealgasprop{intEntropy}}_{\ch{O2}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+            -
+            \gls{universalGasConstant}
+            \ln{
+                \state{\propcomp{moleFraction}{\ch{O2}}}{2}
+            }
+        \right]\\
+        &+
+        2\propcomp{numberMoles}{A}
+        \left[
+            \state{{\molalidealgasprop{intEntropy}}_{\ch{H2O}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+            -
+            \gls{universalGasConstant}
+            \ln{
+                \state{\propcomp{moleFraction}{\ch{H2O}}}{2}
+            }
+        \right]
+        +
+        \num{3.76}\propcomp{numberMoles}{B}
+        \left[
+            \state{{\molalidealgasprop{intEntropy}}_{\ch{N2}}}{2}
+            \functionOf{
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            }
+            -
+            \gls{universalGasConstant}
+            \ln{
+                \state{\propcomp{moleFraction}{\ch{N2}}}{2}
+            }
+        \right]\\
+        &+
+        \left[
+            \propcomp{numberMoles}{A}
+            +
+            (\propcomp{numberMoles}{B}-2\propcomp{numberMoles}{A})
+            +
+            2\propcomp{numberMoles}{A}
+            +
+            \num{3.76}\propcomp{numberMoles}{B}
+        \right]
+        \left(
+            \molalidealgasprop{intEntropy}
+            -
+            \molar{\gls{intEntropy}}
+        \right)_{\gls{mixture}}
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }_{\gls{mixture}}^{(2)}\,.
+        \end{aligned}
+    \end{equation}
+
+    As equações de mudança de base para a entalpia de formação são as mesmas,
+    exceto que os termos
+    $(\molalidealgasprop{intEnthalpy} -
+    \molar{\gls{intEnthalpy}})\functionOf{\gsub{temperature}{reduced},
+        \gsub{pressure}{reduced}, \gls{PitzerAcentricFactor},
+    \gls{WuPolarFactor}}$ e $(\molalidealgasprop{intEntropy} -
+    \molar{\gls{intEntropy}})\functionOf{\gsub{temperature}{reduced},
+        \gsub{pressure}{reduced}, \gls{PitzerAcentricFactor},
+    \gls{WuPolarFactor}}$ são todos nulos, como no caso de gás perfeito.
+    Precisamos da composição da mistura ao final da combustão, no estado 2. O
+    total de moles da mistura \state{\gls{numberMoles}}{2} será a soma do
+    número de moles dos componentes da mistura em 2. Assim,
+    %
+    \begin{equation} \label{eq:8.50}
+        \state{\gls{numberMoles}}{2}
+        =
+        \propcomp{numberMoles}{A}
+        +
+        (\propcomp{numberMoles}{B}-2\propcomp{numberMoles}{A})
+        +
+        2\propcomp{numberMoles}{A}
+        +
+        \num{3.76}\propcomp{numberMoles}{B}
+        =
+        \propcomp{numberMoles}{A}
+        +
+        \num{4.76}\propcomp{numberMoles}{B}\,.
+    \end{equation}
+
+    Note que o número de moles no estado 2 é igual ao do estado 1, mas,
+    cuidado, essa é uma situação particular para essa reação (por quê?). A
+    composição da mistura em 2 torna-se
+    %
+    \begin{equation} \label{eq:8.51}
+        \propcomp{moleFraction}{\ch{CO2}}
+        =
+        \frac{
+            \propcomp{numberMoles}{A}
+        }{
+            \propcomp{numberMoles}{A}
+            +
+            \num{4.76}\propcomp{numberMoles}{B}
+        }\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.52}
+        \propcomp{moleFraction}{\ch{O2}}
+        =
+        \frac{
+            \propcomp{numberMoles}{B}
+            -
+            2\propcomp{numberMoles}{A}
+        }{
+            \propcomp{numberMoles}{A}
+            +
+            4,76\propcomp{numberMoles}{B}
+        }\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.53}
+        \state{\propcomp{moleFraction}{\ch{H2O}}}{2}
+        =
+        \frac{
+            2\propcomp{numberMoles}{A}
+        }{
+            \propcomp{numberMoles}{A}
+            +
+            \num{4.76}\propcomp{numberMoles}{B}
+        }\,,
+    \end{equation}
+    %
+    \begin{equation} \label{eq:8.54}
+        \state{\propcomp{moleFraction}{\ch{N2}}}{2}
+        =
+        \frac{
+            \num{3.76}\propcomp{numberMoles}{A}
+        }{
+            \propcomp{numberMoles}{A}
+            +
+            \num{4.76}\propcomp{numberMoles}{B}
+        }\,.
+    \end{equation}
+
+    Para que o problema tenha sentido físico, todas as frações molares devem
+    ser maiores ou iguais a zero. Neste caso, basta que
+    $\propcomp{numberMoles}{B}-2\propcomp{numberMoles}{A} \ge 0$. Se
+    $\propcomp{numberMoles}{B} = 2\propcomp{numberMoles}{A}$ então não haverá
+    \ch{O2} na mistura final e, portanto, teremos queimado o metano
+    precisamente com o ar teórico.
+
+    Por outro lado, se fixarmos a temperatura e a pressão da mistura final,
+    então, dependendo dos valores escolhidos para \state{\gls{temperature}}{2},
+    \state{\gls{pressure}}{2} talvez haja uma (ou mais de uma) solução física
+    para as únicas incógnitas \propcomp{numberMoles}{A} e
+    \propcomp{numberMoles}{B}.
+
+
+    \section{A Temperatura Adiabática de Chama e o Poder Calorífico}
+
+    Como no presente exemplo, o processo é adiabático, pode-se prever que a
+    temperatura e a pressão finais serão muito elevadas ($\approx
+    \SI{3000}{\kelvin}$), pois toda a energia de combustão estará sendo
+    utilizada para aquecer os produtos.
+
+    A temperatura que ocorre sob um processo adiabático de combustão é muitas
+    vezes chamada de \emph{temperatura adiabática de chama}, \gls{tac}, posto
+    que a combustão se propaga como uma chama ao longo da câmara. Para se
+    reduzir a temperatura final você acha que precisaria aumentar ou diminuir a
+    quantidade de ar?
+
+    Seja agora um sistema aberto (volume de controle) não adiabático no qual o
+    combustível (1) entra nas condições padrão a \gls{standardTemperature},
+    \gls{standardPressure} e o ar estequiométrico (2) também a
+    \gls{standardTemperature}, \gls{standardPressure}. Suponha que os produtos
+    de combustão (sem dissociação) saem separadamente, cada um deles a
+    \gls{standardTemperature}, \gls{standardPressure}.  Para que isso aconteça,
+    os produtos de combustão devem perder calor para o ambiente. A Primeira Lei
+    aplicada a este sistema, considerando-se regime permanente, sem trabalho
+    mecânico, desprezando-se as energias cinéticas e potenciais e se usarmos a
+    vazão molar de combustível como referência de escala, ficará:
+    %
+    \begin{equation} \label{eq:8.55}
+        \gsupsub{enthalpy}{standardState}{chProducts}
+        -
+        \gsupsub{enthalpy}{standardState}{chReactants}
+        =
+        \gls{heatTransfer}
+        =
+        \molar{\gls{intEnthalpy}}_{\gls{chReactants}\gls{chProducts}}^{\gls{standardState}}\,,
+    \end{equation}
+    %
+    onde os subscritos \gls{chReactants} e \gls{chProducts} se referem a
+    reagentes e produtos respectivamente e o sobrescrito refere-se ao estado
+    padrão.
+
+    Para fixar ideias, vamos assumir daqui em diante um combustível cuja
+    composição molar equivalente pode ser escrita como
+    \gls{chemicalGenericFuel}. Você é capaz de obter a quantidade
+    estequiométrica de ar necessária para um mol desse combustível? Para isso,
+    considere que os únicos produtos de combustão devem ser \ch{CO2}, \ch{H2O},
+    \ch{O2} e \ch{N2} e conte o número de átomos de elementos em ambos os lados
+    da seguinte reação de combustão:
+    %
+    % Comment: neste caso a razão de equivalencia aparece na equação?
+    \begin{equation} \label{eq:8.56}
+        \ch{
+            \gls{chemicalGenericFuel}
+            +
+            $\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}$
+            (
+                O2
+                +
+                3.76 N2
+            )
+            ->
+            \gls{numberMoles}_{ CO2 } CO2
+            +
+            \gls{numberMoles}_{ H2O } H2O
+            +
+            \propcomp{numberMoles}{O2} O2
+            +
+            \propcomp{numberMoles}{N2} N2
+        }\,,
+    \end{equation}
+    %
+    onde
+    %
+    \begin{equation} \label{eq:8.57}
+        \gls{airFuelRatio}
+        =
+        \num{4.76}\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}\,,
+    \end{equation}
+    %
+    e obterá então
+    %
+    \begin{equation} \label{eq:8.58}
+        \begin{aligned}
+            \ch{C}&\,:
+            \gls{carbonQuantity} - \propcomp{numberMoles}{\ch{CO2}} = 0\,,\\
+            %
+            \ch{H}&\,:
+            \gls{hidrogenQuantity} - 2\propcomp{numberMoles}{\ch{H2O}} = 0\,,\\
+            %
+            \ch{O}&\,:
+            \gls{oxygenQuantity}
+            +
+            2\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}
+            -
+            \left(
+                2\propcomp{numberMoles}{\ch{CO2}}
+                +
+                \propcomp{numberMoles}{\ch{H2O}}
+                +
+                2\propcomp{numberMoles}{\ch{O2}}
+            \right) = 0\,,\\
+            \ch{N}&\,:
+            \gls{nitrogenQuantity}
+            +
+            \num{3.76}(2\gls{molarAirFuelRatio})
+            -
+            2\propcomp{numberMoles}{\ch{N2}} = 0\,,\\
+        \end{aligned}
+    \end{equation}
+    %
+    de onde encontramos que
+    %
+    \begin{equation} \label{eq:8.59}
+        \gls{molarAirFuelRatio}
+        =
+        \gls{carbonQuantity}
+        +
+        \frac{\gls{hidrogenQuantity}}{4}
+        -
+        \frac{\gls{oxygenQuantity}}{2}\,,
+    \end{equation}
+    %
+    e portanto, a reação estequiométrica ficará
+    %
+    % Comment: assumindo combustão completa neste caso?
+    \begin{equation} \label{eq:8.60}
+        \begin{aligned}
+        \ch{
+            \gls{chemicalGenericFuel}
+            &+
+            \bigg(
+                \gls{carbonQuantity}
+                +
+                $\frac{\gls{hidrogenQuantity}}{4}$
+                -
+                $\frac{\gls{oxygenQuantity}}{2}$
+            \bigg)
+            (
+                O2
+                +
+                3.76 N2
+            )
+            ->\\
+            &\gls{carbonQuantity} CO2
+            +
+            $\frac{\gls{oxygenQuantity}}{2}$ H2O
+            +
+            \bigg[
+                $\num{3.76}$
+                \bigg(
+                    \gls{carbonQuantity}
+                    +
+                    $\frac{\gls{hidrogenQuantity}}{4}$
+                    -
+                    $\frac{\gls{oxygenQuantity}}{2}$
+                \bigg)
+                +
+                $\frac{\gls{nitrogenQuantity}}{2}$
+            \bigg] N2
+        }\,.
+        \end{aligned}
+    \end{equation}
+    %
+    Lembrando-nos que a base da entalpia de formação para \ch{O2} e \ch{N2} é
+    zero, a \cref{eq:8.55} se torna
+    %
+    \begin{equation}
+        \gls{combustionEnthalpy}
+        =
+        \gls{carbonQuantity}
+        \propcomp{formationEnthalpy}{\ch{CO2}}
+        +
+        \frac{\gls{oxygenQuantity}}{2}
+        \propcomp{formationEnthalpy}{\ch{H2O}}
+        -
+        \propcomp{formationEnthalpy}{\gls{chemicalGenericFuel}}\,,
+    \end{equation}
+    %
+    onde \gls{combustionEnthalpy} é conhecido como \emph{calor de combustão},
+    ou entalpia de combustão, um valor negativo (por quê?). Seu valor em módulo
+    é denominado poder calorífico do combustível no estado padrão, em
+    \si{\kilo\joule\per\kilo\mol} de combustível. Você pode mostrar que o valor
+    de \gls{combustionEnthalpy} será alterado dependendo da fase em que o
+    combustível se encontra e também dependendo da fase da água nos produtos.
+    Se á agua estiver em estado de vapor, trata-se do \gls{pci}, ao passo que
+    se a água estiver na fase condensada, está-se referindo ao \gls{pcs} (qual
+    deles é maior? Por quê?).
+
+    Já estabelecemos os fundamentos pelos quais utilizamos as Leis da
+    Termodinâmica para alguns casos de misturas homogêneas reativas, incluindo
+    as reações químicas que consomem um dos reagentes. Mas e as reações
+    reversíveis? Como veremos, elas formam a essência do equilíbrio químico.
+
+
+    \section{As Reações Químicas Reversíveis e O Equilíbrio Qu\'imico}
+
+    Se os produtos de combustão de um combustível cuja composição equivalente é
+    \gls{chemicalGenericFuel} são produtos de combustão  \ch{CO}, \ch{NO},
+    \ch{H2}, \ch{H}, \ch{O}, \ch{OH}?  Vamos nos fixar nestes dez produtos,
+    embora possam haver muitos mais, pois estes já nos permitem o modelamento
+    razoavelmente realista de grande parte dos sistemas de combustão em
+    condições normais.
+
+    Consideremos a reação química do combustível com uma determinada quantidade
+    de ar como ponto de partida e se houver um equilíbrio a \gls{temperature} e
+    \gls{pressure}, será obtido a partir dessa mistura, da seguinte forma:
+    %
+    \begin{equation} \label{eq:8.62}
+        \begin{aligned}
+        \ch{
+            &\gls{chemicalGenericFuel}
+            +
+            $\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}$
+            (
+                O2
+                +
+                3,76 N2
+            )
+            ->\\
+            &\propcomp{numberMoles}{1} CO2
+            +
+            \propcomp{numberMoles}{2} H2O
+            +
+            \propcomp{numberMoles}{3} N2
+            +
+            \propcomp{numberMoles}{4} O2
+            +
+            \propcomp{numberMoles}{5} CO
+            +
+            \propcomp{numberMoles}{6} H2
+            +
+            \propcomp{numberMoles}{7} H
+            +
+            \propcomp{numberMoles}{8} O
+            +
+            \propcomp{numberMoles}{9} OH
+            +
+            \propcomp{numberMoles}{10} NO
+        }\,.
+        \end{aligned}
+    \end{equation}
+
+    A função de Gibbs da mistura de produtos de combustão a \gls{temperature} e
+    \gls{pressure} será dada por:
+    %
+    \begin{equation} \label{eq:8.63}
+        \gls{GibbsFreeEnergy}
+        =
+        \sum\limits_{\gls{numberSpecies}}{
+            \propcomp{chemicalPotential}{i}
+            \propcomp{numberMoles}{i}
+        }\,,
+        \,\,\,\,
+        \forall i\,,
+    \end{equation}
+    %
+    onde %
+    $
+        \propcomp{chemicalPotential}{i}
+        =
+        \partmolalprop{GibbsFreeEnergy}{i}
+        =
+        \ddxconsty{
+            \gls{GibbsFreeEnergy}
+        }{
+            \propcomp{numberMoles}{i}
+        }{
+            \gls{temperature},
+            \gls{pressure},
+            \propcomp{numberMoles}{j \neq i}
+        }
+    $ é o potencial (eletro-)químico do componente $i$ na mistura a
+    \gls{temperature} e \gls{pressure}, o mesmo que a função de Gibbs parcial
+    molar do componente $i$ na mistura a \gls{temperature} e \gls{pressure}.
+
+    No caso da nossa reação, a \cref{eq:8.63} para \gls{GibbsFreeEnergy} ficará
+    da seguinte forma:
+    %
+    \begin{equation} \label{eq:8.64}
+        \gls{GibbsFreeEnergy}
+        =
+        \propcomp{chemicalPotential}{1}
+        \propcomp{numberMoles}{1}
+        +
+        \propcomp{chemicalPotential}{2}
+        \propcomp{numberMoles}{2}
+        +
+        \propcomp{chemicalPotential}{3}
+        \propcomp{numberMoles}{3}
+        +
+        \propcomp{chemicalPotential}{4}
+        \propcomp{numberMoles}{4}
+        +
+        \propcomp{chemicalPotential}{5}
+        \propcomp{numberMoles}{5}
+        +
+        \propcomp{chemicalPotential}{6}
+        \propcomp{numberMoles}{6}
+        +
+        \propcomp{chemicalPotential}{7}
+        \propcomp{numberMoles}{7}
+        +
+        \propcomp{chemicalPotential}{8}
+        \propcomp{numberMoles}{8}
+        +
+        \propcomp{chemicalPotential}{9}
+        \propcomp{numberMoles}{9}
+        +
+        \propcomp{chemicalPotential}{10}
+        \propcomp{numberMoles}{10}
+    \end{equation}
+
+    O equilíbrio da mistura dos produtos de combustão a \gls{temperature},
+    \gls{pressure} será dado pela minimização da função de Gibbs, ou seja,
+    $\diff{\gls{GibbsFreeEnergy}} = 0$.Portanto, diferenciando
+    \gls{GibbsFreeEnergy} e levando-se em conta as equações de Gibbs-Duhem (por
+    quê?), obtemos:
+    %
+    \begin{equation} \label{eq:8.65}
+        \begin{aligned}
+            \diff{\gls{GibbsFreeEnergy}}
+            &=
+            \propcomp{chemicalPotential}{1}
+            \diff{\propcomp{numberMoles}{1}}
+            +
+            \propcomp{chemicalPotential}{2}
+            \diff{\propcomp{numberMoles}{2}}
+            +
+            \propcomp{chemicalPotential}{3}
+            \diff{\propcomp{numberMoles}{3}}
+            +
+            \propcomp{chemicalPotential}{4}
+            \diff{\propcomp{numberMoles}{4}}
+            +
+            \propcomp{chemicalPotential}{5}
+            \diff{\propcomp{numberMoles}{5}}\\
+            &+
+            \propcomp{chemicalPotential}{6}
+            \diff{\propcomp{numberMoles}{6}}
+            +
+            \propcomp{chemicalPotential}{7}
+            \diff{\propcomp{numberMoles}{7}}
+            +
+            \propcomp{chemicalPotential}{8}
+            \diff{\propcomp{numberMoles}{8}}
+            +
+            \propcomp{chemicalPotential}{9}
+            \diff{\propcomp{numberMoles}{9}}
+            +
+            \propcomp{chemicalPotential}{10}
+            \diff{\propcomp{numberMoles}{10}}
+            =
+            0\,.
+        \end{aligned}
+    \end{equation}
+
+    Pela conservação dos elementos químicos \ch{C}, \ch{H}, \ch{O} e \ch{N}
+    envolvidos na reação química, deveremos ter à direita da reação o mesmo
+    número que à esquerda, isto para cada elemento químico:
+    %
+    \begin{equation} \label{eq:8.66}
+        \begin{aligned}
+        \ch{C}&:
+        \propcomp{numberMoles}{1}
+        +
+        \propcomp{numberMoles}{5} - \gls{carbonQuantity}
+        =
+        0\\
+        \ch{H}&:
+        2\propcomp{numberMoles}{2}
+        +
+        2\propcomp{numberMoles}{6}
+        +
+        \propcomp{numberMoles}{7}
+        +
+        \propcomp{numberMoles}{9}
+        -
+        \gls{hidrogenQuantity}
+        =
+        0 \\
+        \ch{O}&:
+        2\propcomp{numberMoles}{1}
+        +
+        \propcomp{numberMoles}{2}
+        +
+        2\propcomp{numberMoles}{4}
+        +
+        \propcomp{numberMoles}{5}
+        +
+        \propcomp{numberMoles}{8}
+        +
+        \propcomp{numberMoles}{9}
+        +
+        \propcomp{numberMoles}{10}
+        -
+        \left(
+            \gls{oxygenQuantity}
+            +
+            2\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}
+        \right)
+        =
+        0\\
+        \ch{N}&:
+        2\propcomp{numberMoles}{3}
+        +
+        \propcomp{numberMoles}{10}
+        -
+        \left[
+            \gls{nitrogenQuantity}
+            +
+            2(3,76)\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}
+        \right]
+        =
+        0\,.
+        \end{aligned}
+    \end{equation}
+
+    Claramente não podemos variar independentemente os números de moles dos
+    componentes da mistura na \cref{eq:8.65}, pois estão vinculados pelas
+    quatro equações de conservação, \cref{eq:8.66}, de forma que a minimização
+    da função de Gibbs da mistura deve satisfazer também às restrições,
+    \cref{eq:8.66}.
+
+
+    \section{O Método dos Multiplicadores de Lagrange}
+
+    Dentre as várias maneiras de se resolver este problema, dentre as quais a
+    substituição sucessiva, vamos utilizar aqui o método dos multiplicadores de
+    Lagrange. Para isso, escrevemos a forma estendida da função
+    \gls{GibbsFreeEnergy} a ser minimizada, $\tilde{\gls{GibbsFreeEnergy}}$,
+    cujo mínimo deverá ser o mesmo de G, pois cada um dos
+    \gls{LagrangeMultiplyer}, conhecidos como os \emph{multiplicadores de
+    Lagrange}, é multiplicado pela sua respectiva equação de conservação,
+    \cref{eq:8.66}:
+    %
+    \begin{equation} \label{eq:8.67}
+        \begin{aligned}
+        \tilde{\gls{GibbsFreeEnergy}}
+        =
+        \gls{GibbsFreeEnergy}
+        +
+        &\gls{LagrangeMultiplyer}_{\ch{C}}
+        \left(
+            \propcomp{numberMoles}{1}
+            +
+            \propcomp{numberMoles}{5}
+            -
+            \gls{carbonQuantity}
+        \right)
+        +\\
+        &\gls{LagrangeMultiplyer}_{\ch{H}}
+        \left(
+            2\propcomp{numberMoles}{2}
+            +
+            2\propcomp{numberMoles}{6}
+            +
+            \propcomp{numberMoles}{7}
+            +
+            \propcomp{numberMoles}{9}
+            -
+            \gls{hidrogenQuantity}
+        \right)
+        +\\
+        &\gls{LagrangeMultiplyer}_{\ch{O}}
+        \left[
+            2\propcomp{numberMoles}{1}
+            +
+            \propcomp{numberMoles}{2}
+            +
+            2\propcomp{numberMoles}{4}
+            +
+            \propcomp{numberMoles}{5}
+            +
+            \propcomp{numberMoles}{8}
+            +
+            \propcomp{numberMoles}{9}
+            +
+            \propcomp{numberMoles}{10}
+            -
+            \left(
+                \gls{oxygenQuantity}
+                +
+                2\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}
+            \right)
+        \right]
+        +\\
+        &\gls{LagrangeMultiplyer}_{\ch{N}}
+        \left[
+            2\propcomp{numberMoles}{3}
+            +
+            \propcomp{numberMoles}{10}
+            -
+            \left(
+                \gls{nitrogenQuantity}
+                +
+                2(3,76)\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}
+            \right)
+        \right]\,.
+        \end{aligned}
+    \end{equation}
+
+    Diferenciamos, então, $\tilde{\gls{GibbsFreeEnergy}}$ e substituimos
+    \diff{\gls{GibbsFreeEnergy}}, da seguinte forma:
+    %
+    \begin{equation} \label{eq:8.68}
+        \begin{aligned}
+        \diff{
+            \tilde{\gls{GibbsFreeEnergy}}
+        }
+        =&\,\,\,
+        \propcomp{chemicalPotential}{1}
+        \diff{\propcomp{numberMoles}{1}}
+        +
+        \propcomp{chemicalPotential}{2}
+        \diff{\propcomp{numberMoles}{2}}
+        +
+        \propcomp{chemicalPotential}{3}
+        \diff{\propcomp{numberMoles}{3}}
+        +
+        \propcomp{chemicalPotential}{4}
+        \diff{\propcomp{numberMoles}{4}}
+        +
+        \propcomp{chemicalPotential}{5}
+        \diff{\propcomp{numberMoles}{5}}
+        +\\
+        &\propcomp{chemicalPotential}{6}
+        \diff{\propcomp{numberMoles}{6}}
+        +
+        \propcomp{chemicalPotential}{7}
+        \diff{\propcomp{numberMoles}{7}}
+        +
+        \propcomp{chemicalPotential}{8}
+        \diff{\propcomp{numberMoles}{8}}
+        +
+        \propcomp{chemicalPotential}{9}
+        \diff{\propcomp{numberMoles}{9}}
+        +
+        \propcomp{chemicalPotential}{10}
+        \diff{\propcomp{numberMoles}{10}}
+        +\\
+        &\gls{LagrangeMultiplyer}_{\ch{C}}
+        \left(
+            \diff{\propcomp{numberMoles}{1}}
+            +
+            \diff{\propcomp{numberMoles}{5}}
+        \right)
+        +\\
+        &\gls{LagrangeMultiplyer}_{\ch{H}}
+        \left(
+            2\diff\propcomp{numberMoles}{2}
+            +
+            2\diff\propcomp{numberMoles}{6}
+            +
+            \diff\propcomp{numberMoles}{7}
+            +
+            \diff\propcomp{numberMoles}{9}
+        \right)
+        +\\
+        &\gls{LagrangeMultiplyer}_{\ch{O}}
+        \left(
+            2\diff\propcomp{numberMoles}{1}
+            +
+            \diff\propcomp{numberMoles}{2}
+            +
+            2\diff\propcomp{numberMoles}{4}
+            +
+            \diff\propcomp{numberMoles}{5}
+            +
+            \diff\propcomp{numberMoles}{8}
+            +
+            \diff\propcomp{numberMoles}{9}
+            +
+            \diff\propcomp{numberMoles}{10}
+        \right)
+        +\\
+        &\gls{LagrangeMultiplyer}_{\ch{N}}
+        \left(
+            2\diff\propcomp{numberMoles}{3}
+            +
+            \diff\propcomp{numberMoles}{10}
+        \right)
+        +\\
+        &\diff\gls{LagrangeMultiplyer}_{\ch{C}}
+        \left(
+            \propcomp{numberMoles}{1}
+            +
+            \propcomp{numberMoles}{5}
+            -
+            \gls{carbonQuantity}
+        \right)
+        +\\
+        &\diff\gls{LagrangeMultiplyer}_{\ch{H}}
+        \left(
+            2\propcomp{numberMoles}{2}
+            +
+            2\propcomp{numberMoles}{6}
+            +
+            \propcomp{numberMoles}{7}
+            +
+            \propcomp{numberMoles}{9}
+            -
+            \gls{hidrogenQuantity}
+        \right)
+        +\\
+        &\diff\gls{LagrangeMultiplyer}_{\ch{O}}
+        \left[
+            2\propcomp{numberMoles}{1}
+            +
+            \propcomp{numberMoles}{2}
+            +
+            2\propcomp{numberMoles}{4}
+            +
+            \propcomp{numberMoles}{5}
+            +
+            \propcomp{numberMoles}{8}
+            +
+            \propcomp{numberMoles}{9}
+            +
+            \propcomp{numberMoles}{10}
+            -
+            \left(
+                \gls{oxygenQuantity}
+                +
+                2\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}
+            \right)
+        \right]
+        +\\
+        &\diff\gls{LagrangeMultiplyer}_{\ch{N}}
+        \left[
+            2\propcomp{numberMoles}{3}
+            +
+            \propcomp{numberMoles}{10}
+            -
+            \left(
+                \gls{nitrogenQuantity}
+                +
+                2(3,76)\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}
+            \right)
+        \right]\,.
+        \end{aligned}
+    \end{equation}
+
+    Coletando-se os termos das diferenciais nesta equação, obtemos:
+    %
+    \begin{equation} \label{eq:8.69}
+        \begin{aligned}
+        \diff{
+            \tilde{\gls{GibbsFreeEnergy}}
+        }
+        =&\,\,\,
+        \left(
+            \propcomp{chemicalPotential}{1}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{C}}
+            +
+            2\gls{LagrangeMultiplyer}_{\ch{O}}
+        \right)
+        \diff{\propcomp{numberMoles}{1}}
+        +
+        \left(
+            \propcomp{chemicalPotential}{2}
+            +
+            2\gls{LagrangeMultiplyer}_{\ch{H}}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{O}}
+        \right)
+        \diff{\propcomp{numberMoles}{2}}
+        +
+        \left(
+            \propcomp{chemicalPotential}{3}
+            +
+            2\gls{LagrangeMultiplyer}_{\ch{N}}
+        \right)
+        \diff{\propcomp{numberMoles}{3}}
+        +\\
+        &
+        \left(
+            \propcomp{chemicalPotential}{4}
+            +
+            2\gls{LagrangeMultiplyer}_{\ch{O}}
+        \right)
+        \diff{\propcomp{numberMoles}{4}}
+        +
+        \left(
+            \propcomp{chemicalPotential}{5}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{C}}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{O}}
+        \right)
+        \diff{\propcomp{numberMoles}{5}}
+        +
+        \left(
+            \propcomp{chemicalPotential}{6}
+            +
+            2\gls{LagrangeMultiplyer}_{\ch{H}}
+        \right)
+        \diff{\propcomp{numberMoles}{6}}
+        +
+        \left(
+            \propcomp{chemicalPotential}{7}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{H}}
+        \right)
+        \diff{\propcomp{numberMoles}{7}}
+        +\\
+        &\left(
+            \propcomp{chemicalPotential}{8}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{O}}
+        \right)
+        \diff{\propcomp{numberMoles}{8}}
+        +
+        \left(
+            \propcomp{chemicalPotential}{9}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{O}}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{H}}
+        \right)
+        \diff{\propcomp{numberMoles}{9}}
+        +
+        \left(
+            \propcomp{chemicalPotential}{10}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{N}}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{O}}
+        \right)
+        \diff{\propcomp{numberMoles}{10}}
+        +\\
+        &
+        \left(
+            \propcomp{numberMoles}{1}
+            +
+            \propcomp{numberMoles}{5}
+            -
+            \gls{carbonQuantity}
+        \right)
+        \diff\gls{LagrangeMultiplyer}_{\ch{C}}
+        +
+        \left(
+            2\propcomp{numberMoles}{2}
+            +
+            2\propcomp{numberMoles}{6}
+            +
+            \propcomp{numberMoles}{7}
+            +
+            \propcomp{numberMoles}{9}
+            -
+            \gls{hidrogenQuantity}
+        \right)
+        \diff\gls{LagrangeMultiplyer}_{\ch{H}}
+        +\\
+        &
+        \left[
+            2\propcomp{numberMoles}{1}
+            +
+            \propcomp{numberMoles}{2}
+            +
+            2\propcomp{numberMoles}{4}
+            +
+            \propcomp{numberMoles}{5}
+            +
+            \propcomp{numberMoles}{8}
+            +
+            \propcomp{numberMoles}{9}
+            +
+            \propcomp{numberMoles}{10}
+            -
+            \left(
+                \gls{oxygenQuantity}
+                +
+                2\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}
+            \right)
+        \right]
+        \diff\gls{LagrangeMultiplyer}_{\ch{O}}
+        +\\
+        &
+        \left[
+            2\propcomp{numberMoles}{3}
+            +
+            \propcomp{numberMoles}{10}
+            -
+            \left(
+                \gls{nitrogenQuantity}
+                +
+                2(3,76)\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}
+            \right)
+        \right]
+        \diff\gls{LagrangeMultiplyer}_{\ch{N}}
+        =
+        0\,.
+        \end{aligned}
+    \end{equation}
+
+    Uma vez que agora na \cref{eq:8.69} cada diferencial pode variar
+    arbitrariamente, para que $\diff{\tilde{\gls{GibbsFreeEnergy}}}$ se anule
+    cada um dos respectivos coeficientes deve ser igualado a zero, produzindo
+    assim o sistema:
+    %
+    \begin{equation} \label{eq:8.70}
+        \begin{aligned}
+            &\propcomp{chemicalPotential}{1}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{C}}
+            +
+            2\gls{LagrangeMultiplyer}_{\ch{O}}
+            = 0
+            \,\,\,\,\,
+            \text{(\ch{CO2})}\\
+            %
+            &\propcomp{chemicalPotential}{2}
+            +
+            2\gls{LagrangeMultiplyer}_{\ch{H}}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{O}}
+            = 0
+            \,\,\,\,\,
+            \text{(\ch{H2O})}\\
+            %
+            &\propcomp{chemicalPotential}{3}
+            +
+            2\gls{LagrangeMultiplyer}_{\ch{N}}
+            = 0
+            \,\,\,\,\,
+            \text{(\ch{N2})}\\
+            %
+            &\propcomp{chemicalPotential}{4}
+            +
+            2\gls{LagrangeMultiplyer}_{\ch{O}}
+            = 0
+            \,\,\,\,\,
+            \text{(\ch{O2})}\\
+            %
+            &\propcomp{chemicalPotential}{5}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{C}}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{O}}
+            = 0
+            \,\,\,\,\,
+            \text{(\ch{CO})}\\
+            %
+            &\propcomp{chemicalPotential}{6}
+            +
+            2\gls{LagrangeMultiplyer}_{\ch{H}}
+            = 0
+            \,\,\,\,\,
+            \text{(\ch{H2})}\\
+            %
+            &\propcomp{chemicalPotential}{7}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{H}}
+            = 0
+            \,\,\,\,\,
+            \text{(\ch{H})}\\
+            %
+            &\propcomp{chemicalPotential}{8}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{O}}
+            = 0
+            \,\,\,\,\,
+            \text{(\ch{O})}\\
+            %
+            &\propcomp{chemicalPotential}{9}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{O}}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{H}}
+            = 0
+            \,\,\,\,\,
+            \text{(\ch{OH})}\\
+            %
+            &\propcomp{chemicalPotential}{10}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{N}}
+            +
+            \gls{LagrangeMultiplyer}_{\ch{O}}
+            = 0
+            \,\,\,\,\,
+            \text{(\ch{NO})}\\
+            %
+            &\propcomp{numberMoles}{1}
+            +
+            \propcomp{numberMoles}{5}
+            -
+            \gls{carbonQuantity}
+            = 0\\
+            %
+            &2\propcomp{numberMoles}{2}
+            +
+            2\propcomp{numberMoles}{6}
+            +
+            \propcomp{numberMoles}{7}
+            +
+            \propcomp{numberMoles}{9}
+            -
+            \gls{hidrogenQuantity}
+            = 0\\
+            %
+            &2\propcomp{numberMoles}{1}
+            +
+            \propcomp{numberMoles}{2}
+            +
+            2\propcomp{numberMoles}{4}
+            +
+            \propcomp{numberMoles}{5}
+            +
+            \propcomp{numberMoles}{8}
+            +
+            \propcomp{numberMoles}{9}
+            +
+            \propcomp{numberMoles}{10}
+            -
+            \left(
+                \gls{oxygenQuantity}
+                +
+                2\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}
+            \right)
+            = 0\\
+            %
+            &2\propcomp{numberMoles}{3}
+            +
+            \propcomp{numberMoles}{10}
+            -
+            \left(
+                \gls{nitrogenQuantity}
+                +
+                2(3,76)\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}
+            \right)
+            = 0\\
+            %
+            &\propcomp{numberMoles}{1}
+            +
+            \propcomp{numberMoles}{2}
+            +
+            \propcomp{numberMoles}{3}
+            +
+            \propcomp{numberMoles}{4}
+            +
+            \propcomp{numberMoles}{5}
+            +
+            \propcomp{numberMoles}{6}
+            +
+            \propcomp{numberMoles}{7}
+            +
+            \propcomp{numberMoles}{8}
+            +
+            \propcomp{numberMoles}{9}
+            +
+            \propcomp{numberMoles}{10}
+            +
+            \gls{numberMoles} = 0\,,
+        \end{aligned}
+    \end{equation}
+    %
+    onde \gls{numberMoles} é o número total de moles nos produtos.
+
+    Por outro lado, cada um dos potenciais químicos pode ser escrito:
+    %
+    \begin{equation} \label{eq:8.71}
+        \propcomp{chemicalPotential}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure},
+            \propcomp{moleFraction}{1},
+            \propcomp{moleFraction}{2},
+            ...,
+            \propcomp{moleFraction}{9}
+        }
+        =
+        \partmolalprop{GibbsFreeEnergy}{i}
+        =
+        \propcomp{chemicalPotential}{i}^{\gls{standardState}}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        +
+        \gls{universalGasConstant}
+        \gls{temperature}
+        \ln{
+            \left(
+                \frac{
+                    \molalpropcomp{fugacity}{i}
+                    \functionOf{
+                        \gls{temperature},
+                        \gls{pressure},
+                        \propcomp{moleFraction}{1},
+                        \propcomp{moleFraction}{2},
+                        ...,
+                        \propcomp{moleFraction}{9}
+                    }
+                }{
+                    \propcomp{fugacity}{i}^{\gls{standardState}}
+                    \functionOf{
+                        \gls{temperature},
+                        \gls{standardPressure}
+                    }
+                }
+            \right)
+        }\,,
+        \,\,\,\,
+        \forall i = 1,2,...,10 \,,
+    \end{equation}
+    %
+    onde
+    $\propcomp{chemicalPotential}{i}^{\gls{standardState}}\functionOf{\gls{temperature},
+    \gls{standardPressure}}$ é o potencial químico de $i$ puro a
+    \gls{temperature} e \gls{standardPressure};
+    $\molalpropcomp{fugacity}{i}\functionOf{\gls{temperature}, \gls{pressure},
+    \propcomp{moleFraction}{1}, ..., \propcomp{moleFraction}{9}}$ é a
+    fugacidade do componente $i$ na mistura a \gls{temperature} e
+    \gls{pressure};
+    $\propcomp{fugacity}{i}^{\gls{standardState}}\functionOf{\gls{temperature},
+    \gls{standardPressure}}$ é a fugacidade do componente $i$ puro a
+    \gls{temperature} e \gls{standardPressure}.
+
+    Observe que a temperatura da \cref{eq:8.71} é \gls{temperature} e que a
+    pressão \gls{standardPressure} refere-se a um estado padrão arbitrário,
+    frequentemente adotado como a pressão do meio-ambiente padrão
+    \gsub{pressure}{environmentState} para efeito de tabelas.
+
+    Se cada um dos componentes puros $i$ for assumido como gás perfeito a
+    \gls{temperature} e \gls{standardPressure} então a \cref{eq:8.71} ficará:
+    %
+    \begin{equation} \label{eq:8.72}
+        \propcomp{chemicalPotential}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure},
+            \propcomp{moleFraction}{1},
+            \propcomp{moleFraction}{2},
+            ...,
+            \propcomp{moleFraction}{9}
+        }
+        =
+        \partmolalprop{GibbsFreeEnergy}{i}
+        =
+        {\idealgasprop{chemicalPotential}}_{i}^{\gls{standardState}}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        +
+        \gls{universalGasConstant}
+        \gls{temperature}
+        \ln{
+            \left(
+                \frac{
+                    \molalpropcomp{fugacity}{i}
+                    \functionOf{
+                        \gls{temperature},
+                        \gls{pressure},
+                        \propcomp{moleFraction}{1},
+                        \propcomp{moleFraction}{2},
+                        ...,
+                        \propcomp{moleFraction}{9}
+                    }
+                }{
+                    \gls{standardPressure}
+                }
+            \right)
+        }\,,
+        \,\,\,\,
+        \forall i = 1,2,...,10\,,
+    \end{equation}
+    %
+    pois, como $i$ é um gás perfeito a \gls{temperature} e
+    \gls{standardPressure}, então
+    $\propcomp{fugacity}{i}^{\gls{standardState}}\functionOf{\gls{temperature},
+    \gls{standardPressure}} = \gls{standardPressure}$.
+
+    Como em situações anteriormente encontradas, não poderemos avançar enquanto
+    não fornecermos um modelo para a fugacidade de cada componente $i$ na
+    mistura a \gls{temperature} e \gls{pressure}. Vamos, então, admitir que a
+    mistura nessas condições é uma solução ideal. Aplicando-se a Lei de
+    Lewis-Randall, a \cref{eq:8.72} torna-se:
+    %
+    \begin{equation} \label{eq:8.73}
+        \propcomp{chemicalPotential}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure},
+            \propcomp{moleFraction}{1},
+            \propcomp{moleFraction}{2},
+            ...,
+            \propcomp{moleFraction}{9}
+        }
+        =
+        \partmolalprop{GibbsFreeEnergy}{i}
+        =
+        {\idealgasprop{chemicalPotential}}_{i}^{\gls{standardState}}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        +
+        \gls{universalGasConstant}
+        \gls{temperature}
+        \ln{
+            \left(
+                \frac{
+                    \propcomp{moleFraction}{i}
+                    \propcomp{fugacity}{i}
+                    \functionOf{
+                        \gls{temperature},
+                        \gls{pressure}
+                    }
+                }{
+                    \gls{standardPressure}
+                }
+            \right)
+        }\,,
+        \,\,\,\,
+        \forall i = 1,2,...,10\,,
+    \end{equation}
+    %
+    pois $\molalpropcomp{fugacity}{i}\functionOf{\gls{temperature},
+    \gls{pressure}, \propcomp{moleFraction}{1}, ...,
+    \propcomp{moleFraction}{9}} =
+    \propcomp{moleFraction}{i}\propcomp{fugacity}{i}\functionOf{\gls{temperature},
+    \gls{pressure}}$, $\forall i = 1,2,...,10$. Cada uma das frações molares é
+    $\propcomp{moleFraction}{i} =
+    \dfrac{\propcomp{numberMoles}{i}}{\gls{numberMoles}}$, tal que
+    $\sum\limits^{10}_{i = 1}{\propcomp{moleFraction}{i}} = 1$.
+
+    Se, além disso, se a água nos produtos estiver toda ela na forma de vapor e
+    a mistura de produtos de combustão a \gls{temperature} e \gls{pressure}
+    puder ser considerada como de gases perfeitos, uma hipótese aliás bem
+    razoável em processos de combustão comuns, então todos os
+    $\propcomp{fugacity}{i}\functionOf{\gls{temperature}, \gls{pressure}} =
+    \gls{pressure}$. Com isso, os potenciais químicos ficarão:
+
+    \begin{equation} \label{eq:8.74}
+        \propcomp{chemicalPotential}{i}
+        =
+        \partmolalprop{GibbsFreeEnergy}{i}
+        =
+        {\idealgasprop{chemicalPotential}}_{i}^{\gls{standardState}}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        +
+        \gls{universalGasConstant}
+        \gls{temperature}
+        \left[
+            \ln{
+                \frac{
+                    \propcomp{numberMoles}{i}
+                }{
+                    \gls{numberMoles}
+                }
+            }
+            +
+            \ln{
+                \frac{
+                    \gls{pressure}
+                }{
+                    \gls{standardPressure}
+                }
+            }
+        \right]\,,
+        \,\,\,\,
+        \forall i = 1,2,...,10\,.
+    \end{equation}
+
+    As \cref{eq:8.74} devem ser utilizadas em substituição aos potenciais
+    químicos no sistema das \cref{eq:8.70}. Se como no nosso exemplo, forem dez
+    os produtos de combustão, teremos uma equação para \gls{molarAirFuelRatio},
+    \cref{eq:8.59}, dez equações referentes aos potenciais químicos
+    \propcomp{chemicalPotential}{i}, quatro equações da conservação de \ch{C},
+    \ch{H}, \ch{O} e \ch{N} e mais uma equação do número total de moles
+    \gls{numberMoles}, representando um sistema com dezesseis equações. Quantas
+    e quais seriam as incógnitas? Vejamos: Analisando o sistema,
+    \cref{eq:8.70}, associado às \cref{eq:8.74}, descobrimos o conjunto de
+    variáveis:
+    %
+    \begin{equation*}
+        \gls{carbonQuantity},
+        \gls{hidrogenQuantity},
+        \gls{oxygenQuantity},
+        \gls{nitrogenQuantity},
+        \gls{equivalenceRatio},
+        \gls{molarAirFuelRatio},
+        \propcomp{numberMoles}{1},\propcomp{numberMoles}{2},
+        \propcomp{numberMoles}{3},\propcomp{numberMoles}{4},
+        \propcomp{numberMoles}{5},\propcomp{numberMoles}{6},
+        \propcomp{numberMoles}{7},\propcomp{numberMoles}{8},
+        \propcomp{numberMoles}{9},\propcomp{numberMoles}{10},
+        \gls{LagrangeMultiplyer}_{\ch{C}},
+        \gls{LagrangeMultiplyer}_{\ch{H}},
+        \gls{LagrangeMultiplyer}_{\ch{O}},\gls{LagrangeMultiplyer}_{\ch{N}},
+        \gls{numberMoles},\gls{temperature},\gls{pressure}\,,
+    \end{equation*}
+    %
+    o que perfaz um total de  vinte e três incógnitas, sete a mais do que o
+    número de equações no sistema.  Portanto, para que este tenha uma solução
+    determinada, ou são necessárias mais sete equações, ou então que sete das
+    variáveis sejam conhecidas de antemão. Podemos afirmar de um modo geral que
+    as sete equações-extra ou os meios para a sua obtenção devem provir dos
+    dados e especificações estabelecidas para cada problema.
+
+    Deixamos para discutir à parte a determinação dos valores para
+    ${\molalidealgasprop{chemicalPotential}}_{i}^{\gls{standardState}}\functionOf{\gls{temperature},\gls{standardPressure}}
+    =
+    {\molalidealgasprop{intGibbsFreeEnergy}}_i^{\gls{standardPressure}}\functionOf{\gls{temperature},
+    \gls{standardPressure}}$, nas \cref{eq:8.71,eq:8.72,eq:8.73}, assumindo-se
+    gases perfeitos a cada um dos componentes puros $i$ na temperatura
+    \gls{temperature} e pressão padrão \gls{standardPressure}.
+
+
+    \section{A Determinação dos Potenciais Químicos}
+
+    Vimos que na expressão da minimização da Função de Gibbs de uma mistura de
+    \gls{numberSpecies} componentes em equilíbrio químico a \gls{temperature} e
+    \gls{pressure}, aparece a função de Gibbs parcial molar de cada componente
+    $i$ nas condições da mistura, ou seja, $\partmolalprop{GibbsFreeEnergy}{i}
+    = \propcomp{chemicalPotential}{i}\functionOf{\gls{temperature},
+    \gls{pressure}, \propcomp{moleFraction}{j \neq i}}$ também chamado de
+    potencial químico do componente $i$ na mistura a \gls{temperature} e
+    \gls{pressure}.
+
+    Mas como determinamos os valores destes potenciais?
+
+    Vamos recuperar o que vimos a respeito, agora de forma geral:
+    %
+    \begin{equation*}
+        \propcomp{chemicalPotential}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure},
+            \propcomp{moleFraction}{1},
+            \propcomp{moleFraction}{2},
+            ...,
+            \propcomp{moleFraction}{9}
+        }
+        =
+        \partmolalprop{GibbsFreeEnergy}{i}
+        =
+        \propcomp{chemicalPotential}{i}^{\gls{standardState}}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        +
+        \gls{universalGasConstant}
+        \gls{temperature}
+        \ln{
+            \left(
+                \frac{
+                    \molalpropcomp{fugacity}{i}
+                    \functionOf{
+                        \gls{temperature},
+                        \gls{pressure},
+                        \propcomp{moleFraction}{1},
+                        \propcomp{moleFraction}{2},
+                        ...,
+                        \propcomp{moleFraction}{9}
+                    }
+                }{
+                    \propcomp{fugacity}{i}^{\gls{standardState}}
+                    \functionOf{
+                        \gls{temperature},
+                        \gls{standardPressure}
+                    }
+                }
+            \right)
+        }\,,
+        \,\,\,\,
+        \forall i = 1,2,...,10 \,.
+    \end{equation*}
+
+    Se $i$ puro for gás perfeito a \gls{temperature} e \gls{standardPressure}:
+    %
+    \begin{equation}
+        \propcomp{chemicalPotential}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure},
+            \propcomp{moleFraction}{1},
+            \propcomp{moleFraction}{2},
+            ...,
+            \propcomp{moleFraction}{9}
+        }
+        =
+        \partmolalprop{GibbsFreeEnergy}{i}
+        =
+        {\idealgasprop{chemicalPotential}}_{i}^{\gls{standardState}}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        +
+        \gls{universalGasConstant}
+        \gls{temperature}
+        \ln{
+            \left(
+                \frac{
+                    \molalpropcomp{fugacity}{i}
+                    \functionOf{
+                        \gls{temperature},
+                        \gls{pressure},
+                        \propcomp{moleFraction}{1},
+                        \propcomp{moleFraction}{2},
+                        ...,
+                        \propcomp{moleFraction}{9}
+                    }
+                }{
+                    \gls{standardPressure}
+                }
+            \right)
+        }\,,
+        \,\,\,\,
+        \forall i = 1,2,...,10\,.
+    \end{equation}
+
+    Por outro lado, se em \gls{temperature} e \gls{pressure} a mistura
+    homogênea for solução ideal:
+    %
+    \begin{equation*}
+        \propcomp{chemicalPotential}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure},
+            \propcomp{moleFraction}{1},
+            \propcomp{moleFraction}{2},
+            ...,
+            \propcomp{moleFraction}{9}
+        }
+        =
+        \partmolalprop{GibbsFreeEnergy}{i}
+        =
+        {\idealgasprop{chemicalPotential}}_{i}^{\gls{standardState}}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        +
+        \gls{universalGasConstant}
+        \gls{temperature}
+        \ln{
+            \left(
+                \frac{
+                    \propcomp{moleFraction}{i}
+                    \propcomp{fugacity}{i}
+                    \functionOf{
+                        \gls{temperature},
+                        \gls{pressure}
+                    }
+                }{
+                    \gls{standardPressure}
+                }
+            \right)
+        }\,,
+        \,\,\,\,
+        \forall i = 1,2,...,10\,.
+    \end{equation*}
+
+    Ainda, se a solução ideal for uma mistura de gases perfeitos:
+    %
+    \begin{equation*}
+        \propcomp{chemicalPotential}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure},
+            \propcomp{moleFraction}{1},
+            \propcomp{moleFraction}{2},
+            ...,
+            \propcomp{moleFraction}{9}
+        }
+        =
+        \partmolalprop{GibbsFreeEnergy}{i}
+        =
+        {\idealgasprop{chemicalPotential}}_{i}^{\gls{standardState}}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        +
+        \gls{universalGasConstant}
+        \gls{temperature}
+        \ln{
+            \left(
+                \frac{
+                    \propcomp{moleFraction}{i}
+                    \gls{pressure}
+                }{
+                    \gls{standardPressure}
+                }
+            \right)
+        }\,,
+        \,\,\,\,
+        \forall i = 1,2,...,10\,.
+    \end{equation*}
+
+    Muito bem, até agora, mas como determinarmos o valor de
+    ${\molalidealgasprop{intGibbsFreeEnergy}}^{\gls{standardTemperature}}_{i}\functionOf{\gls{temperature},
+    \gls{pressure}}$?
+
+    Se estivermos lidando com reações químicas, já sabemos que todas as
+    propriedades deverão ser trazidas para uma mesma base, comum a todos os
+    integrantes da reação. Neste caso, por conveniência, usaremos a base da
+    função de Gibbs de formação, \gls{formationGibbsFreeEnergy} cuja definição
+    é idêntica a da base da entalpia de formação \gls{formationEnthalpy}, ou
+    seja, onde se nesta lê entalpia substitua-se naquela por função de Gibbs.
+
+    Podemos expressar a função de Gibbs de qualquer substância pura $i$ a
+    \gls{temperature}, \gls{pressure} por uma expressão análoga a que
+    desenvolvemos para a entalpia:
+
+    \begin{equation} \label{eq:8.75}
+        \molalpropcomp{intGibbsFreeEnergy}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+        =
+        \propcomp{formationGibbsFreeEnergy}{i}
+        +
+        \underset{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+            \rightarrow
+            \gls{temperature},
+            \gls{pressure}
+        }{
+            \Delta\molalpropcomp{intGibbsFreeEnergy}{i}
+        }{}\,.
+    \end{equation}
+
+    Nesta última equação, o termo da esquerda que queremos determinar e o
+    primeiro termo da direita estão ambos na base da função de Gibbs de
+    formação. O último termo da direita poderá estar, como sabemos, em uma base
+    qualquer. O valor de \propcomp{formationGibbsFreeEnergy}{i}, por sua vez,
+    pode ser obtido, quando possível, das tabelas termodinâmicas.  Muitas vezes
+    $i$ é assumido como gás perfeito em \gls{standardTemperature},
+    \gls{standardPressure}, o que, como já discutimos, não implica em perda de
+    generalidade. Quanto aos demais termos da direita, podemos escrever:
+    %
+    \begin{equation} \label{eq:8.76}
+        \underset{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+            \rightarrow
+            \gls{temperature},
+            \gls{pressure}
+        }{
+            \Delta\molalpropcomp{intGibbsFreeEnergy}{i}
+        }{}
+        =
+        \molalpropcomp{intGibbsFreeEnergy}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+        -
+        \molalpropcomp{intGibbsFreeEnergy}{i}
+        \functionOf{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+        }
+        =
+        \left[
+            \molar{\gls{intEnthalpy}}
+            \functionOf{
+                \gls{standardTemperature}
+            }
+            -
+            \molar{\gls{intEnthalpy}}
+            \functionOf{
+                \gls{temperature}
+            }
+        \right]_{i}
+        -
+        \gls{temperature}
+        \molalpropcomp{intEntropy}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+        +
+        \gls{standardTemperature}
+        \molalpropcomp{intEntropy}{i}
+        \functionOf{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+        }\,.
+    \end{equation}
+
+    Para escrever esta equação, lançamos mão da definição de função de Gibbs
+    para substância pura $\gls{intGibbsFreeEnergy} = \gls{intEnthalpy} -
+    \gls{temperature}\gls{intEntropy}$. A diferença de entalpias, bem como as
+    entropias, podem ser obtidas como já estudamos. Um caso interessante e
+    importante é quando a base é adotada como gás perfeito. Então,
+    substituindo-se nas \cref{eq:8.75,eq:8.76} os termos que devem ser gases
+    perfeitos, a expressão completa para a função de Gibbs molar (ou o
+    potencial químico) de uma substância pura $i$ a \gls{temperature},
+    \gls{pressure} será dada por
+    %
+    \begin{equation} \label{eq:8.76}
+        \begin{aligned}
+        \molalpropcomp{intGibbsFreeEnergy}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+        =
+        \propcomp{chemicalPotential}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+        &=
+        \propcomp{formationGibbsFreeEnergy}{i}
+        +
+        \left[
+            \molalpropcomp{intGibbsFreeEnergy}{i}
+            \functionOf{
+                \gls{temperature},
+                \gls{pressure}
+            }
+            -
+            \molalidealgasprop{intGibbsFreeEnergy}_{i}
+            \functionOf{
+                \gls{standardTemperature},
+                \gls{standardPressure}
+            }
+        \right]\\
+        &=
+        \propcomp{formationGibbsFreeEnergy}{i}
+        +
+        \left[
+            \molar{\gls{intEnthalpy}}
+            \functionOf{
+                \gls{temperature}
+            }
+            -
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{standardTemperature}
+            }
+        \right]_{i}
+        -
+        \gls{temperature}
+        \molalpropcomp{intEntropy}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+        +
+        \gls{standardTemperature}
+        \molalidealgasprop{intEntropy}_{i}
+        \functionOf{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+        }\,.
+        \end{aligned}
+    \end{equation}
+
+    No caso de nossa reação química, precisávamos determinar o valor de
+    ${\molalidealgasprop{chemicalPotential}}_{i}^{\gls{standardState}}\functionOf{\gls{temperature},
+    \gls{standardPressure}} =
+    {\molalidealgasprop{intGibbsFreeEnergy}}^{\gls{standardTemperature}}_{i}\functionOf{\gls{temperature},
+    \gls{standardPressure}}$. Pois bem, basta substituirmos adequadamente na
+    \cref{eq:8.76}:
+    %
+    \begin{equation} \label{eq:8.77}
+        \begin{aligned}
+        {\molalidealgasprop{intGibbsFreeEnergy}}_{i}^{\gls{standardState}}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        =
+        {\idealgasprop{chemicalPotential}}_{i}^{\gls{standardState}}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        &=
+        \propcomp{formationGibbsFreeEnergy}{i}
+        +
+        \left[
+            \molalidealgasprop{intGibbsFreeEnergy}_{i}
+            \functionOf{
+                \gls{temperature},
+                \gls{standardPressure}
+            }
+            -
+            \molalidealgasprop{intGibbsFreeEnergy}_{i}
+            \functionOf{
+                \gls{standardTemperature},
+                \gls{standardPressure}
+            }
+        \right]\\
+        &=
+        \propcomp{formationGibbsFreeEnergy}{i}
+        +
+        \left[
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{temperature}
+            }
+            -
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{standardTemperature}
+            }
+        \right]_{i}
+        -
+        \gls{temperature}
+        \molalidealgasprop{intEntropy}_{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        +
+        \gls{standardTemperature}
+        \molalidealgasprop{intEntropy}_{i}
+        \functionOf{
+            \gls{standardTemperature},
+            \gls{standardPressure}
+        }\,.
+        \end{aligned}
+    \end{equation}
+
+    A \cref{eq:8.77} é claramente muito conveniente para o usuário, pois
+    envolve apenas valores do gás perfeito para a substância pura $i$.
+
+    A estas alturas você já deve estar dominando com tranquilidade todas estas
+    transformações, não é verdade? Como ficaria a Eq. 8.76 com todas as
+    expansões em coordenadas generalizadas e nas bases adequadas? Com algum
+    cuidado e atenção (faça!), você deve chegar a
+
+    \begin{equation} \label{eq:8.78}
+        \begin{aligned}
+        \molalpropcomp{intGibbsFreeEnergy}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+        =
+        \propcomp{chemicalPotential}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure}
+        }
+        &=
+        \propcomp{formationGibbsFreeEnergy}{i}
+        -
+        \left(
+            \molalidealgasprop{intEnthalpy}
+            -
+            \molar{\gls{intEnthalpy}}
+        \right)_{i}
+        \functionOf{
+            \gsub{temperature}{reduced},
+            \gsub{pressure}{reduced},
+            \gls{PitzerAcentricFactor},
+            \gls{WuPolarFactor}
+        }
+        +
+        \left[
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{temperature}
+            }
+            -
+            \molalidealgasprop{intEnthalpy}
+            \functionOf{
+                \gls{standardTemperature}
+            }
+        \right]_{i}
+        +\\
+        &\gls{temperature}
+        \left[
+            \left(
+                \molalidealgasprop{intEntropy}
+                -
+                \molar{\gls{intEntropy}}
+            \right)_{i}
+            \functionOf{
+                \gsub{temperature}{reduced},
+                \gsub{pressure}{reduced},
+                \gls{PitzerAcentricFactor},
+                \gls{WuPolarFactor}
+            }
+            -
+            \left[
+                \molalidealgasprop{intEntropy}
+                \functionOf{
+                    \gls{temperature},
+                    \gls{pressure}
+                }
+                -
+                \molalidealgasprop{intEntropy}
+                \functionOf{
+                    \gls{standardTemperature},
+                    \gls{standardPressure}
+                }
+            \right]_{i}
+        \right]
+        +
+        \left(
+            \gls{standardTemperature}
+            -
+            \gls{temperature}
+        \right)
+        \propcomp{absoluteEntropy}{i}\,.
+        \end{aligned}
+    \end{equation}
+    %
+    na qual $\propcomp{absoluteEntropy}{i}$ é o valor da entropia
+    absoluta da substância pura $i$ como gás perfeito no estado padrão a
+    $(\gls{standardTemperature},\gls{standardPressure})$. Como ficaria a
+    \cref{eq:8.78} se a substância pura $i$ fosse gás perfeito também a
+    $(\gls{temperature}, \gls{pressure})$? E como ficaria a \cref{eq:8.77},
+    que, como você percebeu, é avaliada inteiramente a \gls{standardPressure}?
+
+
+    \section{O Método das Constantes de Equilíbrio}
+
+    Vamos repetir aqui a reação química dada pela \cref{eq:8.62}:
+
+    \begin{equation} \label{eq:8.79}
+        \begin{aligned}
+        \ch{
+            &\gls{chemicalGenericFuel}
+            +
+            $\frac{\gls{molarAirFuelRatio}}{\gls{equivalenceRatio}}$
+            (
+                O2
+                +
+                3,76 N2
+            )
+            ->\\
+            &\propcomp{numberMoles}{1} CO2
+            +
+            \propcomp{numberMoles}{2} H2O
+            +
+            \propcomp{numberMoles}{3} N2
+            +
+            \propcomp{numberMoles}{4} O2
+            +
+            \propcomp{numberMoles}{5} CO
+            +
+            \propcomp{numberMoles}{6} H2
+            +
+            \propcomp{numberMoles}{7} H
+            +
+            \propcomp{numberMoles}{8} O
+            +
+            \propcomp{numberMoles}{9} OH
+            +
+            \propcomp{numberMoles}{10} NO
+        }\,.
+        \end{aligned}
+    \end{equation}
+
+    Vimos também que o equilíbrio químico da mistura homogênea dos produtos de
+    combustão será dado pela minimização da função de Gibbs da mistura a
+    \gls{temperature}, \gls{pressure}:
+
+    \begin{equation} \label{eq:8.80}
+        \begin{aligned}
+            \diff{\gls{GibbsFreeEnergy}}
+            &=
+            \propcomp{chemicalPotential}{1}
+            \diff{\propcomp{numberMoles}{1}}
+            +
+            \propcomp{chemicalPotential}{2}
+            \diff{\propcomp{numberMoles}{2}}
+            +
+            \propcomp{chemicalPotential}{3}
+            \diff{\propcomp{numberMoles}{3}}
+            +
+            \propcomp{chemicalPotential}{4}
+            \diff{\propcomp{numberMoles}{4}}
+            +
+            \propcomp{chemicalPotential}{5}
+            \diff{\propcomp{numberMoles}{5}}\\
+            &+
+            \propcomp{chemicalPotential}{6}
+            \diff{\propcomp{numberMoles}{6}}
+            +
+            \propcomp{chemicalPotential}{7}
+            \diff{\propcomp{numberMoles}{7}}
+            +
+            \propcomp{chemicalPotential}{8}
+            \diff{\propcomp{numberMoles}{8}}
+            +
+            \propcomp{chemicalPotential}{9}
+            \diff{\propcomp{numberMoles}{9}}
+            +
+            \propcomp{chemicalPotential}{10}
+            \diff{\propcomp{numberMoles}{10}}
+            =
+            0\,,
+        \end{aligned}
+    \end{equation}
+    %
+    sujeita esta às restrições estabelecidas pela conservação dos elementos
+    químicos, no nosso caso \ch{C}, \ch{H}, \ch{O} e \ch{N}. Vimos em uma seção
+    anterior a incorporação (isto é, a satisfação) dessas restrições utilizando
+    o método dos multiplicadores de Lagrange. Havíamos comentado a respeito de
+    outros métodos para isso.  Dentre eles, nessa seção apresentaremos \emph{o
+        método das constantes de equilíbrio}.
+
+    Vamos então expressar a produção dos dez produtos de combustão \ch{CO2},
+    \ch{H2O}, \ch{N2}, \ch{O2}, \ch{CO}, \ch{H2}, \ch{H}, \ch{O}, \ch{OH},
+    \ch{NO}, na forma das seguintes seis reações químicas:
+    %
+    \begin{equation} \label{eq:8.81}
+        \begin{aligned}
+            &\ch{1/2 H2 <-> H} \\
+            &\ch{1/2 O2 <-> O} \\
+            &\ch{1/2 H2 + 1/2 O2 <-> OH} \\
+            &\ch{1/2 N2 + 1/2 O2 <-> NO} \\
+            &\ch{H2 + 1/2 O2 <-> H2O} \\
+            &\ch{CO + 1/2 O2 <-> CO2}\,.
+        \end{aligned}
+    \end{equation}
+
+    Perceba que todos os produtos de combustão estão representados nestas seis
+    equações e poderíamos também demonstrar que quaisquer outras reações seriam
+    necessariamente combinações lineares dessas seis. Pois bem, como vimos
+    anteriormente a cada uma destas reações podemos atribuir um grau de reação
+    $\gls{reactionExtent}_k$, $\forall k = 1,...,6$. A variação total do número
+    de moles \diff{\propcomp{numberMoles}{i}}, $\forall i = 1,...,10$ para cada
+    um dos produtos pode ser descrita em função da proporção do avanço da
+    variação do grau de reação (ou seja, do deslocamento de cada reação para a
+    direita na direção dos \enquote{produtos}) de cada uma das reações nas
+    quais cada um dos produtos aparecem, da seguinte forma:
+    %
+    \begin{equation} \label{eq:8.82}
+    \begin{aligned}
+        (\ch{CO2})\,\,\,\,\,
+        \diff{\propcomp{numberMoles}{1}}
+        &=
+        \diff{\propcomp{reactionExtent}{6}}\\
+        %
+        (\ch{H2O})\,\,\,\,\,
+        \diff{\propcomp{numberMoles}{2}}
+        &=
+        \diff{\propcomp{reactionExtent}{5}}\\
+        %
+        (\ch{N2})\,\,\,\,\,
+        \diff{\propcomp{numberMoles}{3}}
+        &=
+        -\frac{1}{2}\diff{\propcomp{reactionExtent}{4}}\\
+        %
+        (\ch{O2})\,\,\,\,\,
+        \diff{\propcomp{numberMoles}{4}}
+        &=
+        -\frac{1}{2}\diff{\propcomp{reactionExtent}{2}}
+        -\frac{1}{2}\diff{\propcomp{reactionExtent}{3}}
+        -\frac{1}{2}\diff{\propcomp{reactionExtent}{4}}
+        -\frac{1}{2}\diff{\propcomp{reactionExtent}{5}}
+        -\frac{1}{2}\diff{\propcomp{reactionExtent}{6}}
+        \\
+        %
+        (\ch{CO})\,\,\,\,\,
+        \diff{\propcomp{numberMoles}{5}}
+        &=
+        -\diff{\propcomp{reactionExtent}{6}}\\
+        %
+        (\ch{H2})\,\,\,\,\,
+        \diff{\propcomp{numberMoles}{6}}
+        &=
+        -\frac{1}{2}\diff{\propcomp{reactionExtent}{1}}
+        -\frac{1}{2}\diff{\propcomp{reactionExtent}{3}}
+        -\diff{\propcomp{reactionExtent}{5}}
+        \\
+        %
+        (\ch{H})\,\,\,\,\,
+        \diff{\propcomp{numberMoles}{7}}
+        &=
+        \diff{\propcomp{reactionExtent}{1}}\\
+        %
+        (\ch{O})\,\,\,\,\,
+        \diff{\propcomp{numberMoles}{8}}
+        &=
+        \diff{\propcomp{reactionExtent}{2}}\\
+        %
+        (\ch{OH})\,\,\,\,\,
+        \diff{\propcomp{numberMoles}{9}}
+        &=
+        \diff{\propcomp{reactionExtent}{3}}\\
+        %
+        (\ch{NO})\,\,\,\,\,
+        \diff{\propcomp{numberMoles}{10}}
+        &=
+        \diff{\propcomp{reactionExtent}{4}}\,.\\
+        %
+    \end{aligned}
+    \end{equation}
+
+    Você deve ter percebido que o objetivo das relações, \cref{eq:8.82}, é fazer com
+    que as variações dos números de moles dos produtos satisfaçam as restrições
+    impostas pela conservação dos elementos químicos \ch{C}, \ch{H}, \ch{O} e
+    \ch{N}. Portanto,
+    já deve ter concluído que o próximo passo é substituirmos as variações dos
+    números de moles dos produtos na \cref{eq:8.80}:
+
+    \begin{equation} \label{eq:8.83}
+        \begin{aligned}
+            \diff{\gls{GibbsFreeEnergy}}
+            =&\,\,\,
+            \propcomp{chemicalPotential}{1}
+            \diff{\propcomp{reactionExtent}{6}}
+            +
+            \propcomp{chemicalPotential}{2}
+            \diff{\propcomp{reactionExtent}{5}}
+            -
+            \propcomp{chemicalPotential}{3}
+            \frac{1}{2}\diff{\propcomp{reactionExtent}{4}}\\
+            &+
+            \propcomp{chemicalPotential}{4}
+            \left(
+                -\frac{1}{2}\diff{\propcomp{reactionExtent}{2}}
+                -\frac{1}{2}\diff{\propcomp{reactionExtent}{3}}
+                -\frac{1}{2}\diff{\propcomp{reactionExtent}{4}}
+                -\frac{1}{2}\diff{\propcomp{reactionExtent}{5}}
+                -\frac{1}{2}\diff{\propcomp{reactionExtent}{6}}
+            \right)
+            -
+            \propcomp{chemicalPotential}{5}
+            \diff{\propcomp{reactionExtent}{6}}\\
+            &+
+            \propcomp{chemicalPotential}{6}
+            \left(
+                -\frac{1}{2}\diff{\propcomp{reactionExtent}{1}}
+                -\frac{1}{2}\diff{\propcomp{reactionExtent}{3}}
+                -\diff{\propcomp{reactionExtent}{5}}
+            \right)
+            +
+            \propcomp{chemicalPotential}{7}
+            \diff{\propcomp{reactionExtent}{1}}
+            +
+            \propcomp{chemicalPotential}{8}
+            \diff{\propcomp{reactionExtent}{2}}
+            +
+            \propcomp{chemicalPotential}{9}
+            \diff{\propcomp{reactionExtent}{3}}
+            +
+            \propcomp{chemicalPotential}{10}
+            \diff{\propcomp{reactionExtent}{4}}\,.
+        \end{aligned}
+    \end{equation}
+
+    Colocando as diferenciais dos graus de reação em evidência e igualando a
+    zero, obtemos:
+    %
+    \begin{equation} \label{eq:8.84}
+        \begin{aligned}
+            \diff{\gls{GibbsFreeEnergy}}
+            =&\,\,\,
+            \left(
+                \propcomp{chemicalPotential}{7}
+                -
+                \frac{1}{2}\propcomp{chemicalPotential}{6}
+            \right)
+            \diff{\propcomp{reactionExtent}{1}}
+            +
+            \left(
+                \propcomp{chemicalPotential}{8}
+                -
+                \frac{1}{2}\propcomp{chemicalPotential}{4}
+            \right)
+            \diff{\propcomp{reactionExtent}{2}}\\
+            &+
+            \left(
+                \propcomp{chemicalPotential}{9}
+                -
+                \frac{1}{2}\propcomp{chemicalPotential}{6}
+                -
+                \frac{1}{2}\propcomp{chemicalPotential}{4}
+            \right)
+            \diff{\propcomp{reactionExtent}{3}}
+            +
+            \left(
+                \propcomp{chemicalPotential}{10}
+                -
+                \frac{1}{2}\propcomp{chemicalPotential}{3}
+                -
+                \frac{1}{2}\propcomp{chemicalPotential}{4}
+            \right)
+            \diff{\propcomp{reactionExtent}{4}}\\
+            &+
+            \left(
+                \propcomp{chemicalPotential}{2}
+                -
+                \propcomp{chemicalPotential}{6}
+                -
+                \frac{1}{2}\propcomp{chemicalPotential}{4}
+            \right)
+            \diff{\propcomp{reactionExtent}{5}}
+            +
+            \left(
+                \propcomp{chemicalPotential}{1}
+                -
+                \propcomp{chemicalPotential}{5}
+                -
+                \frac{1}{2}\propcomp{chemicalPotential}{4}
+            \right)
+            \diff{\propcomp{reactionExtent}{6}}
+            =
+            0\,.
+        \end{aligned}
+    \end{equation}
+
+    Uma vez que todas as variações dos graus de reação na \cref{eq:8.84} são
+    arbitrárias, cada um dos seus coeficientes deve ser zero, para que ela seja
+    satisfeita. Deve ficar claro que, uma vez alcançado o equilíbrio a
+    \gls{temperature}, \gls{pressure}, a composição da mistura não se alterará
+    mais, de forma que tentativas de deslocamento de quaisquer das seis
+    reações, \cref{eq:8.81}, para a esquerda ou para a direita implicará
+    imediatamente aumento da função de Gibbs total da mistura e
+    consequentemente haverá um movimento de restituição no sentido contrário
+    até se restabelecer o equilíbrio.
+
+    Repetindo aqui a \cref{eq:8.71}, mas com \gls{numberSpecies} componentes:
+    %
+    \begin{equation*}
+        \propcomp{chemicalPotential}{i}
+        \functionOf{
+            \gls{temperature},
+            \gls{pressure},
+            \propcomp{moleFraction}{j \neq i}
+        }
+        =
+        \partmolalprop{GibbsFreeEnergy}{i}
+        =
+        \propcomp{chemicalPotential}{i}^{\gls{standardState}}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        +
+        \gls{universalGasConstant}
+        \gls{temperature}
+        \ln{
+            \left(
+                \frac{
+                    \molalpropcomp{fugacity}{i}
+                    \functionOf{
+                        \gls{temperature},
+                        \gls{pressure},
+                        \propcomp{moleFraction}{j \neq i}
+                    }
+                }{
+                    \propcomp{fugacity}{i}^{\gls{standardState}}
+                    \functionOf{
+                        \gls{temperature},
+                        \gls{standardPressure}
+                    }
+                }
+            \right)
+        }\,,
+        \,\,\,\,
+        \forall i = 1,2,...,\gls{numberSpecies} \,,
+    \end{equation*}
+
+    Para simplificar a notação, vamos definir a \emph{atividade do componente
+    $i$} em qualquer mistura homogênea de \gls{numberSpecies} componentes a
+    \gls{temperature}, \gls{pressure} em relação ao estado padrão a
+    \gls{temperature},\gls{standardPressure} como:
+    %
+    \begin{equation} \label{eq:8.85}
+        \propcomp{activity}{i}
+        \equiv
+        \frac{
+            \molalpropcomp{fugacity}{i}
+        }{
+            \propcomp{fugacity}{i}^{\gls{standardState}}
+            \functionOf{
+                \gls{temperature},
+                \gls{standardPressure}
+            }
+        }\,,
+        \,\,\,\,
+        \forall i = 1,2,...,\gls{numberSpecies}
+    \end{equation}
+    %
+    e a \cref{eq:8.71} pode ser rescrita como
+    %
+    \begin{equation} \label{eq:8.86}
+        \propcomp{chemicalPotential}{i}
+        =
+        \partmolalprop{GibbsFreeEnergy}{i}
+        =
+        \molalpropcomp{intGibbsFreeEnergy}{i}^{\gls{standardState}}
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        +
+        \gls{universalGasConstant}
+        \gls{temperature}
+        \ln{
+            \propcomp{activity}{i}
+        }\,,
+        \,\,\,\,
+        \forall i = 1,2,...,\gls{numberSpecies} \,,
+    \end{equation}
+
+    Substituimos os potenciais químicos dados pelas \cref{eq:8.86} na
+    \cref{eq:8.84} e obtemos:
+    %
+    \begin{equation} \label{eq:8.87}
+        \begin{aligned}
+            \diff{\gls{GibbsFreeEnergy}}
+            =&\,\,\,\,\,\,
+            \left[
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{7}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{7}
+                    }
+                \right)
+                -
+                \frac{1}{2}
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{6}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{6}
+                    }
+                \right)
+            \right]
+            \diff{\propcomp{reactionExtent}{1}}\\
+            &+
+            \left[
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{8}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{8}
+                    }
+                \right)
+                -
+                \frac{1}{2}
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{4}
+                    }
+                \right)
+            \right]
+            \diff{\propcomp{reactionExtent}{2}}\\
+            &+
+            \left[
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{9}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{9}
+                    }
+                \right)
+                -
+                \frac{1}{2}
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{6}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{6}
+                    }
+                \right)
+                -
+                \frac{1}{2}
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{4}
+                    }
+                \right)
+            \right]
+            \diff{\propcomp{reactionExtent}{3}}\\
+            &+
+            \left[
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{10}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{10}
+                    }
+                \right)
+                -
+                \frac{1}{2}
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{3}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{3}
+                    }
+                \right)
+                -
+                \frac{1}{2}
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{4}
+                    }
+                \right)
+            \right]
+            \diff{\propcomp{reactionExtent}{4}}\\
+            &+
+            \left[
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{2}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{2}
+                    }
+                \right)
+                -
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{6}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{6}
+                    }
+                \right)
+                -
+                \frac{1}{2}
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{4}
+                    }
+                \right)
+            \right]
+            \diff{\propcomp{reactionExtent}{5}}\\
+            &+
+            \left[
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{1}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{1}
+                    }
+                \right)
+                -
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{5}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{5}
+                    }
+                \right)
+                -
+                \frac{1}{2}
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+                    +
+                    \gls{universalGasConstant}
+                    \gls{temperature}
+                    \ln{
+                        \propcomp{activity}{4}
+                    }
+                \right)
+            \right]
+            \diff{\propcomp{reactionExtent}{6}}
+            =
+            0\,.
+        \end{aligned}
+    \end{equation}
+
+    Colocando em evidência o termo \gls{universalGasConstant}\gls{temperature},
+    rearranjamos a \cref{eq:8.87}, e, lembrando que a soma de logaritmos
+    corresponde ao logaritmo de produtos, chegamos a seguinte expressão:
+    %
+    \begin{equation} \label{eq:8.88}
+        \begin{aligned}
+            \diff{\gls{GibbsFreeEnergy}}
+            =&\,\,\,\,\,\,
+            \left[
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{7}^{\gls{standardState}}
+                    -
+                    \frac{1}{2}
+                    \molalpropcomp{intGibbsFreeEnergy}{6}^{\gls{standardState}}
+                \right)
+                +
+                \gls{universalGasConstant}
+                \gls{temperature}
+                \ln{
+                    \left(
+                        \frac{
+                            \propcomp{activity}{7}
+                        }{
+                            \propcomp{activity}{6}^{\sfrac{1}{2}}
+                        }
+                    \right)
+                }
+            \right]
+            \diff{\propcomp{reactionExtent}{1}}\\
+            &+
+            \left[
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{8}^{\gls{standardState}}
+                    -
+                    \frac{1}{2}
+                    \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+                \right)
+                +
+                \gls{universalGasConstant}
+                \gls{temperature}
+                \ln{
+                    \left(
+                        \frac{
+                            \propcomp{activity}{8}
+                        }{
+                            \propcomp{activity}{4}^{\sfrac{1}{2}}
+                        }
+                    \right)
+                }
+            \right]
+            \diff{\propcomp{reactionExtent}{2}}\\
+            &+
+            \left[
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{9}^{\gls{standardState}}
+                    -
+                    \frac{1}{2}
+                    \molalpropcomp{intGibbsFreeEnergy}{6}^{\gls{standardState}}
+                    -
+                    \frac{1}{2}
+                    \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+                \right)
+                +
+                \gls{universalGasConstant}
+                \gls{temperature}
+                \ln{
+                    \left(
+                        \frac{
+                            \propcomp{activity}{9}
+                        }{
+                            \propcomp{activity}{6}^{\sfrac{1}{2}}
+                            \propcomp{activity}{4}^{\sfrac{1}{2}}
+                        }
+                    \right)
+                }
+            \right]
+            \diff{\propcomp{reactionExtent}{3}}\\
+            &+
+            \left[
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{10}^{\gls{standardState}}
+                    -
+                    \frac{1}{2}
+                    \molalpropcomp{intGibbsFreeEnergy}{3}^{\gls{standardState}}
+                    -
+                    \frac{1}{2}
+                    \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+                \right)
+                +
+                \gls{universalGasConstant}
+                \gls{temperature}
+                \ln{
+                    \left(
+                        \frac{
+                            \propcomp{activity}{10}
+                        }{
+                            \propcomp{activity}{3}^{\sfrac{1}{2}}
+                            \propcomp{activity}{4}^{\sfrac{1}{2}}
+                        }
+                    \right)
+                }
+            \right]
+            \diff{\propcomp{reactionExtent}{4}}\\
+            &+
+            \left[
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{2}^{\gls{standardState}}
+                    -
+                    \molalpropcomp{intGibbsFreeEnergy}{6}^{\gls{standardState}}
+                    -
+                    \frac{1}{2}
+                    \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+                \right)
+                +
+                \gls{universalGasConstant}
+                \gls{temperature}
+                \ln{
+                    \left(
+                        \frac{
+                            \propcomp{activity}{2}
+                        }{
+                            \propcomp{activity}{6}
+                            \propcomp{activity}{4}^{\sfrac{1}{2}}
+                        }
+                    \right)
+                }
+            \right]
+            \diff{\propcomp{reactionExtent}{5}}\\
+            &+
+            \left[
+                \left(
+                    \molalpropcomp{intGibbsFreeEnergy}{1}^{\gls{standardState}}
+                    -
+                    \molalpropcomp{intGibbsFreeEnergy}{5}^{\gls{standardState}}
+                    -
+                    \frac{1}{2}
+                    \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+                \right)
+                +
+                \gls{universalGasConstant}
+                \gls{temperature}
+                \ln{
+                    \left(
+                        \frac{
+                            \propcomp{activity}{1}
+                        }{
+                            \propcomp{activity}{5}
+                            \propcomp{activity}{4}^{\sfrac{1}{2}}
+                        }
+                    \right)
+                }
+            \right]
+            \diff{\propcomp{reactionExtent}{6}}
+            =
+            0\,.
+        \end{aligned}
+    \end{equation}
+
+    Cada um dos termos entre parenteses na \cref{eq:8.88} é equivalente à
+    variação da função de Gibbs %
+    $
+        \Delta \gsuper{GibbsFreeEnergy}{standardState}_k
+        \functionOf{
+            \gls{temperature},
+            \gls{standardPressure}
+        }
+        =
+        {\gsupsub{GibbsFreeEnergy}{standardState}{chProducts}}_{k}
+        -
+        {\gsupsub{GibbsFreeEnergy}{standardState}{chReactants}}_{k}
+    $, $\forall k = 1,...,6$ por convenção, dos \enquote{reagentes} (esquerda)
+    para os \enquote{produtos} (direita), com cada \enquote{reagente} e cada
+    \enquote{produto} assumido estar a
+    \gls{temperature},\gls{standardPressure}, para cada uma das seis reações,
+    da seguinte forma:
+
+    \begin{equation} \label{eq:8.89}
+        \begin{array}{l l l}
+            \ch{1/2 H2 <-> H}
+        &   \ch{1/2 H2 -> H}
+        &   \Delta \gsuper{GibbsFreeEnergy}{standardState}_1 =
+            \molalpropcomp{intGibbsFreeEnergy}{7}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intGibbsFreeEnergy}{6}^{\gls{standardState}}
+        \\
+            \ch{1/2 O2 <-> O}
+        &   \ch{1/2 O2 -> O}
+        &   \Delta \gsuper{GibbsFreeEnergy}{standardState}_2  =
+            \molalpropcomp{intGibbsFreeEnergy}{8}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+        \\
+            \ch{1/2 H2 + 1/2 O2 <-> OH}
+        &   \ch{1/2 H2 + 1/2 O2 -> OH}
+        &   \Delta \gsuper{GibbsFreeEnergy}{standardState}_3 =
+            \molalpropcomp{intGibbsFreeEnergy}{9}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intGibbsFreeEnergy}{6}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+        \\
+            \ch{1/2 N2 + 1/2 O2 <-> NO}
+        &   \ch{1/2 N2 + 1/2 O2 -> NO}
+        &   \Delta \gsuper{GibbsFreeEnergy}{standardState}_4 =
+            \molalpropcomp{intGibbsFreeEnergy}{10}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intGibbsFreeEnergy}{3}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+        \\
+            \ch{H2 + 1/2 O2 <-> H2O}
+        &   \ch{H2 + 1/2 O2 -> H2O}
+        &   \Delta \gsuper{GibbsFreeEnergy}{standardState}_5 =
+            \molalpropcomp{intGibbsFreeEnergy}{2}^{\gls{standardState}}
+            -
+            \molalpropcomp{intGibbsFreeEnergy}{6}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+        \\
+            \ch{CO + 1/2 O2 <-> CO2}
+        &   \ch{CO + 1/2 O2 -> CO2}
+        &   \Delta \gsuper{GibbsFreeEnergy}{standardState}_6 =
+            \molalpropcomp{intGibbsFreeEnergy}{1}^{\gls{standardState}}
+            -
+            \molalpropcomp{intGibbsFreeEnergy}{5}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+                \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}}
+            \\
+        \end{array}
+    \end{equation}
+
+    Observe como cada um dos $\Delta
+    \gsuper{GibbsFreeEnergy}{standardState}_k\functionOf{\gls{temperature},
+    \gls{standardPressure}}$ nas \cref{eq:8.89} está vinculado a sua respectiva
+    reação $k$ não apenas na direção --- da esquerda para a direita, mas também
+    no valor de seus coeficientes estequiométricos. Podemos então afirmar que
+    se multiplicarmos qualquer das equações $k$ por um número positivo ou
+    negativo, o seu respectivo $\Delta
+    \gsuper{GibbsFreeEnergy}{standardState}_k\functionOf{\gls{temperature},
+    \gls{standardPressure}}$ será multiplicado pelo mesmo número. Além disso,
+    qualquer combinação linear entre as seis equações incorrerá na mesma
+    combinação linear para os respectivos $\Delta
+    \gsuper{GibbsFreeEnergy}{standardState}_k$. Vejamos um exemplo importante.
+    Peguemos a equação 6 e multipliquemos por -1:
+    %
+    \begin{equation} \label{eq:8.90}
+        \begin{array}{l l l}
+            \ch{CO2 <-> CO + 1/2 O2}
+        &   \ch{CO2 -> CO + 1/2 O2}
+        &   \Delta \gsuper{GibbsFreeEnergy}{standardState}_7 =
+            -\molalpropcomp{intGibbsFreeEnergy}{1}^{\gls{standardState}}
+            +
+            \molalpropcomp{intGibbsFreeEnergy}{5}^{\gls{standardState}}
+            +
+            \frac{1}{2}
+            \molalpropcomp{intGibbsFreeEnergy}{4}^{\gls{standardState}} \\
+        \end{array}
+    \end{equation}
+
+    Se somarmos a equação 7 com a equação 5, resultará na equação 8:
+    %
+    \begin{equation} \label{eq:8.91}
+        \begin{array}{l l l}
+            \ch{H2 + CO2 <-> H2O + CO}
+        &   \ch{H2 + CO2 <-> H2O + CO}
+        &   \Delta \gsuper{GibbsFreeEnergy}{standardState}_8 =
+            \molalpropcomp{intGibbsFreeEnergy}{2}^{\gls{standardState}}
+            +
+            \molalpropcomp{intGibbsFreeEnergy}{5}^{\gls{standardState}}
+            -
+            \molalpropcomp{intGibbsFreeEnergy}{6}^{\gls{standardState}}
+            -
+            \molalpropcomp{intGibbsFreeEnergy}{1}^{\gls{standardState}} \\
+        \end{array}
+    \end{equation}
+
+    A reação química reversível da \cref{eq:8.91} é extremamente importante e
+    ocorre com qualquer temperatura dos produtos sempre que a razão de
+    equivalência for maior do que 1, ou seja o ar utilizado na combustão é
+    menor do que o ar estequiométrico para o combustível. Ela é chamada de
+    \emph{reação água-gás}.
+
+    Como inicialmente estabelecemos, poderíamos ter escolhido as reações 7 ou
+    8, ou mesmo ambas, para substituir uma ou duas reações do sistema de seis,
+    \cref{eq:8.81}. Seja qual for a nossa escolha, enfatizamos que só podemos
+    encontrar seis reações que são independentes entre si, nem mais e nem
+    menos.
+
+    Vamos definir a constante de equilíbrio
+    $\gls{chEquilibriumConstant}_{k}\functionOf{\gls{temperature}}$ para uma
+    reação reversível $k$ como sendo:
+    %
+    \begin{equation} \label{eq:8.92}
+        \ln{
+            \gls{chEquilibriumConstant}_k
+            \functionOf{
+                \gls{temperature}
+            }
+        }
+        =
+        -\frac{
+            \Delta \gsuper{GibbsFreeEnergy}{standardState}_k
+            \functionOf{
+                \gls{temperature},
+                \gls{standardPressure}
+            }
+        }{
+            \gls{universalGasConstant}
+            \gls{temperature}
+        }\,,
+        \,\,\,\,
+        \forall k = 1,...,6\,.
+    \end{equation}
+
+    Observe que as constantes de equilíbrio não são realmente constantes, mas
+    uma função da temperatura da reação química \gls{temperature}. Entretanto,
+    este nome acabou permanecendo por razões históricas. De que maneira a
+    constante de equilíbrio varia com a temperatura? Voltaremos a essa questão,
+    mas antes vamos obter as equações de equilíbrio que utilizam as constantes.
+
+    A partir da \cref{eq:8.88}, igualando-se cada coeficiente a zero e
+    substituindo-se para as constantes de equilíbrio, obteremos equações que
+    representam para cada reação química reversível a relação entre a
+    respectiva constante de equilíbrio e as atividades e as fugacidades dos
+    componentes que participam daquela reação, dentro da mistura homogênea de
+    produtos de combustão em equilíbrio a \gls{temperature}, \gls{pressure}.
+    Assumiremos, além disso, por conveniência que no estado padrão a
+    \gls{temperature} e \gls{standardPressure} os componentes puros $i$ são
+    gases perfeitos, isto é,
+    $\propcomp{fugacity}{i}\functionOf{\gls{temperature},
+    \gls{standardPressure}} = \gls{standardPressure}$. Obtemos assim:
+    %
+    \begin{equation} \label{eq:8.93}
+        \begin{aligned}
+        &\propcomp{chEquilibriumConstant}{1}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \frac{
+            \propcomp{activity}{7}
+        }{
+            \propcomp{activity}{6}^{\sfrac{1}{2}}
+        }
+        =
+        \frac{
+            \sfrac{
+                \molalpropcomp{fugacity}{7}
+            }{
+                \gls{pressure}
+            }
+        }{
+            \left(
+                \sfrac{
+                    \molalpropcomp{fugacity}{6}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+        }
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{\sfrac{1}{2}} \\
+        &\propcomp{chEquilibriumConstant}{2}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \frac{
+            \propcomp{activity}{8}
+        }{
+            \propcomp{activity}{4}^{\sfrac{1}{2}}
+        }
+        =
+        \frac{
+            \sfrac{
+                \molalpropcomp{fugacity}{8}
+            }{
+                \gls{pressure}
+            }
+        }{
+            \left(
+                \sfrac{
+                    \molalpropcomp{fugacity}{4}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+        }
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{\sfrac{1}{2}} \\
+        &\propcomp{chEquilibriumConstant}{3}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \frac{
+            \propcomp{activity}{9}
+        }{
+            \propcomp{activity}{6}^{\sfrac{1}{2}}
+            \propcomp{activity}{4}^{\sfrac{1}{2}}
+        }
+        =
+        \frac{
+            \sfrac{
+                \molalpropcomp{fugacity}{9}
+            }{
+                \gls{pressure}
+            }
+        }{
+            \left(
+                \sfrac{
+                    \molalpropcomp{fugacity}{6}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+            \left(
+                \sfrac{
+                    \molalpropcomp{fugacity}{4}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+        }
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{0} \\
+        &\propcomp{chEquilibriumConstant}{4}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \frac{
+            \propcomp{activity}{10}
+        }{
+            \propcomp{activity}{3}^{\sfrac{1}{2}}
+            \propcomp{activity}{4}^{\sfrac{1}{2}}
+        }
+        =
+        \frac{
+            \sfrac{
+                \molalpropcomp{fugacity}{10}
+            }{
+                \gls{pressure}
+            }
+        }{
+            \left(
+                \sfrac{
+                    \molalpropcomp{fugacity}{3}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+            \left(
+                \sfrac{
+                    \molalpropcomp{fugacity}{4}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+        }
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{0} \\
+        &\propcomp{chEquilibriumConstant}{5}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \frac{
+            \propcomp{activity}{2}
+        }{
+            \propcomp{activity}{6}
+            \propcomp{activity}{4}^{\sfrac{1}{2}}
+        }
+        =
+        \frac{
+            \sfrac{
+                \molalpropcomp{fugacity}{9}
+            }{
+                \gls{pressure}
+            }
+        }{
+            \left(
+                \sfrac{
+                    \molalpropcomp{fugacity}{2}
+                }{
+                    \gls{pressure}
+                }
+            \right)
+            \left(
+                \sfrac{
+                    \molalpropcomp{fugacity}{4}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+        }
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{-\sfrac{1}{2}} \\
+        &\propcomp{chEquilibriumConstant}{6}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \frac{
+            \propcomp{activity}{1}
+        }{
+            \propcomp{activity}{5}
+            \propcomp{activity}{4}^{\sfrac{1}{2}}
+        }
+        =
+        \frac{
+            \sfrac{
+                \molalpropcomp{fugacity}{1}
+            }{
+                \gls{pressure}
+            }
+        }{
+            \left(
+                \sfrac{
+                    \molalpropcomp{fugacity}{5}
+                }{
+                    \gls{pressure}
+                }
+            \right)
+            \left(
+                \sfrac{
+                    \molalpropcomp{fugacity}{4}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+        }
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{-\sfrac{1}{2}}\,. \\
+        \end{aligned}
+    \end{equation}
+
+    Como sempre, pouco poderemos avançar se não modelarmos as fugacidades dos
+    componentes na mistura. Pois bem, se a mistura de produtos de combustão
+    puder ser considerada como solução ideal a \gls{temperature},
+    \gls{pressure}, então as Eqs. 8.93 se desdobrarão em:
+    %
+    \begin{equation} \label{eq:8.94}
+        \begin{aligned}
+        &\propcomp{chEquilibriumConstant}{1}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \frac{
+            \propcomp{activity}{7}
+        }{
+            \propcomp{activity}{6}^{\sfrac{1}{2}}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{moleFraction}{7}
+            }{
+                \propcomp{moleFraction}{6}^{\sfrac{1}{2}}
+            }
+        \right)
+        \frac{
+            \sfrac{
+                \propcomp{fugacity}{7}
+            }{
+                \gls{pressure}
+            }
+        }{
+            \left(
+                \sfrac{
+                    \propcomp{fugacity}{6}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+        }
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{\sfrac{1}{2}} \\
+        &\propcomp{chEquilibriumConstant}{2}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \frac{
+            \propcomp{activity}{8}
+        }{
+            \propcomp{activity}{4}^{\sfrac{1}{2}}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{moleFraction}{8}
+            }{
+                \propcomp{moleFraction}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \frac{
+            \sfrac{
+                \propcomp{fugacity}{8}
+            }{
+                \gls{pressure}
+            }
+        }{
+            \left(
+                \sfrac{
+                    \propcomp{fugacity}{4}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+        }
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{\sfrac{1}{2}} \\
+        &\propcomp{chEquilibriumConstant}{3}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \frac{
+            \propcomp{activity}{9}
+        }{
+            \propcomp{activity}{6}^{\sfrac{1}{2}}
+            \propcomp{activity}{4}^{\sfrac{1}{2}}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{moleFraction}{9}
+            }{
+                \propcomp{moleFraction}{6}^{\sfrac{1}{2}}
+                \propcomp{moleFraction}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \frac{
+            \sfrac{
+                \propcomp{fugacity}{9}
+            }{
+                \gls{pressure}
+            }
+        }{
+            \left(
+                \sfrac{
+                    \propcomp{fugacity}{6}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+            \left(
+                \sfrac{
+                    \propcomp{fugacity}{4}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+        }
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{0} \\
+        &\propcomp{chEquilibriumConstant}{4}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \frac{
+            \propcomp{activity}{10}
+        }{
+            \propcomp{activity}{3}^{\sfrac{1}{2}}
+            \propcomp{activity}{4}^{\sfrac{1}{2}}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{moleFraction}{10}
+            }{
+                \propcomp{moleFraction}{3}^{\sfrac{1}{2}}
+                \propcomp{moleFraction}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \frac{
+            \sfrac{
+                \propcomp{fugacity}{10}
+            }{
+                \gls{pressure}
+            }
+        }{
+            \left(
+                \sfrac{
+                    \propcomp{fugacity}{3}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+            \left(
+                \sfrac{
+                    \propcomp{fugacity}{4}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+        }
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{0} \\
+        &\propcomp{chEquilibriumConstant}{5}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \frac{
+            \propcomp{activity}{2}
+        }{
+            \propcomp{activity}{6}
+            \propcomp{activity}{4}^{\sfrac{1}{2}}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{moleFraction}{2}
+            }{
+                \propcomp{moleFraction}{6}
+                \propcomp{moleFraction}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \frac{
+            \sfrac{
+                \propcomp{fugacity}{9}
+            }{
+                \gls{pressure}
+            }
+        }{
+            \left(
+                \sfrac{
+                    \propcomp{fugacity}{2}
+                }{
+                    \gls{pressure}
+                }
+            \right)
+            \left(
+                \sfrac{
+                    \propcomp{fugacity}{4}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+        }
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{-\sfrac{1}{2}} \\
+        &\propcomp{chEquilibriumConstant}{6}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \frac{
+            \propcomp{activity}{1}
+        }{
+            \propcomp{activity}{5}
+            \propcomp{activity}{4}^{\sfrac{1}{2}}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{moleFraction}{1}
+            }{
+                \propcomp{moleFraction}{5}
+                \propcomp{moleFraction}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \frac{
+            \sfrac{
+                \propcomp{fugacity}{1}
+            }{
+                \gls{pressure}
+            }
+        }{
+            \left(
+                \sfrac{
+                    \propcomp{fugacity}{5}
+                }{
+                    \gls{pressure}
+                }
+            \right)
+            \left(
+                \sfrac{
+                    \propcomp{fugacity}{4}
+                }{
+                    \gls{pressure}
+                }
+            \right)^{\sfrac{1}{2}}
+        }
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{-\sfrac{1}{2}}\,. \\
+        \end{aligned}
+    \end{equation}
+
+    Nas \cref{eq:8.94} os termos
+    $\dfrac{\propcomp{fugacity}{i}}{\gls{pressure}}$ são os coeficientes de
+    fugacidade do componente $i$ puro a \gls{temperature}, \gls{pressure}, que
+    poderiam ser obtidos através das coordenadas generalizadas.
+
+    Finalmente, se a solução ideal dos produtos de combustão a
+    \gls{temperature}, \gls{pressure} puder ser considerada como uma mistura de
+    gases perfeitos, os coeficientes de fugacidade serão todos iguais a unidade
+    e obteremos as equações das constantes de equilíbrio na sua forma mais
+    conhecida:
+    %
+    \begin{equation} \label{eq:8.95}
+        \begin{aligned}
+        &\propcomp{chEquilibriumConstant}{1}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{moleFraction}{7}
+            }{
+                \propcomp{moleFraction}{6}^{\sfrac{1}{2}}
+            }
+        \right)
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{\sfrac{1}{2}} \\
+        &\propcomp{chEquilibriumConstant}{2}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{moleFraction}{8}
+            }{
+                \propcomp{moleFraction}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{\sfrac{1}{2}} \\
+        &\propcomp{chEquilibriumConstant}{3}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{moleFraction}{9}
+            }{
+                \propcomp{moleFraction}{6}^{\sfrac{1}{2}}
+                \propcomp{moleFraction}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{0} \\
+        &\propcomp{chEquilibriumConstant}{4}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{moleFraction}{10}
+            }{
+                \propcomp{moleFraction}{3}^{\sfrac{1}{2}}
+                \propcomp{moleFraction}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{0} \\
+        &\propcomp{chEquilibriumConstant}{5}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{moleFraction}{2}
+            }{
+                \propcomp{moleFraction}{6}
+                \propcomp{moleFraction}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{-\sfrac{1}{2}} \\
+        &\propcomp{chEquilibriumConstant}{6}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{moleFraction}{1}
+            }{
+                \propcomp{moleFraction}{5}
+                \propcomp{moleFraction}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{-\sfrac{1}{2}}\,.\\
+        \end{aligned}
+    \end{equation}
+
+    Chamamos a sua atenção para o fato de que as conhecidas \cref{eq:8.95} só
+    podem ser empregadas quando a mistura em equilíbrio puder ser considerada
+    como de gases perfeitos a \gls{temperature}, \gls{pressure}, uma hipótese,
+    aliás, bem razoável nos processos de combustão encontrados na prática.
+
+    Em cada uma das reações de equilíbrio a reação se desloca para a esquerda
+    ou direita conforme alteramos a pressão ou a temperatura da reação.
+
+    Como poderemos saber a direção em que uma determinada reação se deslocará
+    se alterarmos a sua pressão, enquanto mantemos a sua temperatura
+    inalterada?
+
+    Vamos estudar a primeira (ou a segunda) das \cref{eq:8.95}. Como o produto
+    do lado direito é constante, se aumentarmos a pressão \gls{pressure}, o
+    numerador da relação de frações molares deve diminuir e o denominador
+    aumentar, ou seja, a reação se desloca em direção aos reagentes, para a
+    esquerda.
+
+    Vamos ver agora a reação 5 (ou a reação 6): o aumento da pressão  implicará
+    o aumento do numerador (por quê?) e a diminuição do denominador, deslocando
+    a reação para a direita, no sentido dos produtos.
+
+    O que podemos dizer das reações 3 ou 4? Claramente a alteração da pressão
+    não terá efeito sobre estas reações (por quê?).
+
+    Então, já podemos estabelecer uma regra: se o número de moles dos produtos
+    for maior do que o número de moles dos reagentes, então o aumento da
+    pressão causará um deslocamento para os reagentes e vice-versa. Este é o
+    chamado \emph{princípio de Le Chatelier}.
+
+    O que podemos dizer a respeito do efeito da temperatura? Se o valor da
+    constante de equilíbrio aumentar com a temperatura, então um aumento da
+    temperatura implica um deslocamento da reação no sentido dos produtos (por
+    quê?). Ao contrário, se o valor da constante de equilíbrio decrescer com o
+    aumento da temperatura, então a reação correspondente se deslocará para os
+    reagentes. Ou seja, não poderemos decidir qual é o efeito enquanto não
+    analisarmos com mais detalhes o comportamento da constante de equilíbrio
+    com a temperatura.
+
+    Para uma substância pura $i$ podemos escrever:
+    %
+    \begin{equation*}
+        \diff\molalpropcomp{intGibbsFreeEnergy}{i}
+        =
+        -\molalpropcomp{entropy}{i}
+        \diff{\gls{temperature}}
+        +
+        \molalpropcomp{specificVolume}{i}
+        \diff{\gls{pressure}}\,.
+    \end{equation*}
+
+    A diferencial calculada a pressão constante ficará:
+    %
+    \begin{equation} \label{eq:8.96}
+        \diff\molalpropcomp{intGibbsFreeEnergy}{i}\big|_{\gls{pressure}}
+        =
+        -\molalpropcomp{entropy}{i}
+        \diff{\gls{temperature}}\big|_{\gls{pressure}}
+        =
+        -
+        \frac{
+            \left(
+                \molalpropcomp{intEnthalpy}{i}
+                -
+                \molalpropcomp{intGibbsFreeEnergy}{i}
+            \right)
+        }{
+            \gls{temperature}
+        }
+        \diff{\gls{temperature}}\big|_{\gls{pressure}}\,.
+    \end{equation}
+
+    Rearranjando a \cref{eq:8.96} e dividindo-se por $\gls{temperature}^2$:
+    %
+    \begin{equation} \label{eq:8.97}
+        \frac{
+            \gls{temperature}
+            \diff\molalpropcomp{intGibbsFreeEnergy}{i}\big|_{\gls{pressure}}
+            -
+            \molalpropcomp{intGibbsFreeEnergy}{i}
+            \diff{\gls{temperature}}\big|_{\gls{pressure}}\,.
+        }{
+            \gls{temperature}^2
+        }
+        =
+        -
+        \frac{
+            \molalpropcomp{intEnthalpy}{i}
+        }{
+            \gls{temperature}^2
+        }
+        \diff{\gls{temperature}}\big|_{\gls{pressure}}\,,
+    \end{equation}
+    %
+    de onde obtemos:
+
+    \begin{equation} \label{eq:8.98}
+        \diff{}
+        \left(
+            \frac{
+                \molalpropcomp{intGibbsFreeEnergy}{i}
+            }{
+                \gls{temperature}
+            }
+        \right)_{\gls{pressure}}
+        =
+        -
+        \frac{
+            \molalpropcomp{intEnthalpy}{i}
+        }{
+            \gls{temperature}^2
+        }
+        \diff{\gls{temperature}}\big|_{\gls{pressure}}\,.
+    \end{equation}
+
+    Vamos rescrever a mesma expressão para a substância pura $i$ mas no estado
+    padrão a \gls{temperature}, \gls{standardPressure}, dividindo
+    adicionalmente por \gls{universalGasConstant}:
+    %
+    \begin{equation} \label{eq:8.99}
+        \diff{}
+        \left(
+            \frac{
+                \molalpropcomp{intGibbsFreeEnergy}{i}
+            }{
+                \gls{universalGasConstant}
+                \gls{temperature}
+            }
+        \right)_{\gls{standardPressure}}
+        =
+        -
+        \frac{
+            \molalpropcomp{intEnthalpy}{i}
+        }{
+            \gls{universalGasConstant}
+            \gls{temperature}^2
+        }
+        \diff{\gls{temperature}}\big|_{\gls{standardPressure}}\,.
+    \end{equation}
+
+    Então, para qualquer uma das reações de equilíbrio $k$ podemos escrever:
+    %
+    \begin{equation} \label{eq:8.100}
+        \diff{}
+        \left(
+            \frac{
+                \Delta \gsuper{GibbsFreeEnergy}{standardState}_k
+            }{
+                \gls{universalGasConstant}
+                \gls{temperature}
+            }
+        \right)_{\gls{standardPressure}}
+        =
+        -
+        \frac{
+            \Delta \gsuper{enthalpy}{standardState}_k
+        }{
+            \gls{universalGasConstant}
+            \gls{temperature}^2
+        }
+        \diff{\gls{temperature}}\big|_{\gls{standardPressure}}\,,
+    \end{equation}
+    %
+    ou ainda, da definição de constante de equilíbrio:
+    %
+    \begin{equation} \label{eq:8.101}
+        \diff{}
+        \left(
+            \ln{
+                \gls{chEquilibriumConstant}_k
+            }
+        \right)
+        =
+        -
+        \frac{
+            \Delta \gsuper{enthalpy}{standardState}_k
+        }{
+            \gls{universalGasConstant}
+            \gls{temperature}^2
+        }
+        \diff{\gls{temperature}}\big|_{\gls{standardPressure}}
+        =
+        -
+        \frac{
+            \Delta \gsuper{enthalpy}{standardState}_k
+        }{
+            \gls{universalGasConstant}
+        }
+        \diff{\left(
+            \frac{1}{\gls{temperature}}
+        \right)}_{\gls{standardPressure}}\,.
+    \end{equation}
+
+    Assim como a variação da função de Gibbs associada a cada uma das $k$
+    reações, podemos também definir $\Delta
+    \gsuper{enthalpy}{standardState}_k\functionOf{\gls{temperature},
+    \gls{standardPressure}}$, a entalpia de reação no estado padrão a
+    \gls{temperature},\gls{standardPressure}. De fato, por analogia com as
+    \cref{eq:8.89}, podemos escrever:
+
+    \begin{equation} \label{eq:8.102}
+        \begin{array}{l l l}
+            \ch{1/2 H2 <-> H}
+        &   \ch{1/2 H2 -> H}
+        &   \Delta \gsuper{enthalpy}{standardState}_1 =
+            \molalpropcomp{intEnthalpy}{7}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intEnthalpy}{6}^{\gls{standardState}}
+        \\
+            \ch{1/2 O2 <-> O}
+        &   \ch{1/2 O2 -> O}
+        &   \Delta \gsuper{enthalpy}{standardState}_2  =
+            \molalpropcomp{intEnthalpy}{8}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intEnthalpy}{4}^{\gls{standardState}}
+        \\
+            \ch{1/2 H2 + 1/2 O2 <-> OH}
+        &   \ch{1/2 H2 + 1/2 O2 -> OH}
+        &   \Delta \gsuper{enthalpy}{standardState}_3 =
+            \molalpropcomp{intEnthalpy}{9}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intEnthalpy}{6}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intEnthalpy}{4}^{\gls{standardState}}
+        \\
+            \ch{1/2 N2 + 1/2 O2 <-> NO}
+        &   \ch{1/2 N2 + 1/2 O2 -> NO}
+        &   \Delta \gsuper{enthalpy}{standardState}_4 =
+            \molalpropcomp{intEnthalpy}{10}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intEnthalpy}{3}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intEnthalpy}{4}^{\gls{standardState}}
+        \\
+            \ch{H2 + 1/2 O2 <-> H2O}
+        &   \ch{H2 + 1/2 O2 -> H2O}
+        &   \Delta \gsuper{enthalpy}{standardState}_5 =
+            \molalpropcomp{intEnthalpy}{2}^{\gls{standardState}}
+            -
+            \molalpropcomp{intEnthalpy}{6}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+            \molalpropcomp{intEnthalpy}{4}^{\gls{standardState}}
+        \\
+            \ch{CO + 1/2 O2 <-> CO2}
+        &   \ch{CO + 1/2 O2 -> CO2}
+        &   \Delta \gsuper{enthalpy}{standardState}_6 =
+            \molalpropcomp{intEnthalpy}{1}^{\gls{standardState}}
+            -
+            \molalpropcomp{intEnthalpy}{5}^{\gls{standardState}}
+            -
+            \frac{1}{2}
+                \molalpropcomp{intEnthalpy}{4}^{\gls{standardState}}
+            \\
+        \end{array}
+    \end{equation}
+
+    A característica principal da entalpia de reação é que o seu valor é
+    positivo para as reações endotérmicas, ou seja, que absorvem energia, como
+    as de dissociação 1 e 2 e negativo para as reações exotérmicas, ou seja,
+    que liberam energia, como as de oxidação 3, 4, 5 e 6. Assim como a função
+    de Gibbs do estado padrão, a entalpia de reação também está estreitamente
+    associada a uma determinada reação de equilíbrio. Se multiplicarmos a
+    reação por um número positivo ou negativo, a entalpia de reação será
+    afetada da mesma forma.
+
+    Da análise da \cref{eq:8.101} podemos concluir duas coisas. A primeira, que
+    o logaritmo da constante de equilíbrio varia linearmente com o inverso da
+    temperatura absoluta, se a entalpia de reação for razoavelmente constante
+    no intervalo de temperatura considerado. A segunda, que a variação da
+    constante de equilíbrio com a temperatura depende apenas do sinal da
+    entalpia de reação. Se a reação considerada for endotérmica, o valor da
+    constante de equilíbrio aumenta com a temperatura, ou seja, a dissociação
+    aumenta com a temperatura (por quê?), ao passo que o valor decresce com o
+    aumento da temperatura para as reações exotérmicas, ou seja, a reação se
+    desloca no sentido dos reagentes (por quê?). A propósito, a \cref{eq:8.101}
+    é denominada \emph{equação de Van't Hoff}.
+
+    Retornando ao equacionamento do problema original, vamos assumir que os
+    produtos de combustão formam uma mistura de gases perfeitos a
+    \gls{temperature}, \gls{pressure}. Expressando as \cref{eq:8.95} em termos
+    de número de moles:
+
+    \begin{equation} \label{eq:8.103}
+        \begin{aligned}
+        &\propcomp{chEquilibriumConstant}{1}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{numberMoles}{7}
+            }{
+                \propcomp{numberMoles}{6}^{\sfrac{1}{2}}
+                \gls{numberMoles}^{\sfrac{1}{2}}
+            }
+        \right)
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{\sfrac{1}{2}} \\
+        &\propcomp{chEquilibriumConstant}{2}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{numberMoles}{8}
+            }{
+                \propcomp{numberMoles}{4}^{\sfrac{1}{2}}
+                \gls{numberMoles}^{\sfrac{1}{2}}
+            }
+        \right)
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{\sfrac{1}{2}} \\
+        &\propcomp{chEquilibriumConstant}{3}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{numberMoles}{9}
+            }{
+                \propcomp{numberMoles}{6}^{\sfrac{1}{2}}
+                \propcomp{numberMoles}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{0} \\
+        &\propcomp{chEquilibriumConstant}{4}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{numberMoles}{10}
+            }{
+                \propcomp{numberMoles}{3}^{\sfrac{1}{2}}
+                \propcomp{numberMoles}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{0} \\
+        &\propcomp{chEquilibriumConstant}{5}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{numberMoles}{2}
+                \gls{numberMoles}^{\sfrac{1}{2}}
+            }{
+                \propcomp{numberMoles}{6}
+                \propcomp{numberMoles}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{-\sfrac{1}{2}} \\
+        &\propcomp{chEquilibriumConstant}{6}
+        \functionOf{
+            \gls{temperature}
+        }
+        =
+        \left(
+            \frac{
+                \propcomp{numberMoles}{1}
+                \gls{numberMoles}^{\sfrac{1}{2}}
+            }{
+                \propcomp{numberMoles}{5}
+                \propcomp{numberMoles}{4}^{\sfrac{1}{2}}
+            }
+        \right)
+        \left(
+            \frac{
+                \gls{pressure}
+            }{
+                \gls{standardPressure}
+            }
+        \right)^{-\sfrac{1}{2}} \\
+        \end{aligned}
+    \end{equation}
+
+    Quantas e quais são afinal as equações do sistema? Vejamos: são as seis
+    equações com as constantes de equilíbrio, \cref{eq:8.103}, adicionadas das
+    quatro equações de conservação dos elementos químicos, \cref{eq:8.66}, a
+    soma do número de moles \gls{numberMoles} encontrada na última das
+    \cref{eq:8.70} e uma equação para \gls{molarAirFuelRatio}, \cref{eq:8.59},
+    em um total de doze equações.  Analisando as
+    \cref{eq:8.59,eq:8.66,eq:8.70,eq:8.103}, chegamos ao seguinte  conjunto de
+    dezenove variáveis:
+    %
+    \begin{equation*}
+         \gls{carbonQuantity}, \gls{hidrogenQuantity},
+         \gls{oxygenQuantity}, \gls{nitrogenQuantity},
+         \gls{equivalenceRatio},
+         \gls{molarAirFuelRatio},
+         \propcomp{numberMoles}{1}, \propcomp{numberMoles}{2},
+         \propcomp{numberMoles}{3}, \propcomp{numberMoles}{4},
+         \propcomp{numberMoles}{5}, \propcomp{numberMoles}{6},
+         \propcomp{numberMoles}{7}, \propcomp{numberMoles}{8},
+         \propcomp{numberMoles}{9}, \propcomp{numberMoles}{10},
+         \gls{numberMoles}, \gls{temperature}, \gls{pressure}\,,
+    \end{equation*}
+    %
+    ou seja, sete a mais do que o número de equações do sistema, consistente
+    com o número que obtivemos com o método dos multiplicadores de Lagrange. Da
+    mesma forma que com aquele método, precisamos de sete equações ou dos meios
+    para obter o valor de sete variáveis, para que possamos buscar soluções
+    para o problema. Em geral, \gls{carbonQuantity}, \gls{hidrogenQuantity},
+    \gls{oxygenQuantity}, \gls{nitrogenQuantity} e consequentemente
+    \gls{molarAirFuelRatio}, são valores dados pela escolha do combustível e a
+    razão de equivalência \gls{equivalenceRatio} é um parâmetro a ser
+    investigado. Resta-nos então a temperatura \gls{temperature} e a pressão
+    \gls{pressure} dos produtos de combustão.
