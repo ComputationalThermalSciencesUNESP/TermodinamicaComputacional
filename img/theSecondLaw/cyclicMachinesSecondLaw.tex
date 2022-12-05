@@ -1,0 +1,208 @@
+% Author: Iago Lessa de Oliveira (February, 2022)
+\documentclass[margin=5pt]{standalone}
+
+    \usepackage{siunitx}
+    \usepackage{../../tikz-local-config}
+
+    \usepackage{glossaries-extra}
+    \usepackage{glossaries-ext}
+    \usepackage{tensor-operators}
+
+        \loadglsentries{../../thermo-glossary.tex}
+        \loadglsentries{../../thermo-acronyms.tex}
+
+\begin{document}
+
+    \begin{tikzpicture}
+
+    \coordinate (origin) at (0,0);
+
+    % Reservoir dimensions
+    \def\length{10cm};
+    \def\height{0.75cm};
+    \def\gap{3cm};
+
+    \coordinate (machine) at (-\length/4,\gap/2);
+    \coordinate (refrigerator) at (\length/4,\gap/2);
+
+
+    \node[%
+        draw,
+        shade,
+        top color=blue!50,
+        bottom color=blue!10,
+        %shading angle=30,
+        rounded corners,
+        minimum width=\length,
+        minimum height=\height
+    ]   (coldReservoir) at (origin)
+        {%
+            Reservatório Térmico a \gsub{temperature}{coldReservoir}
+        };
+
+    \node[%
+        draw,
+        shade,
+        top color=red!50,
+        bottom color=red!10,
+        rounded corners,
+        minimum width=\length,
+        minimum height=\height
+    ]   (hotReservoir) at ($(origin)+(0,\gap)$)
+        {Reservatório Térmico a \gsub{temperature}{hotReservoir}};
+
+    % Heat and work interactions
+    \begin{scope}[%
+        name=thermalMachineInteractions
+    ]
+
+        \node[%
+            draw,
+            single arrow,
+            rotate=-90,
+            anchor=west,
+            minimum width=0.7cm,
+            minimum height=0.01cm*\gap,
+            single arrow head extend=0.1cm,
+            xshift=0.4cm,
+            fill=blue!40,
+            label={north:\gsub{heatTransfer}{cyclicMachine,coldReservoir}}
+        ]   (heatOutMachine) at (machine)
+            {};
+
+        \node[%
+            draw,
+            single arrow,
+            anchor=west,
+            rotate=180,
+            minimum width=0.7cm,
+            minimum height=0.01cm*\gap,
+            single arrow head extend=0.1cm,
+            xshift=0.4cm,
+            fill=green!40,
+            label={east:\gsub{workTransfer}{cyclicMachine}}
+        ]   (workOutMachine) at (machine)
+            {};
+
+            % thermal machine
+            \node[
+                draw=black,
+                %shading=radial
+                circle,
+                minimum size=1cm,
+                top color=green!60,
+                bottom color=green!10,
+                label={[
+                    anchor=south west,
+                    font=\tiny,
+                    text width=3cm,
+                    yshift=-0.2cm,
+                    xshift=0.1cm
+                ]north east:{%
+                    Maquina términa \\[-1pt]
+                    com fluido de trabalho \\[-1pt]
+                    operando em ciclo
+                }}
+            ]   (cycleMachine) at (machine)
+                {};
+
+            \draw[
+                ->,
+                domain=-45:215,
+                shift={(machine)}
+            ]   (machine) plot ({0.3cm*cos(\x)},{0.3cm*sin(\x)});
+
+        \node[%
+            draw,
+            single arrow,
+            rotate=-90,
+            anchor=east,
+            minimum width=0.7cm,
+            %minimum height=0.01cm*\gap,
+            minimum height=0.715cm,
+            single arrow head extend=0.1cm,
+            xshift=-0.4cm,
+            fill=red!40,
+            label={south:\gsub{heatTransfer}{cyclicMachine,hotReservoir}}
+        ]   (heatInMachine) at (machine)
+            {};
+
+    \end{scope}
+
+    \begin{scope}[%
+        name=thermalMachineInteractions
+    ]
+
+        \node[%
+            draw,
+            single arrow,
+            rotate=90,
+            anchor=west,
+            minimum width=0.7cm,
+            minimum height=0.01cm*\gap,
+            single arrow head extend=0.1cm,
+            xshift=0.4cm,
+            fill=red!40,
+            label={south:\gsub{heatTransfer}{refrigerator,hotReservoir}}
+        ]   (heatOutRefrigerator) at (refrigerator)
+            {};
+
+        % refrigerator
+        \node[
+            draw=black,
+            %shading=radial
+            circle,
+            minimum size=1cm,
+            top color=orange!60,
+            bottom color=orange!10,
+            label={[
+                anchor=west,
+                font=\tiny,
+                text width=3cm,
+            ]east:{%
+                Refrigerador \\[-1pt]
+                com fluido de trabalho \\[-1pt]
+                operando em ciclo
+            }}
+        ]   (cyclerefrigerator) at (refrigerator)
+            {};
+
+        \draw[
+            ->,
+            domain=0:275,
+            shift={(refrigerator)}
+        ]   (machine) plot ({0.3cm*cos(\x)},{0.3cm*sin(\x)});
+
+        \node[%
+            draw,
+            single arrow,
+            rotate=90,
+            anchor=east,
+            minimum width=0.7cm,
+            minimum height=0.715cm,
+            %minimum height=0.01cm*\gap,
+            single arrow head extend=0.1cm,
+            xshift=-0.4cm,
+            fill=blue!40,
+            label={south:\gsub{heatTransfer}{refrigerator,coldReservoir}}
+        ]   (heatInRefrigerator) at (refrigerator)
+            {};
+
+        \node[%
+            draw,
+            single arrow,
+            anchor=east,
+            minimum width=0.7cm,
+            minimum height=0.01cm*\gap,
+            single arrow head extend=0.1cm,
+            xshift=-0.4cm,
+            fill=orange!40,
+            label={west:\gsub{workTransfer}{refrigerator}}
+        ]   (workInRefrigerator) at (refrigerator)
+            {};
+    \end{scope}
+
+
+
+    \end{tikzpicture}
+\end{document}

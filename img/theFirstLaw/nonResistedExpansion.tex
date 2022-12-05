@@ -1,0 +1,128 @@
+% Author: Iago Lessa de Oliveira (February, 2022)
+\documentclass[margin=5pt]{standalone}
+
+    \usepackage{siunitx}
+    \usepackage{../../tikz-local-config}
+
+    \usepackage{glossaries-extra}
+    \usepackage{glossaries-ext}
+    \usepackage{tensor-operators}
+
+        \loadglsentries{../../thermo-glossary.tex}
+        \loadglsentries{../../thermo-acronyms.tex}
+
+\begin{document}
+    \begin{tikzpicture}[%
+        scale=4.5
+    ]
+
+        \coordinate (origin) at (0,0);
+        \coordinate (corner1) at (1.2,0);
+        \coordinate (corner2) at (1.2,0.75);
+        \coordinate (corner3) at (0,0.75);
+
+        \coordinate (membraneA) at (0.7,0);
+        \coordinate (membraneB) at (0.7,0.75);
+
+        \draw[%
+            black,
+            %thick,
+            rounded corners,
+            fill=red!30
+        ]   (membraneA)
+            --
+            (corner1)
+            --
+            (corner2)
+            --
+            (membraneB);
+
+        \draw[%
+            black,
+            %thick,
+            rounded corners,
+            fill=blue!30
+        ]   (membraneB)
+            --
+            (corner3)
+            --
+            (origin)
+            --
+            (membraneA);
+
+        \draw[%
+            dashed,
+            thick
+        ]   (membraneA)
+            -- node [above, sloped] {Membrana}
+            (membraneB);
+
+        \node[%
+            text width=2cm,
+            align=center
+        ]   (A) at (0.30,0.35)
+            {%
+                \textbf{A}\\[\baselineskip]
+                \propcomp{numberMoles}{A},
+                \state{\propcomp{temperature}{A}}{1},
+                \state{\propcomp{pressure}{A}}{1}
+            };
+
+        \node[%
+            text width=2cm,
+            align=center
+        ]   (B) at (0.95,0.35)
+            {%
+                \textbf{B}\\[\baselineskip]
+                \propcomp{numberMoles}{B},
+                \state{\propcomp{temperature}{B}}{1},
+                \state{\propcomp{pressure}{B}}{1}
+            };
+
+            \draw[%
+                black,
+                %thick,
+                rounded corners,
+                fill=purple!30,
+                xshift=1cm
+            ]   ($(origin)+(1.5,0)$)
+                -- coordinate[pos=0.5] (state2)
+                ($(corner1)+(1.5,0)$)
+                --
+                ($(corner2)+(1.5,0)$)
+                --
+                ($(corner3)+(1.5,0)$)
+                --
+                cycle;
+
+        \node[%
+            text width=2cm,
+            align=center
+        ]   (AB) at (2.1,0.35)
+            {%
+                \textbf{A + B}\\[\baselineskip]
+                $\propcomp{numberMoles}{A} +
+                \propcomp{numberMoles}{B}$,\\[\baselineskip]
+                \state{\gls{temperature}}{2},
+                \state{\gls{pressure}}{2}
+            };
+
+        \node[%
+            %text width=3cm,
+            align=center,
+            anchor=north
+        ]   at ($(origin)!0.5!(corner1)$)
+            {%
+                \textbf{1}: Antes de romper-se a membrana
+            };
+
+        \node[%
+            %text width=3cm,
+            align=center,
+            anchor=north
+        ]   at (state2)
+            {%
+                \textbf{2}: Após o rompimento
+            };
+    \end{tikzpicture}
+\end{document}

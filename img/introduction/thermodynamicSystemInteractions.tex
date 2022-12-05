@@ -1,0 +1,156 @@
+% Author: Iago Lessa de Oliveira (February, 2022)
+\documentclass[margin=5pt]{standalone}
+
+    \usepackage{siunitx}
+    \usepackage{../../tikz-local-config}
+
+    \usepackage{glossaries-extra}
+    \usepackage{glossaries-ext}
+    \usepackage{tensor-operators}
+
+        \loadglsentries{../../thermo-glossary.tex}
+        \loadglsentries{../../thermo-acronyms.tex}
+
+\begin{document}
+
+    \begin{tikzpicture}[%
+        %scale=0.5
+    ]
+
+        \begin{scope}[%
+            % name local scope (can be used to place node)
+            local bounding box=system,
+            scale=1.5
+        ]
+
+            \draw[%
+                thick,
+                %dashed,
+                shade,
+                top color=yellow!50,
+                bottom color=yellow!10,
+                %fill=yellow!50,
+                rotate=55,
+                postaction={decorate},
+                decoration={%
+                    markings,
+                    mark=at position 0.1 with{%
+                        \coordinate (pinHeat);
+                    },
+                    mark=at position 0.3 with{%
+                        \coordinate (pinWork);
+                    },
+                    mark=at position 0.9 with{%
+                        \coordinate (pinMass);
+                    }
+                }
+            ]   plot[%
+                    smooth cycle,
+                    tension=0.9
+                ]   coordinates {% polar coordinates
+                        (0:0.5)
+                        (45:1.2)
+                        (90:1.5)
+                        (135:1.2)
+                        (180:1)
+                        (225:1)
+                        (270:1)
+                        (315:1)
+                    } coordinate (pinBoundary);
+        \end{scope}
+
+        \node[%
+            yshift=-0.35cm,
+            text width=2.5cm,
+            align=center
+        ]   (labelSystem) at (system)
+            {%
+                \textbf{Sistema}\\
+                \diff{\gls{mass}}, \diff{\gls{temperature}},
+                \diff{\gls{pressure}}, \diff{\gls{volume}},
+                \diff{\gls{specificVolume}}
+            };
+
+        % boundary label
+        \node[%
+            xshift=0.55cm,
+            yshift=0.35cm,
+            anchor=west,
+            %text width=2.5cm,
+            align=center,
+            inner sep=1pt,
+        ]   (labelBoundary) at (pinBoundary)
+            {%
+                \textbf{Fronteira}
+            };
+
+        \draw[%
+            indication
+        ]   (labelBoundary.south west)
+            to
+            (pinBoundary);
+
+        % Interactions
+        \draw[%
+            green!50!black,
+            thick,
+            -latex,
+            line width=1.5pt,
+            %bend left=10
+        ]   (pinMass)++(-0.4cm,-0.4cm)
+            to[out=90,in=200]
+            node[
+                pos=1,
+                anchor=south west,
+                inner sep=1pt
+            ]   {\large\idiff{\gls{mass}}}
+            ++(1.0cm,1.0cm);
+
+        \draw[%
+            red!70,
+            thick,
+            -latex,
+            line width=1.5pt,
+        ]   (pinHeat)++(-0.4cm,0.4cm)
+            to[out=0,in=100]
+            node[
+                pos=0,
+                anchor=south east,
+                inner sep=1pt
+            ]   {\large\idiff{\gls{heatTransfer}}}
+            ++(1.0cm,-1.0cm);
+
+        \draw[%
+            blue!70,
+            thick,
+            latex-,
+            line width=1.5pt,
+        ]   (pinWork)++(-0.4cm,-0.4cm)
+            to[out=90,in=190]
+            node[
+                pos=0,
+                anchor=north,
+                inner sep=1pt
+            ]   {\large\idiff{\gls{workTransfer}}}
+            ++(1.0cm,1.0cm);
+
+        \node[%
+            xshift=2.5cm,
+            yshift=0.3cm,
+            text width=3cm,
+            align=center,
+            text=green!50!black,
+        ]   (labelEnv) at (system.south)
+            {\textbf{Meio-ambiente}};
+
+        %\begin{scope}[on background layer]
+        %    \fill[%
+        %        shading=radial,
+        %        inner color=green
+        %    ]   (current bounding box.south west)
+        %        rectangle
+        %        (current bounding box.north east);
+        %\end{scope}
+
+    \end{tikzpicture}
+\end{document}

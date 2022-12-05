@@ -1,0 +1,256 @@
+% Author: Iago Lessa de Oliveira (February, 2022)
+\documentclass[margin=5pt]{standalone}
+
+    \usepackage{siunitx}
+    \usepackage{../../tikz-local-config}
+
+    \usepackage{glossaries-extra}
+    \usepackage{glossaries-ext}
+    \usepackage{tensor-operators}
+
+        \loadglsentries{../../thermo-glossary.tex}
+        \loadglsentries{../../thermo-acronyms.tex}
+
+\begin{document}
+
+    \begin{tikzpicture}[%
+        scale=1.4
+    ]
+
+        \tikzset{
+            pics/openPort/.style={%
+                code={%
+                    \draw[%
+                        black,
+                    ]   (-0.5cm,-0.25cm) coordinate (corner1)
+                        --
+                        ++(1cm,0cm);
+
+                    \draw[%
+                        black,
+                    ]   (-0.5cm,0.25cm)
+                        --
+                        ++(1cm,0cm) coordinate (corner2);
+
+                    \fill[white]
+                        (corner1)
+                        rectangle
+                        (corner2);
+
+                    \draw[%
+                        -latex,
+                        black,
+                        line width=1pt,
+                    ]   (-0.30cm,0)
+                        --
+                        ++(0.60cm,0cm);
+                }
+            }
+        }
+
+        \def\inletsWall{0cm};
+        \def\outletsWall{8cm};
+
+        \draw[%
+            thick,
+            rounded corners,
+            fill=yellow!20
+        ]   (\inletsWall,0)
+            rectangle
+            (\outletsWall,5cm);
+
+
+        % Inlets
+        \foreach \y/\index in {%
+            0.5/1,%
+            1.5/2,%
+            3.0/n%
+        }{%
+            \pic[%
+                %label={west:{Test}}
+            ]   at (\inletsWall,\y) {openPort};
+
+            \node[%
+                anchor=east,
+                xshift=-0.5cm
+            ]   at (\inletsWall,\y)
+                {$(\gsub{massFlowRate}{inlet})_{\index}$};
+        }
+
+        % Outlets
+        \foreach \y/\index in {%
+            1.5/1,%
+            2.5/2,%
+            4.0/n%
+        }{%
+            \pic[%
+                %label={west:{Test}}
+            ]   at (\outletsWall,\y) {openPort};
+
+            \node[%
+                anchor=west,
+                xshift=0.5cm
+            ]   at (\outletsWall,\y)
+                {$(\gsub{massFlowRate}{outlet})_{\index}$};
+        }
+
+        % Heat reservoirs
+        \foreach \x/\index in {%
+            1.5/1,%
+            3.5/2,%
+            6.5/n%
+        }{%
+
+            \coordinate (heatPosition) at (\x,5);
+
+            \begin{scope}[%
+                shift={(heatPosition)}
+            ]
+
+                \node[%
+                    draw,
+                    rectangle,
+                    minimum width=2.4cm,
+                    minimum height=1.0cm,
+                    fill=red!20
+                ]   (thermalReservoir) at ++(0,1cm)
+                    {\state{\gls{temperature}}{\index}};
+
+                \node[%
+                    draw,
+                    fill=red!20,
+                    single arrow,
+                    anchor=west,
+                    rotate=-90,
+                    minimum height=1.2cm,
+                    minimum width=1.2cm,
+                    single arrow head extend=0.1cm,
+                    xshift=-0.01cm,
+                    label={[
+                        anchor=west,
+                        xshift=0.2cm
+                    ]north:{
+                        $\gls{heatTransfer}_{\index}$
+                    }}
+                ]   (heatFlow) at (thermalReservoir.south)
+                    {};
+
+            \end{scope}
+        }
+
+        % Environment reservoir
+        \coordinate (envReservoirPosition) at (2,0);
+
+        \begin{scope}[%
+            shift={(envReservoirPosition)}
+        ]
+
+            \coordinate (thermalReservoir) at ++(0,-1.5cm);
+
+            \node[%
+                draw,
+                fill=green!20,
+                single arrow,
+                anchor=west,
+                rotate=90,
+                minimum height=1.5cm,
+                minimum width=1.2cm,
+                single arrow head extend=0.1cm,
+                xshift=1.1cm,
+                label={[
+                    anchor=east,
+                    xshift=-0.2cm
+                ]north:{
+                    \gsub{heatTransfer}{environmentState}
+                }}
+            ]   (heatFlow) at (thermalReservoir)
+                {};
+
+            \node[%
+                draw,
+                cloud,
+                minimum width=6.0cm,
+                minimum height=2.5cm,
+                fill=green!20,
+            ]   at (thermalReservoir)
+                {%
+                };
+
+            \node[%
+            ]   (label) at (thermalReservoir)
+                {%
+                    Meio ambiente, \gsub{temperature}{environmentState}
+                };
+
+        \end{scope}
+
+        \node[%
+            draw,
+            fill=blue!40,
+            single arrow,
+            anchor=west,
+            rotate=-90,
+            minimum height=2.5cm,
+            minimum width=1.5cm,
+            single arrow head extend=0.15cm,
+            xshift=-0.5cm,
+            label={[
+                anchor=north,
+                xshift=0.2cm
+            ]east:{
+                \gsub{workTransfer}{controlVolume}
+            }}
+        ]   (workFlow) at (6,0.0)
+            {};
+
+        % Control volume
+        \node[%
+            text width=4cm,
+            align=center,
+            font=\large
+        ]   (labelControlVolume) at (4cm,2.5cm)
+        {
+            \textbf{Volume de controle}\\[\baselineskip]
+            $
+                \displaystyle
+                \DDt{
+                    \gsub{totalEnergy}{controlVolume}
+                }
+                \,\,\,\,\,
+                \DDt{
+                    \gsub{entropy}{controlVolume}
+                }
+            $
+        };
+
+        % Boundary
+        \draw[%
+            thin,
+            dashed,
+            rounded corners
+        ]   (\inletsWall,0)++(-1pt,-1pt)
+            rectangle
+            ($(\outletsWall,5cm)+(1pt,1pt)$) coordinate (pinBoundary);
+
+        \node[%
+            text width=1.7cm,
+            align=center,
+            anchor=south west,
+            xshift=0.5cm,
+            yshift=0.5cm
+        ]   (labelBoundary) at (pinBoundary)
+            {%
+                \textbf{Fronteira do volume de controle}
+            };
+
+        \draw[indication]
+            (labelBoundary.west)
+            to[out=180,in=45]
+            (pinBoundary);
+
+
+        \draw[dotted,thick] (-0.25cm,2.0cm) -- ++(0,0.45cm);
+        \draw[dotted,thick] (8.25cm,3.0cm) -- ++(0,0.45cm);
+        \draw[dotted,thick] (4.8,6.0cm) -- ++(0.45cm,0);
+    \end{tikzpicture}
+\end{document}

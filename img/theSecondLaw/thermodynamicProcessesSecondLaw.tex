@@ -1,0 +1,165 @@
+% Author: Iago Lessa de Oliveira (February, 2022)
+\documentclass[margin=5pt]{standalone}
+
+    \usepackage{siunitx}
+    \usepackage{../../tikz-local-config}
+
+    \usepackage{glossaries-extra}
+    \usepackage{glossaries-ext}
+    \usepackage{tensor-operators}
+
+        \loadglsentries{../../thermo-glossary.tex}
+        \loadglsentries{../../thermo-acronyms.tex}
+
+\begin{document}
+
+    \begin{tikzpicture}[%
+        scale=2
+    ]
+
+        \node[%
+            text=red,
+            draw=black,
+            fill=white,
+            circle
+        ]   (state1) at (0,0)
+            {1};
+
+        \node[%
+            text=red,
+            draw=black,
+            fill=white,
+            circle
+        ]   (state2) at (2,1)
+            {2};
+
+
+        \begin{scope}[on background layer]
+            \draw[%
+                blue!70,
+                very thick,
+                hobby,
+                postaction={decorate},
+                decoration={%
+                    markings,
+                    mark=at position 0.2 with{%
+                        \node[left] {$\idiff{\gls{heatTransfer}}_{A}$};
+                    },
+                    mark=at position 0.4 with{%
+                        \node[left]
+                            {$
+                                \dfrac{
+                                    \idiff{\gls{heatTransfer}}_{A}
+                                }{
+                                    \gls{temperature}}
+                            $};
+                    },
+                    mark=at position 0.7 with{%
+                        \node[below] {\textbf{A}};
+                    }
+                }
+            ]   plot coordinates {
+                    (state1)
+                    (0.1,0.1)
+                    (0.7,1.2)
+                    (state2)
+                };
+
+            \draw[%
+                red!70,
+                dashed,
+                very thick,
+                quick hobby,
+                postaction={decorate},
+                decoration={%
+                    markings,
+                    mark=at position 0.2 with{%
+                        \node[left] {$\idiff{\gls{heatTransfer}}_{D}$};
+                    },
+                    mark=at position 0.5 with{%
+                        \node[left]
+                            {$
+                                \dfrac{
+                                    \idiff{\gls{heatTransfer}}_{D}
+                                }{
+                                    \gls{temperature}
+                                }
+                            $};
+                    },
+                    mark=at position 0.7 with{%
+                        \node[below] {\textbf{D}};
+                    }
+                }
+            ]   plot coordinates {
+                    (state1)
+                    (-0.1,0.1)
+                    (0.5,1.5)
+                    (0.8,1.8)
+                    (state2)
+                };
+
+            \draw[%
+                green!50!black,
+                thick,
+                quick hobby,
+                postaction={decorate},
+                decoration={%
+                    markings,
+                    mark=at position 0.3 with{%
+                        \node[right]
+                            {$
+                                \dfrac{
+                                    \idiff{\gls{heatTransfer}}_{B}
+                                }{
+                                    \gls{temperature}
+                                }
+                            $};
+                    },
+                    mark=at position 0.5 with{%
+                        \node[right] {$\idiff{\gls{heatTransfer}}_{B}$};
+                    },
+                    mark=at position 0.7 with{%
+                        \node[below] {\textbf{B}};
+                    }
+                }
+            ]   plot coordinates {
+                    (state1)
+                    (0.4,0.0)
+                    %(0.7,0.6)
+                    (0.8,0.6)
+                    (state2)
+                };
+
+            \draw[%
+                orange,
+                quick hobby,
+                postaction={decorate},
+                decoration={%
+                    markings,
+                    mark=at position 0.2 with{%
+                        \node[above]
+                            {$
+                                \dfrac{
+                                    \idiff{\gls{heatTransfer}}_{C}
+                                }{
+                                    \gls{temperature}
+                                }
+                            $};
+                    },
+                    mark=at position 0.4 with{%
+                        \node[above] {$\idiff{\gls{heatTransfer}}_{C}$};
+                    },
+                    mark=at position 0.7 with{%
+                        \node[below] {\textbf{C}};
+                    }
+                }
+            ]   plot coordinates {
+                    (state1)
+                    (0.2,-0.4)
+                    (0.8,-0.2)
+                    (0.9,-0.2)
+                    (state2)
+                };
+        \end{scope}
+    \end{tikzpicture}
+\end{document}
