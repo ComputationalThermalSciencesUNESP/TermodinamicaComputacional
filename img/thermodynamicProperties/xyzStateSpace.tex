@@ -1,0 +1,287 @@
+% Author Iago Lessa de Oliveira
+% Based on code published in 
+% https://tex.stackexchange.com/questions/479814/a-diagram-about-partial-derivatives-of-fx-y
+\documentclass[tikz,border=3.14mm]{standalone}
+
+    \usepackage{siunitx}
+    \usepackage{../../tikz-local-config}
+
+    \usepackage{glossaries-extra}
+    \usepackage{glossaries-ext}
+    \usepackage{tensor-operators}
+
+        \loadglsentries{../../thermo-glossary.tex}
+        \loadglsentries{../../thermo-acronyms.tex}
+
+\begin{document}
+    \begin{tikzpicture}[
+        bullet/.style={circle,fill,inner sep=1pt},
+        declare function={%
+            f(\x,\y)=2 - 0.5*pow(\x-1.25,2) - 0.5*pow(\y-1,2);
+        }
+    ]
+
+    \begin{axis}[%
+        view={150}{45},
+        colormap/blackwhite,
+        axis lines=middle,
+        zmax=2.2,
+        zmin=0,
+        xmin=-0.2,
+        xmax=2.4,
+        ymin=-0.2,
+        ymax=2,
+        xlabel=$x$,
+        ylabel=$y$,
+        zlabel=$z$,
+        xtick=\empty,
+        ytick=\empty,
+        ztick=\empty
+    ]
+
+        \def\xmin{0.6};
+        \def\xmax{2.0};
+
+        \def\ymin{0.5};
+        \def\ymed{1.2};
+        \def\ymax{2.0};
+
+        \def\xpoint{1.75};
+        \def\ypoint{1.2};
+
+        % Part of the surface
+        \addplot3[
+            surf,
+            %shader=faceted interp,
+            %shader=interp,
+            domain=\xmin:\xmax,
+            domain y=\ymin:\ymed,
+            opacity=0.4
+        ]   {f(x,y)};
+
+        % Coordinate lines
+        \draw[%
+            thin,
+            dashed
+        ]   (\xpoint,0,0)
+            node[above left] {$x_0$}
+            --
+            (\xpoint,\ymed,0)
+            node[bullet] (b1) {}
+            --
+            (0,\ymed,0)
+            node[above right] {$y_0$}
+            (\xpoint,\ymed,0)
+            --
+            (\xpoint,\ymed,{f(\xpoint,\ymed)})
+            node[bullet] {};
+
+        % Angled line
+        \draw[%
+            shorten <= -1.25cm,
+            shorten >= -1.25cm,
+        ]   (\xpoint,\ymed,{f(\xpoint,\ymed)})
+            coordinate (thePoint)
+            --
+            (0.75,\ymed,{f(1.75,1.2)+0.5}) coordinate[pos=0.5] (aux1);
+
+        % Constant y plane
+        \draw[%
+            %black,
+            dashed,
+            %upper left=gray!80!black,
+            %upper right=gray!60,
+            %lower left=gray!60,
+            %lower right=gray!80!black
+        ]   (\xmax,\ymed,{f(\xmax,\ymed)})
+            --
+            (\xmax,\ymed,0)
+            --
+            (\xpoint,\ymed,0)
+            (\xmin,\ymed,0)
+            --
+            (\xmin,\ymed,{f(\xmin,\ymed)});
+
+
+        \draw[thin, dashed]
+            (thePoint)
+            --
+            ++(-1.75,0,0) coordinate (tipParallelXAxis);
+
+        \pic[%
+            draw,
+            <->,
+            %anchor=west,
+            %"$\propto \theta$",
+            %angle eccentricity=3.0
+        ]   {angle=tipParallelXAxis--thePoint--aux1};
+
+        % Rest of the surface
+        \addplot3[%
+            surf,
+            %shader=interp,
+            domain=\xmin:\xmax,
+            domain y=\ymed:\ymax,
+            opacity=0.4
+        ]   {f(x,y)};
+
+        % Cut line on the surface
+        \addplot3[
+            thick,
+            domain=\xmin:\xmax,
+            samples y=1
+        ]   ({x},\ymed,{f(x,\ymed)});
+
+    \end{axis}
+
+    \draw [%
+        latex-
+    ]   (aux1)
+        --
+        ++(-1,1)
+        node[%
+            above,
+            align=center
+        ]   {%
+                Inclinação na direção $x$\\
+                $\dfrac{\partial z}{\partial x}\bigg|_{(x_0,y_0)}$
+            };
+
+    \node[%
+        anchor=north west
+    ]   at (b1) {$(x_0,y_0)$};
+
+
+    \begin{axis}[%
+        xshift=7.5cm,
+        view={150}{45},
+        colormap/blackwhite,
+        axis lines=middle,
+        zmax=2.2,
+        zmin=0,
+        xmin=-0.2,
+        xmax=2.4,
+        ymin=-0.2,
+        ymax=2,
+        xlabel=$x$,
+        ylabel=$y$,
+        zlabel=$z$,
+        xtick=\empty,
+        ytick=\empty,
+        ztick=\empty
+    ]
+
+        \def\xmin{0.6};
+        \def\xmed{1.2};
+        \def\xmax{2.0};
+
+        \def\ymin{0.5};
+        \def\ymax{2.0};
+
+        \def\xpoint{1.75};
+        \def\ypoint{1.2};
+
+        % Part of the surface
+        \addplot3[
+            surf,
+            %shader=faceted interp,
+            %shader=interp,
+            domain=\xmin:\xmed,
+            domain y=\ymin:\ymax,
+            opacity=0.4
+        ]   {f(x,y)};
+
+        % Coordinate lines
+        \draw[%
+            thin,
+            dashed
+        ]   (\xmed,0,0)
+            node[above left] {$x_0$}
+            --
+            (\xmed,\ypoint,0)
+            node[bullet] (b2) {}
+            --
+            (0,\ypoint,0)
+            node[above right] {$y_0$}
+            (\xmed,\ypoint,0)
+            --
+            (\xmed,\ypoint,{f(\xmed,\ypoint)})
+            node[bullet] {};
+
+        % Angled line
+        \draw[%
+            shorten <= -1.50cm,
+            shorten >= -1.25cm,
+        ]   (\xmed,\ypoint,{f(\xmed,\ypoint)})
+            coordinate (thePoint2)
+            --
+            (\xmed,0.2,{f(\xmed,\ypoint)+0.2}) coordinate[pos=0.5] (aux2);
+
+        % Constant x plane
+        \draw[%
+            %black,
+            dashed,
+            %upper left=gray!80!black,
+            %upper right=gray!60,
+            %lower left=gray!60,
+            %lower right=gray!80!black
+        ]   (\xmed,\ymax,{f(\xmed,\ymax)})
+            --
+            (\xmed,\ymax,0)
+            --
+            (\xmed,\ypoint,0)
+            (\xmed,\ymin,0)
+            --
+            (\xmed,\ymin,{f(\xmed,\ymin)});
+
+        \draw[thin, dashed]
+            (thePoint2)
+            --
+            ++(0,-1.5,0) coordinate (tipParallelYAxis);
+
+        \pic[%
+            %draw,
+            <->,
+            %anchor=west,
+            %"$\propto \theta$",
+            %angle eccentricity=3.0
+        ]   {angle=aux2--thePoint2--tipParallelYAxis};
+
+        % Rest of the surface
+        \addplot3[%
+            surf,
+            %shader=interp,
+            domain=\xmed:\xmax,
+            domain y=\ymin:\ymax,
+            opacity=0.4
+        ]   {f(x,y)};
+
+        % Cut line on the surface
+        \addplot3[
+            thick,
+            %domain=\xmin:\xmax,
+            domain=\ymin:\ymax,
+            samples y=1,
+        ]   (\xmed,{x},{f(\xmed,x)});
+
+    \end{axis}
+
+    \draw [%
+        latex-
+    ]   (aux2)
+        --
+        ++(0.3,1)
+        node[%
+            above,
+            align=center
+        ]   {%
+                Inclinação na direção $y$\\
+                $\dfrac{\partial z}{\partial y}\bigg|_{(x_0,y_0)}$
+            };
+
+    \node[%
+        anchor=north east
+    ]   at (b2) {$(x_0,y_0)$};
+
+    \end{tikzpicture}
+\end{document}
