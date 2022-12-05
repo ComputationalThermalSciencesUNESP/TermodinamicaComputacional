@@ -1,0 +1,1122 @@
+% * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * %
+%
+%  Thermodynamic variables and definitions
+%
+% * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * %
+
+% Sub and superscripts
+\newglossaryentry{numberDoF}{
+    type=latin,
+    name={\ensuremath{V}},
+    description={Degrees of freedom of a heterogeneous thermodynamical system},
+    unit={-}
+}
+\newglossaryentry{inlet}{
+    type=subscript,
+    name={\ensuremath{e}},
+    description={Indicates inlet variables}
+}
+\newglossaryentry{outlet}{
+    type=subscript,
+    name={\ensuremath{s}},
+    description={Indicates outlet variables}
+}
+\newglossaryentry{reversible}{
+    type=superscript,
+    name={\ensuremath{\mathrm{rev}}},
+    description={Indicates a reversible process}
+}
+\newglossaryentry{irreversible}{
+    type=superscript,
+    name={\ensuremath{\mathrm{irrev}}},
+    description={Indicates an irreversible process}
+}
+\newglossaryentry{saturated}{
+    type=subscript,
+    name={\ensuremath{\mathit{SAT}}},
+    description={Indicates a saturated state}
+}
+\newglossaryentry{satLiquid}{
+    type=subscript,
+    name={\ensuremath{l}},
+    description={Indicates the liquid-satured state}
+}
+\newglossaryentry{satVapor}{
+    type=subscript,
+    name={\ensuremath{v}},
+    description={Indicates the vapor-satured state}
+}
+\newglossaryentry{satSolid}{
+    type=subscript,
+    name={\ensuremath{s}},
+    description={Indicates the solid-satured state}
+}
+\newglossaryentry{compressedLiquid}{
+    type=subscript,
+    name={\ensuremath{\mathit{LC}}},
+    description={Indicates compressed liquid states}
+}
+\newglossaryentry{critical}{
+    type=subscript,
+    name={\ensuremath{C}},
+    description={Indicates the critical state}
+}
+\newglossaryentry{triple}{
+    type=subscript,
+    name={\ensuremath{triplo}},
+    description={Indicates the triple point}
+}
+\newglossaryentry{reduced}{
+    type=subscript,
+    name={\ensuremath{r}},
+    description={Indicates reduced thermodinamic properties}
+}
+\newglossaryentry{substance}{
+    type=subscript,
+    name={\ensuremath{i}},
+    description={Indicates a substance}
+}
+\newglossaryentry{controlVolume}{
+    type=subscript,
+    name={\ensuremath{\textsc{vc}}},
+    description={Indicates a control-volume quantity}
+}
+\newglossaryentry{environmentState}{
+    type=subscript,
+    name={\ensuremath{0}},
+    description={%
+        Indicates a the state of the environment or surrounding of a
+        system
+    }
+}
+\newglossaryentry{hotReservoir}{
+    type=subscript,
+    name={\ensuremath{H}},
+    description={Indicates the properties of a \enquote{hot} reservoir}
+}
+\newglossaryentry{coldReservoir}{
+    type=subscript,
+    name={\ensuremath{L}},
+    description={Indicates the properties of a \enquote{cold} reservoir}
+}
+\newglossaryentry{cyclicMachine}{
+    type=subscript,
+    name={\ensuremath{M}},
+    description={Indicates a cyclic thermal machine}
+}
+\newglossaryentry{refrigerator}{
+    type=subscript,
+    name={\ensuremath{R}},
+    description={Indicates a refrigerator}
+}
+\newglossaryentry{heatPump}{
+    type=subscript,
+    name={\ensuremath{BC}},
+    description={Indicates a heat pump}
+}
+\newglossaryentry{CarnotCycle}{
+    type=subscript,
+    name={\ensuremath{C}},
+    description={Indicates a property of the cycle of Carnot}
+}
+\newglossaryentry{base}{
+    type=hidden,
+    name={\ensuremath{b}},
+    description={Indicates a property at a reference arbitrary base}
+}
+
+% ---------------------------------------------------------------------------
+\newglossaryentry{vaporQuality}{
+    type=latin,
+    name={\ensuremath{x}},
+    description={%
+        Vapor quality or vapor mass fraction of a saturated liquid-vapor mixture
+    },
+    unit={\si{\pascal}}
+}
+\newglossaryentry{gasConstant}{
+    type=latin,
+    name={\ensuremath{R}},
+    description={%
+        Constant of a specific gas
+    },
+    unit={\si{\kilo\joule\per\kilo\gram\per\kelvin}}
+}
+\newglossaryentry{universalGasConstant}{
+    type=latin,
+    name={\ensuremath{\molar{R}}},
+    description={%
+        Universal constant of gases
+    },
+    unit={\si{\kilo\joule\per\kilo\mol\per\kelvin}}
+}
+\newglossaryentry{compressibilityFactor}{
+    type=latin,
+    name={\ensuremath{Z}},
+    description={Compressibiility factor},
+    unit={-}
+}
+\newglossaryentry{PitzerAcentricFactor}{
+    type=greek,
+    name={\ensuremath{\omega}},
+    description={Pitzer's acentric factor},
+    unit={-}
+}
+\newglossaryentry{WuPolarFactor}{
+    type=latin,
+    name={\ensuremath{Y}},
+    description={Wu-Stiel's polarity factor},
+    unit={-}
+}
+\newglossaryentry{pressure}{
+    type=latin,
+    name={\ensuremath{P}},
+    description={Pressure field of a fluid flow},
+    unit={\si{\pascal}}
+}
+
+\newglossaryentry{massFlowRate}{
+    type=latin,
+    name={\ensuremath{\transferRate{mass}}},
+    description={Mass flow rate},
+    unit={\si{\kilo\gram\per\second}}
+}
+
+% Thermodynamic properties
+\newglossaryentry{numberMoles}{
+    type=latin,
+    name={\ensuremath{n}},
+    description={Number of moles of a species $i$ in a system},
+    unit={\si{\mol}}
+}
+\newglossaryentry{numberSpecies}{
+    type=latin,
+    name={\ensuremath{N}},
+    description={Number of moles of a species $i$ in a system},
+    unit={-}
+}
+\newglossaryentry{numberPhases}{
+    type=latin,
+    name={\ensuremath{p}},
+    description={Number of phases in a heterogeneous mixture},
+    unit={-}
+}
+\newglossaryentry{specificVolume}{
+    type=latin,
+    name={\ensuremath{v}},
+    description={Specific volume -- volume per mass},
+    unit={\si{\cubic\meter\per\kilogram}}
+}
+\newglossaryentry{modifiedReducedVolume}{
+    type=hidden,
+    name={\ensuremath{\gls{specificVolume}^{'}_{\gls{reduced}}}},
+    description={Modified specific volume used for the reduced definition},
+    unit={\si{-}}
+}
+\newglossaryentry{totalEnergy}{
+    type=latin,
+    name={\ensuremath{E}},
+    description={Total energy of a system},
+    unit={\si{\joule}}
+}
+\newglossaryentry{kineticEnergy}{
+    type=latin,
+    name={\ensuremath{E_c}},
+    description={Kinetic energy of a system},
+    unit={\si{\joule}}
+}
+\newglossaryentry{potentialEnergy}{
+    type=latin,
+    name={\ensuremath{E_p}},
+    description={Potential energy of a system},
+    unit={\si{\joule}}
+}
+\newglossaryentry{internalEnergy}{
+    type=latin,
+    name={\ensuremath{U}},
+    description={Internal energy of a system},
+    unit={\si{\joule}}
+}
+\newglossaryentry{intInternalEnergy}{
+    type=latin,
+    name={\ensuremath{u}},
+    description={Intensive internal energy of a system},
+    unit={\si{\joule\per\kilo\gram}}
+}
+\newglossaryentry{intTotalEnergy}{
+    type=latin,
+    name={\ensuremath{e}},
+    description={Intensive total energy of a system},
+    unit={\si{\joule\per\kilo\gram}}
+}
+\newglossaryentry{enthalpy}{
+    type=latin,
+    name={\ensuremath{H}},
+    description={Enthalpy of a system},
+    unit={\si{\joule}}
+}
+\newglossaryentry{intEnthalpy}{
+    type=latin,
+    name={\ensuremath{h}},
+    description={Intensive enthalpy of a system},
+    unit={\si{\joule\per\kilo\gram}}
+}
+
+\newglossaryentry{entropy}{
+    type=latin,
+    name={\ensuremath{S}},
+    description={Entropy of a system},
+    unit={\si{\joule\per\kelvin}}
+}
+\newglossaryentry{intEntropy}{
+    type=latin,
+    name={\ensuremath{s}},
+    description={Intensive entropy of a system},
+    unit={\si{\joule\per\kilo\gram\per\kelvin}}
+}
+
+\newglossaryentry{HelmholtzFreeEnergy}{
+    type=latin,
+    name={\ensuremath{A}},
+    description={Helmholtz free-energy of a system},
+    unit={\si{\joule}}
+}
+\newglossaryentry{intHelmholtzFreeEnergy}{
+    type=latin,
+    name={\ensuremath{a}},
+    description={Intensive Helmholtz free-energy of a system},
+    unit={\si{\joule\per\kilo\gram}}
+}
+
+\newglossaryentry{GibbsFreeEnergy}{
+    type=latin,
+    name={\ensuremath{G}},
+    description={Gibbs free-energy of a system},
+    unit={\si{\joule}}
+}
+\newglossaryentry{intGibbsFreeEnergy}{
+    type=latin,
+    name={\ensuremath{g}},
+    description={Intensive Gibbs free-energy of a system},
+    unit={\si{\joule\per\kilo\gram}}
+}
+
+\newglossaryentry{entropyCreated}{
+    type=latin,
+    name={\ensuremath{S_{gen}}},
+    description={%
+        Entropy created or generated in a process undergone by a system
+    },
+    unit={\si{\joule\per\kelvin}}
+}
+\newglossaryentry{intEntropyCreated}{
+    type=latin,
+    name={\ensuremath{s_{gen}}},
+    description={%
+        Intensive entropy created or generated in a process undergone by a
+        system
+    },
+    unit={\si{\joule\per\kelvin}}
+}
+\newglossaryentry{entropyCreatedRate}{
+    type=latin,
+    name={\ensuremath{{\transferRate{entropy}}_{gen}}},
+    description={%
+        Entropy created or generated in a process undergone by a system
+    },
+    unit={\si{\watt\per\kelvin}}
+}
+\newglossaryentry{intEntropyCreatedRate}{
+    type=latin,
+    name={\ensuremath{\dot{s}_{gen}}},
+    description={%
+        Intensive entropy created or generated in a process undergone by a
+        system
+    },
+    unit={\si{\watt\per\kelvin}}
+}
+
+\newglossaryentry{chemicalPotential}{
+    type=greek,
+    name={\ensuremath{\mu}},
+    description={%
+        Chemical potential of a species crossing the boundary of a system
+    },
+    unit={\si{\joule\per\kelvin}}
+}
+\newglossaryentry{irreversibility}{
+    type=latin,
+    name={\ensuremath{I}},
+    description={Irreversibility of a thermodynamical process},
+    unit={\si{\joule}}
+}
+\newglossaryentry{intIrreversibility}{
+    type=latin,
+    name={\ensuremath{i}},
+    description={Intensive irreversibility},
+    unit={\si{\joule\per\kilo\gram}}
+}
+\newglossaryentry{irreversibilityRate}{
+    type=latin,
+    name={\ensuremath{\dot{I}}},
+    description={Irreversibility rate of a thermodynamical process},
+    unit={\si{\watt}}
+}
+
+\newglossaryentry{thermodynamicProperty}{
+    type=hidden,
+    name={\ensuremath{X}},
+    description={%
+        Generic extensive thermodynamic property of a system
+    },
+    unit={-}
+}
+\newglossaryentry{intThermodynamicProperty}{
+    type=hidden,
+    name={\ensuremath{x}},
+    description={%
+        Generic intensive thermodynamic property of a system
+    },
+    unit={-}
+}
+\newglossaryentry{thermodynamicSubstate}{
+    type=greek,
+    name={\ensuremath{\upsilon}},
+    description={%
+        Generic thermodynamic sub-state of a system, identified as the
+        intensive counterpart of the generalized displacement producing work
+        transfers
+    },
+    unit={-}
+}
+\newglossaryentry{generalizedForce}{
+    type=greek,
+    name={\ensuremath{\tau}},
+    description={Generalized force applied to a system},
+    unit={-}
+}
+\newglossaryentry{generalizedDisplacement}{
+    type=greek,
+    name={\ensuremath{\Upsilon}},
+    description={Generalized displacement applied to a system},
+    unit={-}
+}
+\newglossaryentry{heatTransfer}{
+    type=latin,
+    name={\ensuremath{Q}},
+    description={Heat transfer interaction on the boundary of a system},
+    unit={\si{\joule}}
+}
+
+\newglossaryentry{specificHeatTransfer}{
+    type=latin,
+    name={\ensuremath{q}},
+    description={%
+        Heat transfer interaction on the boundary of a system per unit
+        mass
+    },
+    unit={\si{\joule\per\kilo\gram}}
+}
+\newglossaryentry{heatFlowVector}{
+    type=latin,
+    name={\ensuremath{\vec{q}}},
+    description={%
+        Heat flux or heat flow vector, defined as the heat transfer per unit
+        surface area
+    },
+    unit={\si{\watt\per\square\meter}}
+}
+
+\newglossaryentry{workTransfer}{
+    type=latin,
+    name={\ensuremath{W}},
+    description={Generic work transfer interaction on the boundary of a system},
+    unit={\si{\joule}}
+}
+\newglossaryentry{heatTransferRate}{
+    type=latin,
+    name={\ensuremath{\transferRate{heatTransfer}}},
+    description={Heat transfer rate},
+    unit={\si{\kilo\joule\per\second}}
+}
+\newglossaryentry{workTransferRate}{
+    type=latin,
+    name={\ensuremath{\transferRate{workTransfer}}},
+    description={Work transfer rate},
+    unit={\si{\kilo\joule\per\second}}
+}
+\newglossaryentry{specifcWorkRate}{
+    type=latin,
+    name={\ensuremath{w}},
+    description={Work transfer rate},
+    unit={\si{\kilo\joule\per\kilo\gram}}
+}
+\newglossaryentry{internalMechanicalPower}{
+    type=latin,
+    name={\ensuremath{\dot{w}_{int}}},
+    description={%
+        Internal mechanical power in a system, caused by the stress and
+        deformation
+    },
+    unit={\si{\watt}}
+}
+\newglossaryentry{efficiency}{
+    type=greek,
+    name={\ensuremath{\eta}},
+    description={Generic efficiency of a thermal machine or other system},
+    unit={-}
+}
+\newglossaryentry{performanceCoeff}{
+    type=greek,
+    name={\ensuremath{\beta}},
+    description={%
+        Generic coefficient of performance of a refrigerator or heat pump
+    },
+    unit={-}
+}
+\newglossaryentry{secondLawEfficiency}{
+    type=greek,
+    name={\ensuremath{\gls{efficiency}_{\textsc{ii}}}},
+    description={Efficiency of a thermal system in terms of the Second Law},
+    unit={-}
+}
+\newglossaryentry{numberWorkSources}{
+    type=latin,
+    name={\ensuremath{m}},
+    description={Number of work sources to a system},
+    unit={}
+}
+
+\newglossaryentry{bulkModulus}{
+    type=greek,
+    name={\ensuremath{\kappa}},
+    description={Bulk modulus},
+    unit={\si{\pascal}}
+}
+
+\newglossaryentry{satTemperature}{
+    type=latin,
+    name={\ensuremath{\gls{temperature}_{SAT}}},
+    description={Saturation temperature of a pure substance},
+    unit={\si{\kelvin}}
+}
+\newglossaryentry{satPressure}{
+    type=latin,
+    name={\ensuremath{\gls{pressure}_{SAT}}},
+    description={Saturation pressure of a pure substance},
+    unit={\si{\pascal}}
+}
+
+\newglossaryentry{exergy}{
+    type=latin,
+    name={\ensuremath{E}},
+    description={Generic symbol representing exergy},
+    unit={\si{\joule}}
+}
+\newglossaryentry{exergyRate}{
+    type=latin,
+    name={\ensuremath{\dot{E}}},
+    description={Generic symbol representing exergy rate},
+    unit={\si{\watt}}
+}
+\newglossaryentry{flowExergy}{
+    type=latin,
+    name={\ensuremath{\Psi}},
+    description={Flow exergy},
+    unit={\si{\joule}}
+}
+\newglossaryentry{nonFlowExergy}{
+    type=latin,
+    name={\ensuremath{\Phi}},
+    description={Non-flow exergy},
+    unit={\si{\joule}}
+}
+\newglossaryentry{intFlowExergy}{
+    type=latin,
+    name={\ensuremath{\psi}},
+    description={Intensive flow exergy},
+    unit={\si{\joule\per\kilo\gram}}
+}
+\newglossaryentry{intNonFlowExergy}{
+    type=latin,
+    name={\ensuremath{\varphi}},
+    description={Intensive non-flow exergy},
+    unit={\si{\joule\per\kilo\gram}}
+}
+\newglossaryentry{specificHeat}{
+    type=latin,
+    name={\ensuremath{C}},
+    description={Specific heat of a pure substance},
+    unit={\si{\joule\per\kilo\gram\per\kelvin}}
+}
+\newglossaryentry{constVolumeSpecificHeat}{
+    type=latin,
+    name={\ensuremath{\gls{specificHeat}_{\gls{volume}}}},
+    description={Constant-volume specific heat of a pure substance},
+    unit={\si{\joule\per\kilo\gram\per\kelvin}}
+}
+\newglossaryentry{constPressureSpecificHeat}{
+    type=latin,
+    name={\ensuremath{\gls{specificHeat}_{\gls{pressure}}}},
+    description={Constant-pressure specific heat of a pure substance},
+    unit={\si{\joule\per\kilo\gram\per\kelvin}}
+}
+\newglossaryentry{fugacity}{
+    type=latin,
+    name={\ensuremath{f}},
+    description={Fugacity of a system},
+    unit={\si{\pascal}}
+}
+\newglossaryentry{activity}{
+    type=latin,
+    name={\ensuremath{a}},
+    description={Activity of a component in a mixture},
+    unit={-}
+}
+\newglossaryentry{volumeExpansivity}{
+    type=greek,
+    name={\ensuremath{\alpha_{\gls{pressure}}}},
+    description={Volume expansivity of a system},
+    unit={\si{\per\kelvin}}
+}
+\newglossaryentry{isothermalCompressibility}{
+    type=greek,
+    name={\ensuremath{\beta_{\gls{temperature}}}},
+    description={Isothermal compressibility of a system},
+    unit={\si{\per\pascal}}
+}
+% I used this other definition in the weakly compressible fluid model
+%\newglossaryentry{isothermalCompressibility}{
+%    type=greek,
+%    name={\ensuremath{\psi}},
+%    description={Isothermal compressibility of a fluid},
+%    unit={\si{\square\second\per\square\meter}}
+%}
+
+\newglossaryentry{adiabaticCompressibility}{
+    type=greek,
+    name={\ensuremath{\beta_{\gls{entropy}}}},
+    description={Adiabatic compressibility of a system},
+    unit={\si{\per\pascal}}
+}
+\newglossaryentry{moleFraction}{
+    type=latin,
+    name={\ensuremath{y}},
+    description={%
+        Mole fraction of a component in a mixture
+    },
+    unit={-}
+}
+\newglossaryentry{mixture}{
+    type=subscript,
+    name={\ensuremath{m}},
+    description={%
+        Indicates a proprty of a homogeneous mixture.
+    }
+}
+\newglossaryentry{reactionExtent}{
+    type=greek,
+    name={\ensuremath{\varepsilon}},
+    description={Extent of a chemical reaction (or degree of advancement)},
+    unit={\si{\mol}}
+}
+\newglossaryentry{formationEnthalpy}{
+    type=greek,
+    name={\ensuremath{\molar{\gls{intEnthalpy}}^{\mathrm{0}}_{f}}},
+    description={Enthalpy of formation of a component},
+    unit={\si{\kilo\joule\per\kilo\mol}}
+}
+\newglossaryentry{formationGibbsFreeEnergy}{
+    type=greek,
+    name={\ensuremath{\molar{\gls{intGibbsFreeEnergy}}^{\mathrm{0}}_{f}}},
+    description={Gibbs free energy of formation of a component},
+    unit={\si{\kilo\joule\per\kilo\mol}}
+}
+\newglossaryentry{absoluteEntropy}{
+    type=greek,
+    name={\ensuremath{\molar{\gls{intEntropy}}^{\mathrm{0}}}},
+    description={Absolute entropy of a substance},
+    unit={\si{\kilo\joule\per\kilo\mol\per\kelvin}}
+}
+\newglossaryentry{standardState}{
+    type=superscript,
+    name={\ensuremath{\mathrm{0}}},
+    description={Indicates the standard state}
+}
+\newglossaryentry{standardTemperature}{
+    type=latin,
+    name={\ensuremath{\gsuper{temperature}{standardState}}},
+    description={Standard temperature, \SI{298.15}{\kelvin}},
+    unit={\si{\kelvin}}
+}
+\newglossaryentry{standardPressure}{
+    type=latin,
+    name={\ensuremath{\gsuper{pressure}{standardState}}},
+    description={Standard pressure, \SI{0.1}{\mega\pascal}},
+    unit={\si{\mega\pascal}}
+}
+\newglossaryentry{carbonQuantity}{
+    type=hidden,
+    name={\ensuremath{\alpha}},
+    description={%
+        Quantity of carbon atoms in the generic
+        $\mathrm{C}_{\alpha}\mathrm{H}_{\beta}\mathrm{O}_{\gamma}\mathrm{N}_{\delta}$
+    },
+    unit={-}
+}
+\newglossaryentry{hidrogenQuantity}{
+    type=hidden,
+    name={\ensuremath{\beta}},
+    description={%
+        Quantity of hidrogen atoms in the generic
+        $\mathrm{C}_{\alpha}\mathrm{H}_{\beta}\mathrm{O}_{\gamma}\mathrm{N}_{\delta}$
+    },
+    unit={-}
+}
+\newglossaryentry{oxygenQuantity}{
+    type=hidden,
+    name={\ensuremath{\gamma}},
+    description={%
+        Quantity of oxigen atoms in the generic
+        $\mathrm{C}_{\alpha}\mathrm{H}_{\beta}\mathrm{O}_{\gamma}\mathrm{N}_{\delta}$
+    },
+    unit={-}
+}
+\newglossaryentry{nitrogenQuantity}{
+    type=hidden,
+    name={\ensuremath{\delta}},
+    description={%
+        Quantity of nitrogen atoms in the generic
+        $\mathrm{C}_{\alpha}\mathrm{H}_{\beta}\mathrm{O}_{\gamma}\mathrm{N}_{\delta}$
+    },
+    unit={-}
+}
+\newglossaryentry{chemicalGenericFuel}{
+    type=hidden,
+    name={\ensuremath{%
+        \mathrm{C}_{\alpha}\mathrm{H}_{\beta}\mathrm{O}_{\gamma}\mathrm{N}_{\delta}%
+    }},
+    description={%
+        Chemical formula for a generic fuel
+    },
+    unit={-}
+}
+\newglossaryentry{airFuelRatio}{
+    type=latin,
+    name={\ensuremath{\mathit{AC}}},
+    description={Air-fuel ratio},
+    unit={-}
+}
+\newglossaryentry{stoichiometricAirFuelRatio}{
+    type=latin,
+    name={\ensuremath{\mathit{AC_s}}},
+    description={Stoichiometric or theoretical air-fuel ratio},
+    unit={-}
+}
+\newglossaryentry{molarAirFuelRatio}{
+    type=latin,
+    name={\ensuremath{a_s}},
+    description={Stoichiometric molar air-fuel ratio},
+    unit={-}
+}
+\newglossaryentry{fuelAirRatio}{
+    type=latin,
+    name={\ensuremath{\mathit{CA}}},
+    description={Fuel-air ratio},
+    unit={-}
+}
+\newglossaryentry{stoichiometricFuelAirRatio}{
+    type=latin,
+    name={\ensuremath{\mathit{CA_s}}},
+    description={Stoichiometric or theoretical fuel-air ratio},
+    unit={-}
+}
+\newglossaryentry{equivalenceRatio}{
+    type=latin,
+    name={\ensuremath{\phi}},
+    description={Air-fuel equivalent ratio},
+    unit={-}
+}
+\newglossaryentry{rEquivalenceRatio}{
+    type=latin,
+    name={\ensuremath{\lambda}},
+    description={Reciprocal of the air-fuel equivalent ratio},
+    unit={-}
+}
+\newglossaryentry{chProducts}{
+    type=subscript,
+    name={\ensuremath{P}},
+    description={Indicates the products of a chemical reaction}
+}
+\newglossaryentry{chReactants}{
+    type=subscript,
+    name={\ensuremath{R}},
+    description={Indicates the reactants of a chemical reaction}
+}
+\newglossaryentry{flameAdiabaticTemperature}{
+    type=latin,
+    name={\ensuremath{\gls{temperature}_{ad}}},
+    description={Flame adiabatic temperature},
+    unit={\si{\kelvin}}
+}
+\newglossaryentry{combustionEnthalpy}{
+    type=greek,
+    name={\ensuremath{%
+        \molar{\gls{intEnthalpy}}^{\mathrm{0}}_{\gls{chReactants}\gls{chProducts}}}%
+    },
+    description={Enthalpy of combustion of a fuel},
+    unit={\si{\kilo\joule\per\kilo\mol}}
+}
+\newglossaryentry{LagrangeMultiplyer}{
+    type=greek,
+    name={\ensuremath{\lambda}},
+    description={Lagrange multiplyer},
+    unit={-}
+}
+\newglossaryentry{chEquilibriumConstant}{
+    type=latin,
+    name={\ensuremath{K}},
+    description={Constant of equilibrium of a chemical reaction},
+    unit={-}
+}
+\newglossaryentry{PoyntingFactor}{
+    type=latin,
+    name={\ensuremath{F}},
+    description={Poynting factor},
+    unit={-}
+}
+% * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  %
+%
+%   LIST OF SYMBOLS                                                            %
+%
+% * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  %
+
+% Sub and superscripts                                                         %
+\newglossaryentry{average}{
+    type=subscript,
+    name={\ensuremath{avg}},
+    description={Indicates a time and surface averaged variable}
+}
+\newglossaryentry{maximum}{
+    type=subscript,
+    name={\ensuremath{max}},
+    description={Indicates the maximum value of a sample}
+}
+\newglossaryentry{minimum}{
+    type=subscript,
+    name={\ensuremath{min}},
+    description={Indicates the minimum value of a sample}
+}
+\newglossaryentry{percentil95}{
+    type=subscript,
+    name={\ensuremath{95}},
+    description={Indicates the 95-percentile of a distribution}
+}
+\newglossaryentry{percentil99}{
+    type=subscript,
+    name={\ensuremath{99}},
+    description={Indicates the 99 percentil of a distribution}
+}
+% Coordinate systems
+\newglossaryentry{radial}{
+    type=hidden,
+    name={\ensuremath{r}},
+    description={Radial coordinate of the cylindric coordinate system}
+}
+\newglossaryentry{azimuthal}{
+    type=hidden,
+    name={\ensuremath{\theta}},
+    description={Circunferential coordinate of the cylindric coordinate system}
+}
+\newglossaryentry{z}{
+    type=hidden,
+    name={\ensuremath{z}},
+    description={Axial coordinate of the cylindric coordinate system}
+}
+
+
+\newglossaryentry{xAxis}{
+    type=hidden,
+    name={\ensuremath{x}},
+    description={%
+        First coordinate of the Cartesian system (normally, $x_1$)
+    }
+}
+\newglossaryentry{yAxis}{
+    type=hidden,
+    name={\ensuremath{y}},
+    description={%
+        Second coordinate of the Cartesian system (normally, $x_2$)
+    }
+}
+\newglossaryentry{zAxis}{
+    type=hidden,
+    name={\ensuremath{z}},
+    description={%
+        Third coordinate of the Cartesian system (normally, $x_3$)
+    }
+}
+
+% Velocities
+\newglossaryentry{velocity}{
+    type=latin,
+    name={\ensuremath{\vec{V}}},
+    description={Material velocity},
+    unit={\si{\meter\per\second}}
+}
+\newglossaryentry{angularVelocity}{
+    type=latin,
+    name={\ensuremath{\omega}},
+    description={Angular velocity},
+    unit={\si{\radian\per\second}}
+}
+\newglossaryentry{velocityComp}{
+    type=hidden,
+    name={\ensuremath{V}},
+    description={Material velocity},
+    unit={\si{\meter\per\second}}
+}
+\newglossaryentry{xVelocity}{
+    type=latin,
+    name={\ensuremath{V_x}},
+    description={%
+        Velocity component on the x direction of the spatial coordinates
+    },
+    unit={\si{\meter\per\second}}
+}
+\newglossaryentry{yVelocity}{
+    type=latin,
+    name={\ensuremath{V_y}},
+    description={%
+        Velocity component on the y direction of the spatial coordinates
+    },
+    unit={\si{\meter\per\second}}
+}
+\newglossaryentry{zVelocity}{
+    type=latin,
+    name={\ensuremath{V_z}},
+    description={%
+        Velocity component on the z direction of the spatial coordinates
+    },
+    unit={\si{\meter\per\second}}
+}
+% General-purposes variables                                                   %
+\newglossaryentry{time}{
+    type=latin,
+    name={\ensuremath{t}},
+    description={Time},
+    unit={\si{\second}}
+}
+\newglossaryentry{temperature}{
+    type=latin,
+    name={\ensuremath{T}},
+    description={Temperature},
+    unit={\si{\kelvin}}
+}
+\newglossaryentry{deltat}{
+    type=greek,
+    name={\ensuremath{\Delta \gls{time}}},
+    description={Time-step},
+    unit={\si{\second}}
+}
+\newglossaryentry{mass}{
+    type=latin,
+    name={\ensuremath{m}},
+    description={Mass},
+    unit={\si{\kilo\gram}}
+}
+
+\newglossaryentry{molecularMass}{
+    type=latin,
+    name={\ensuremath{M}},
+    description={Molecular mass},
+    unit={\si{\kilo\mol}}
+}
+\newglossaryentry{length}{
+    type=latin,
+    name={\ensuremath{L}},
+    description={Length},
+    unit={\si{\meter}}
+}
+\newglossaryentry{perimeter}{
+    type=latin,
+    name={\ensuremath{p}},
+    description={Perimeter of a contour},
+    unit={\si{\meter}}
+}
+\newglossaryentry{surfaceArea}{
+    type=latin,
+    name={\ensuremath{A}},
+    description={Area of a surface or region},
+    unit={\si{\square\meter}}
+}
+\newglossaryentry{volume}{
+    type=latin,
+    name={\ensuremath{V}},
+    description={Volume of a region in spatial coordinates},
+    unit={\si{\cubic\meter}}
+}
+\newglossaryentry{surface}{
+    type=latin,
+    name={\ensuremath{S}},
+    description={%
+        Surface of volume \gls{volume}, $\partial V$, in spatial coordinates
+    },
+    unit={\si{\square\meter}}
+}
+\newglossaryentry{density}{
+    type=greek,
+    name={\ensuremath{\rho}},
+    description={Density},
+    unit={\si{\kilo\gram\per\cubic\meter}}
+}
+\newglossaryentry{force}{
+    type=latin,
+    name={\ensuremath{\vec{f}}},
+    description={Force vector},
+    unit={\si{\newton}}
+}
+\newglossaryentry{linearMomentum}{
+    type=latin,
+    name={\ensuremath{\vec{p}}},
+    description={Linear momentum vector},
+    unit={\si{\kilo\gram\meter\per\second}}
+}
+\newglossaryentry{forceComp}{
+    type=hidden,
+    name={\ensuremath{f}},
+    description={Component of the force vector},
+    unit={\si{\newton}}
+}
+\newglossaryentry{traction}{
+    type=latin,
+    name={\ensuremath{\vec{t}}},
+    description={Traction vector},
+    unit={\si{\newton\per\square\meter}}
+}
+\newglossaryentry{CauchyStress}{
+    type=greek,
+    name={\ensuremath{\tensor{\sigma}}},
+    description={Cauchy stress tensor},
+    unit={\si{\pascal}}
+}
+\newglossaryentry{CauchyStressComp}{
+    type=hidden,
+    name={\ensuremath{\sigma}},
+    description={Cauchy stress tensor component},
+    unit={\si{\pascal}}
+}
+\newglossaryentry{bodyForcesPerVolume}{
+    type=latin,
+    name={\ensuremath{\vec{f}_b}},
+    description={Body forces per unit volume},
+    unit={\si{\newton\per\cubic\meter}}
+}
+\newglossaryentry{bodyForcesPerMass}{
+    type=latin,
+    name={\ensuremath{\vec{b}}},
+    description={Body forces per unit mass},
+    unit={\si{\newton\per\kilo\gram}}
+}
+\newglossaryentry{bodyForcesPerMassComp}{
+    type=hidden,
+    name={\ensuremath{{b}}},
+    description={Body forces per unit mass component},
+    unit={\si{\newton\per\kilo\gram}}
+}
+\newglossaryentry{gravity}{
+    type=latin,
+    name={\ensuremath{\vec{g}}},
+    description={Gravitational acceleration vector},
+    unit={\si{\meter\per\square\second}}
+}
+\newglossaryentry{gravityComp}{
+    type=hidden,
+    name={\ensuremath{g}},
+    description={Gravitational acceleration vector},
+    unit={\si{\meter\per\square\second}}
+}
+
+
+% * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  %
+%
+%  Arbitrary Largrangian-Eulerian description
+%
+% * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  %
+
+% Coordinates - vectors and components
+% -> Euler coordinates are also known as spatial coordinates
+% -> Lagrange coordinates are known as material coordinates
+% -> Mesh coordinates are known as referential or ALE coordinates
+% -> The sufix 'Comp' indicates the component symbol of a vector or tensor
+\newglossaryentry{particle}{
+    type=latin,
+    name={\ensuremath{\xi}},
+    description={Representation of a material particle},
+    unit={-}
+}
+\newglossaryentry{EulerCoord}{
+    type=latin,
+    name={\ensuremath{\vec{x}}},
+    description={Eulerian or spatial coordinates system (Cartesian coordinates)},
+    unit={\si{\meter}}
+}
+\newglossaryentry{meshCoord}{
+    type=greek,
+    name={\ensuremath{\gvec{\chi}}},
+    description={%
+        Referential coordinates system for the arbitrary Lagrangian-Eulerian
+        description
+    },
+    unit={\si{\meter}}
+}
+\newglossaryentry{LagrangeCoord}{
+    type=greek,
+    name={\ensuremath{\gvec{\xi}}},
+    description={Lagrangian or material coordinates system},
+    unit={\si{\meter}}
+}
+\newglossaryentry{meshCoordComp}{
+    type=hidden,
+    name={\ensuremath{\chi}},
+    description={Referential, ALE or mesh coordinates system components},
+    unit={\si{\meter}}
+}
+\newglossaryentry{EulerCoordComp}{
+    type=hidden,
+    name={\ensuremath{x}},
+    description={Eulerian or spatial coordinates components},
+    unit={\si{\meter}}
+}
+\newglossaryentry{LagrangeCoordComp}{
+    type=hidden,
+    name={\ensuremath{\xi}},
+    description={Lagrangian or material coordinates components},
+    unit={\si{\meter}}
+}
+
+% Domains and boundary symbols
+\newglossaryentry{domain}{
+    type=greek,
+    name={\ensuremath{\Omega}},
+    description={Spatial solution domain},
+    unit={\si{\cubic\meter}}
+}
+\newglossaryentry{domainBoundary}{
+    type=greek,
+    name={\ensuremath{\Gamma}},
+    description={Boundary of the domain \gls{domain}},
+    unit={\si{\square\meter}}
+}
+\newglossaryentry{nablaSpatial}{
+    type=other,
+    name={\ensuremath{\nabla}},
+    description={Nabla operator in Eulerian coordinates},
+    unit={\si{\per\meter}}
+}
+\newglossaryentry{nablaMaterial}{
+    type=other,
+    name={\ensuremath{\nabla_0}},
+    description={Nabla operator in the initial material coordinates},
+    unit={\si{\per\meter}}
+}

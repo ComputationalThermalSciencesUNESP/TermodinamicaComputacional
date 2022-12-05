@@ -1,0 +1,117 @@
+\ProvidesPackage{tikz-local-config}
+
+    \usepackage{tikz}
+	\usepackage{tikz-dimline}
+    \usepackage{tikz-3dplot}
+
+		\usetikzlibrary{shapes}
+		\usetikzlibrary{shapes.arrows}
+		\usetikzlibrary{shapes.misc}
+        \usetikzlibrary{shapes.geometric}
+		\usetikzlibrary{positioning}
+		\usetikzlibrary{spy}
+		\usetikzlibrary{arrows}
+		\usetikzlibrary{arrows.meta}
+		\usetikzlibrary{fit}
+		\usetikzlibrary{backgrounds}
+		\usetikzlibrary{arrows.meta}
+		\usetikzlibrary{decorations.markings}
+		\usetikzlibrary{decorations.text}
+		\usetikzlibrary{calc}
+		\usetikzlibrary{plotmarks}
+		\usetikzlibrary{intersections}
+		\usetikzlibrary{angles}
+		\usetikzlibrary{quotes}
+		\usetikzlibrary{patterns}
+		\usetikzlibrary{shadings}
+		\usetikzlibrary{shadows.blur}
+        \usetikzlibrary{matrix}
+        \usetikzlibrary{3d}
+        \usetikzlibrary{hobby}
+        %\usetikzlibrary{external}
+        %    \tikzexternalize % activate!
+
+    % Styles
+    %\tikzstyle{indication} = [
+    %    thin,
+    %    -Latex
+    %]
+
+    \tikzstyle{indication} = [
+        %ultra thin,
+        -{Latex}
+    ]
+
+    %\tikzset{%
+    %    indication/.style={%
+    %        thin,
+    %        ->
+    %        %-{Latex[%
+    %        %    scale=1,
+    %        %    length=1.5,
+    %        %    width=1.5
+    %        %]}
+    %    }
+    %}
+
+    \tikzset{%
+        font={\scriptsize\selectfont}
+    }
+
+
+    % PGF Plots setup
+    \usepackage{pgfplots}
+	%\usepackage{pgfplotstable}
+    %    \usepgflibrary{curvilinear}
+    %    \usepgfmodule{nonlineartransformations}
+    %    \usepgfplotslibrary{statistics}
+    %    \usepgfplotslibrary{groupplots}
+    %    \usepgfplotslibrary{dateplot}
+
+        \pgfplotsset{%
+            compat=newest,
+    %        %tick label style={
+    %        %    font=\small\selectfont
+    %        %},
+	%        %label style={
+    %        %    font=\small
+    %        %},
+	%        %legend style={
+    %        %    font=\small
+    %        %},
+    %        table/search path={
+    %        },
+	%        grid style={%
+	%            dashed,
+	%            gray!20
+	%        },
+	%        %no markers, %this option must be local
+	%        minor tick num=4,
+	%        %xtick pos=left,
+	%        %ytick pos=left,
+	%        scaled x ticks=false,
+	%        scaled y ticks=false,
+    %        %yticklabel style={
+    %        %    /pgf/number format/fixed,
+    %        %    /pgf/number format/fixed zerofill,
+    %        %    /pgf/number format/precision=2
+    %        %},
+    %        schematic-plot/.style={
+    %            axis lines=middle,
+    %            %enlarge x limits=0.10,
+    %            %enlarge y limits=0.10,
+    %            every axis x label/.style={%
+    %                at={(current axis.right of origin)},
+    %                anchor=north east
+    %            },
+    %            every axis y label/.style={%
+    %                at={(current axis.above origin)},
+    %                anchor=north east
+    %            },
+    %            ticks=none,
+    %            minor tick num=0,
+    %            yticklabels={},
+    %            xticklabels={},
+    %            clip=false
+    %        }
+        }

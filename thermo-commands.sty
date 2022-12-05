@@ -1,0 +1,128 @@
+\ProvidesPackage{thermo-commands}
+
+    \newcommand\defeq{\stackrel{\mathrm{def}}{=}}
+
+    % Typeset the state of a thermodynamic property
+    \newcommand{\state}[2]{%
+        % 1 -> variable label
+        % 2 -> state label
+        \ensuremath{%
+            #1^{(#2)}%
+        }%
+    }
+
+    % Typeset the phase of a thermodynamic property
+    \newcommand{\phase}[2]{%
+        % 1 -> variable
+        % 2 -> phase label
+        \ensuremath{%
+            #1^{(#2)}%
+        }%
+    }
+
+    % Finite process
+    \newcommand{\fprocess}[4]{%
+        % 1 -> variable label
+        % 2 -> start state label
+        % 3 -> end state label
+        % 4 -> process label (optional)
+        \ifthenelse{\isempty{#4}}{% if process id is empty
+            \ensuremath{%
+                \prescript{}{#2}{\gls{#1}}_{#3}%
+            }%
+        }{% else
+            \ensuremath{%
+                \prescript{}{#2}{\gls{#1}}_{#3#4}^{}%
+            }%
+        }
+    }
+
+    \newcommand{\transferRate}[1]{%
+        \ensuremath{%
+            \dot{\gls{#1}}%
+        }%
+    }
+
+    % Command for correct position of overbar in math
+    % https://tex.stackexchange.com/questions/314238/bar-and-overline
+    % It only works with X! ???
+    %\makeatletter
+    %\newcommand*{\shortbar}{}%
+    %\DeclareRobustCommand*{\shortbar}{%
+    %  \mathpalette\@shortbar{}%
+    %}
+    %\newcommand*{\@shortbar}[2]{%
+    %  % #1: math style
+    %  % #2: unused (empty)
+    %  \sbox0{$#1\mathrm{X}\m@th$}%
+    %  \sbox2{$#1X\m@th$}%
+    %  \rlap{%
+    %    \hbox to\wd2{%
+    %      \hfill
+    %      $\overline{%
+    %        \vrule width 0pt height\ht0 %
+    %        \kern\wd0 %
+    %      }$%
+    %    }%
+    %  }%
+    %  \copy2 %
+    %}
+    %\makeatother
+
+    \newcommand{\mathitbar}[1]{\,\overline{\!{#1}}} % overline short italic
+    %\newcommand{\olsi}[1]{\mskip.5\thinmuskip\overline{\mskip-.5\thinmuskip {#1} \mskip-.5\thinmuskip}\mskip.5\thinmuskip} % overline short
+
+    % Define a molal property
+    \newcommand{\molar}[1]{\ensuremath{\mathitbar{#1}}}
+
+    % Define the ideal-gas version of a thermodynamic property
+    \newcommand{\idealgasprop}[1]{%
+        \ifthenelse{%
+            \equal{#1}{constVolumeSpecificHeat}%
+            \or%
+            \equal{#1}{constPressureSpecificHeat}%
+        }{%
+            \ensuremath{%
+                \gls{#1}_{\mathit{0}}%
+            }%
+        }{%
+            \ensuremath{%
+                \gls{#1}^{*}%
+            }%
+        }%
+    }
+
+    % Molal version of the ideal-gas property
+    \newcommand{\molalidealgasprop}[1]{%
+        \ensuremath{%
+            \molar{\gls{#1}}^{*}%
+        }%
+    }
+
+    % Represent the property of a component in a mixture
+    \newcommand{\propcomp}[2]{%
+        % 1 -> variable label
+        % 2 -> component label (an index, not a glossary entry)
+        \ensuremath{%
+            \gls{#1}_{#2}%
+        }%
+    }
+
+    % Represent the 'molal' property of a component in a mixture
+    \newcommand{\molalpropcomp}[2]{%
+        % 1 -> variable label
+        % 2 -> component label (an index, not a glossary entry)
+        \ensuremath{%
+            \molar{\gls{#1}}_{#2}%
+        }%
+    }
+
+    % Represent the partial molal property of a component
+    \newcommand{\partmolalprop}[2]{%
+        % 1 -> variable label
+        % 2 -> component label (an index, not a glossary entry)
+        \ensuremath{%
+            \mathitbar{\gls{#1}}_{#2}%
+        }%
+    }
+

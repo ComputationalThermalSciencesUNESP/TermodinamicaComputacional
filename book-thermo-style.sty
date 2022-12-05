@@ -1,0 +1,217 @@
+\ProvidesPackage{book-thermo-style}
+
+    % Appantçy, if I use the language option, babel does not get it,
+    % so I have to use it in the docclass header
+    %\usepackage[brazil]{babel}
+    \usepackage{babel}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+
+    % REAL Times New Roman font, just uncomment these lines
+    \usepackage[no-math]{fontspec}
+        %\setromanfont{Times New Roman}
+        \setsansfont{Arial}
+        %\setmonofont{Courier New}
+
+    \usepackage{lmodern}
+
+    \usepackage[%
+        top=3cm,
+        bottom=3cm,
+        left=2cm,
+        right=2cm
+    ]{geometry}
+
+    % HEaders and footer for book
+    \usepackage{fancyhdr}
+
+        % Set page style and clear header
+        \pagestyle{fancy}
+        \fancyhf{}
+
+        % Remove rules in header and footer
+        \renewcommand{\headrulewidth}{0pt}
+        \renewcommand{\footrulewidth}{0pt}
+
+        % For double-sided documents
+        % L - left, R- right, O - odd pages, E - even pages
+        \fancyhead[LE,RO]{}
+        \fancyhead[RE,LO]{%
+            \textsc{Termodinâmica Aplicada}%
+        }
+
+        \fancyfoot[RE,LO]{%
+            \textsc{Termodinâmica Computacional}%
+        }
+        \fancyfoot[LE,RO]{\thepage}
+
+        % For one-sided documents
+        % Header
+        %\rhead{}
+        %\lhead{Termodinâmica Aplicada}
+
+        %% Footer
+        %\rfoot{\thepage}
+        %\lfoot{Termodinâmica Computacional}
+
+    \usepackage[%
+        style=authoryear,%numeric-comp,% this is the global one, for cit and bibliography
+        %bibstyle=authoryear,
+        %citestyle=numeric-comp,
+        backend=biber,
+        %natbib=true,
+        %isbn=false,
+        %url=false
+    ]{biblatex}
+
+        \addbibresource{bib/thermodynamics-books.bib}
+
+    % For a better justification of text
+    \usepackage{microtype}
+
+    \usepackage{indentfirst}
+    \usepackage[nodisplayskipstretch]{setspace}
+
+    \usepackage{amsmath}
+    \usepackage{mathtools}
+
+        \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+        \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+        \DeclarePairedDelimiter{\normOne}{\lVert}{\rVert_{1}}
+        \DeclarePairedDelimiter{\normTwo}{\lVert}{\rVert_{2}}
+
+        % Command to write Roman numerals
+        \newcommand{\romannumber}[1]{%
+            \textup{\uppercase\expandafter{\romannumeral#1}}%
+        }
+
+    \usepackage{graphicx}
+    \usepackage{standalone}
+
+    \usepackage{csquotes}
+    \usepackage{import}
+    \usepackage{pdfpages}
+
+    % floatrow automatically centers the figures
+    \usepackage{floatrow}
+
+        \floatsetup[figure]{%
+            capposition=bottom
+        }
+
+        \floatsetup[subfigure]{%
+            capposition=bottom
+        }
+
+        \floatsetup[table]{%
+            capposition=top
+        }
+
+    \usepackage{caption}
+    \usepackage{subcaption}
+
+        %\captionsetup[figure]{%
+        %    %textformat=simple,
+        %    %labelsep=endash,
+        %    position=bottom,
+        %    justification=centering,
+        %    size=footnotesize
+        %}
+
+        %\captionsetup[table]{%
+        %    %labelsep=endash,
+        %    position=top,
+        %    justification=centering,
+        %    size=footnotesize
+        %}
+
+        %\captionsetup[subfigure]{%
+        %    position=b
+        %}
+
+    % Dedication environment
+    \newenvironment{dedication}
+    {\clearpage                     % we want a new page
+        \thispagestyle{empty}       % no header and footer
+        \vspace*{\stretch{3}}       % some space at the top
+        \itshape                    % the text is in italics
+        \raggedleft                 % flush to the right margin
+    }
+    {\par                           % end the paragraph
+        \vspace{\stretch{1}}        % space at bottom is three times that at the top
+        \clearpage                  % finish off the page
+    }
+
+    \usepackage{siunitx}
+
+        \sisetup{%
+            %detect-all,
+            output-decimal-marker={,},
+            %separate-uncertainty=true,
+            %group-separator = {,},
+            group-minimum-digits=8,
+            per-mode=symbol, %per-mode=reciprocal,
+            %parse-numbers=false,
+            %range-phrase=--,
+            %range-units=single,
+            %table-space-text-post = **,
+            %multi-part-units=single
+        }
+
+    \usepackage[%
+        toc=false,
+        sort=standard,
+        acronyms,
+        nopostdot,
+        nonumberlist,
+        nogroupskip
+    ]{glossaries-extra}
+
+    \usepackage{glossaries-ext}
+
+    %\glsaddall
+    \glsdisablehyper
+
+    % To write chemical formulas
+    \usepackage{chemformula}
+
+    % To avoid large spacing with two-sided documents
+    \raggedbottom
+    \usepackage[bottom]{footmisc}
+
+    % Command '\command' for monospace font
+    \makeatletter
+    \DeclareRobustCommand\ttfamily
+    {\not@math@alphabet\ttfamily\mathtt
+        \fontfamily\ttdefault\selectfont\hyphenchar\font=-1\relax}
+    \makeatother
+    \DeclareTextFontCommand{\command}{\ttfamily\hyphenchar\font=45\relax}
+
+    \usepackage{color}
+    \usepackage{xcolor}
+
+        \colorlet{mylightblue}{blue!20}
+        \colorlet{myblue}{blue!50!black}
+        \colorlet{mydarkblue}{blue!30!black}
+        \colorlet{mylightred}{red!10}
+        \colorlet{myred}{red!50!black}
+        \colorlet{mydarkred}{red!60!black}
+        \colorlet{mydarkgreen}{green!30!black}
+
+    % To start from zero chapter
+    \setcounter{chapter}{-1}
+
+    % To customize labels of enumerations
+    \usepackage[shortlabels]{enumitem}
+
+    \usepackage{multirow}
+    \usepackage{booktabs}
+    \usepackage{tabularx}
+
+    % To customize the verbatim env
+    \usepackage{fancyvrb}
+
+    % New code environement
+    \newenvironment{computercode}
+        {\begin{Verbatim}[baselinestretch=1.0]}
+        {\end{Verbatim}}
