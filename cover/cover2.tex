@@ -1,0 +1,70 @@
+\begin{titlepage}
+\begin{center}
+    \begin{tikzpicture}[%
+        remember picture,
+        overlay,
+        line width=0mm
+    ]
+        % draw the orange strip
+        \fill[
+            draw=black,
+            shade,
+            top color=blue!70!black,
+            bottom color=blue!50
+        ]   (current page.south west)
+            --
+            ++(0.3\paperwidth,0)
+            -- coordinate (pinMainTitle)
+            ++(0,\paperheight)
+            --
+            (current page.north west)
+            --
+            cycle;
+
+        \node[%
+            %draw,
+            anchor=west,
+            text width=0.7\paperwidth,
+            align=center,
+            font=\fontsize{40}{52}\selectfont,
+            yshift=0.1\paperheight
+        ]   (mainTitle) at (pinMainTitle)
+            {
+                {\textbf{%
+                    \sffamily
+                    Termodinâmica\\
+                    Computacional%
+                    }
+                }
+            };
+
+        \node[%
+            draw,
+            fill=white,
+            anchor=south east,
+            text width=0.5\paperwidth,
+            align=center,
+            outer sep=0.1\paperwidth,
+            inner sep=0.02\paperwidth,
+            blur shadow={shadow blur steps=5}
+        ]   (subTitle) at (current page.south east)
+            {
+                {
+                    \sffamily
+                    \fontsize{30}{20}\selectfont
+                    \textbf{Termodinâmica\\[\baselineskip]
+                    Aplicada}
+                }\\[2\baselineskip]
+                {
+                    \sffamily
+                    \fontsize{14}{11}\selectfont
+                    \textit{%
+                        \textbf{Emanuel Rocha Woiski}\\[\baselineskip]
+                        UNESP - Ilha Solteira
+                    }
+                }
+            };
+
+    \end{tikzpicture}
+\end{center}
+\end{titlepage}

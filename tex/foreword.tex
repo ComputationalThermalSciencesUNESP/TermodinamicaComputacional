@@ -1,0 +1,217 @@
+\chapter*{A Abertura}
+\addcontentsline{toc}{chapter}{A Abertura}
+
+
+    Os textos tradicionais de Termodinâmica geralmente contém tabelas de uma ou
+    dupla entrada que representam os valores das principais propriedades
+    termodinâmicas para um número selecionado de substâncias puras, usualmente
+    com valores escalonados da sua temperatura e/ou pressão. Mediante uma, duas
+    ou mais interpolações lineares, o aluno poderá então obter o valor das
+    propriedades sob valores intermediários. De fato, essa abordagem abriga
+    alguns graves problemas. Em primeiro lugar, o aluno ficará com uma sensação
+    de que as tabelas foram entregues aos humanos por alguma divindade, quando
+    na verdade elas provêm de equações cujos valores foram calculados em um
+    passado recente por meio de \enquote{grandes} computadores. Deve ser
+    recordado aqui que ainda nas décadas de 80-90, o computador
+    \enquote{pessoal} era um objeto raro e caro. Em segundo lugar, o aluno será
+    praticamente incapaz de resolver problemas cujo modelagem vá além de um
+    sistema com uma equação --- uma incógnita (ou eventualmente duas equações -
+    duas incógnitas), o que não lhe permite vislumbrar o alcance e as
+    potencialidades oferecidas a ele pelo Postulado dos Estados e pelo conceito
+    de propriedade termodinâmica de substância pura como função
+    \enquote{conhecida} de apenas duas propriedades termodinâmicas
+    independentes (no caso de sistemas compressíveis simples).  Em terceiro
+    lugar, para o aluno lidar com uma substância pura e suas propriedades já
+    parece complicado, como poderá este investigar problemas mais complexos que
+    contenham misturas reativas e não reativas, com ou sem equilíbrio de fases,
+    ideais ou modeladas como pseudo-substâncias puras? Em quarto lugar, e de
+    certa forma como um corolário de todas as razões anteriores, ao aluno
+    ficarão vedados os problemas que envolvem otimização e simulação de
+    sistemas termodinâmicos, ou seja, exatamente aqueles que são mais
+    interessantes e com os quais ele certamente irá se defrontar na sua vida
+    real!
+
+    Sabe-se que hoje em dia os computadores portáteis possuem muito mais poder
+    computacional (sob qualquer métrica!) dos que os mainframes de outrora e
+    que, além disso, são acessíveis a todo mundo, de modo que as tabelas
+    termodinâmicas tradicionais deveriam seguir a mesma rota das tabelas
+    trigonométricas e logarítmicas --- a extinção. Para contribuir com esse
+    processo, no presente texto nós pretendemos resgatar um certo
+    fundamentalismo, pelo qual as propriedades termodinâmicas serão
+    determinadas a partir de uma equação de estado generalizada, utilizando-se
+    extensivamente os conceitos de fator de compressibilidade, coeficiente de
+    fugacidade e propriedades residuais. Além disso, modelos pseudo-críticos
+    apropriados serão utilizados no caso de misturas homogêneas não ideais.
+
+    Dentre todas as equações de estado generalizadas disponíveis na literatura,
+    optamos pela implementação da equação de estado de Lee-Kesler com a
+    correção dada pelo fator acêntrico \gls{PitzerAcentricFactor} de Pitzer e
+    pelo fator \gls{WuPolarFactor} de Wu-Stiel, quando disponível, para uma
+    correção adicional que se aplica a moléculas polares, como a água. Obtendo
+    erros relativos da ordem de no máximo \SI{5}{\percent} quando comparados
+    com as tabelas, não estamos tão preocupados, no momento, com uma extrema
+    acuracidade dos valores obtidos, mas com o desenvolvimento de um
+    procedimento geral e rigoroso para o tratamento de sistemas termodinâmicos
+    com o uso de computador.
+
+    Por outro lado, escolhemos para a implementação a linguagem Python, por ser
+    dinâmica, interpretada, de fácil sintaxe e aprendizado, muito alto nível,
+    orientada a objetos, multiplataforma e de fonte aberta. Com as bibliotecas
+    apropriadas, Scientific Python é cada vez mais empregado no meio
+    científico, seja em substituição ao proprietário e dispendioso MATLAB, seja
+    como linguagem de ligação para as linguagens compiladas, como Fortran, C e
+    C++.  De fato, pode-se afirmar que, segundo a métrica do conhecido TIOBE,
+    Python corresponde à quinta ou sexta linguagem de programação mais
+    utilizada no mundo.
+
+    Este texto é fruto de uma concepção cujo objetivo foi fornecer ao leitor
+    cujo tempo é limitado e precioso, um substrato rigoroso, embora sucinto às
+    vezes, omisso em partes, sobre o qual ele ou ela poderá, em primeiro lugar,
+    modelar e estruturar as possíveis soluções para problemas de Termodinâmica
+    Clássica de complexidade acima do trivial e, em segundo lugar, construir um
+    caminho para o aprofundamento em qualquer direção que mais lhe interessar
+    ou necessitar, sempre utilizando o computador como a ferramenta principal.
+
+    Isto posto, dividimos a obra em dez capítulos e uma Introdução. No Capítulo
+    de Introdução (\cref{chap:introduction}), a partir dos conceitos mais
+    fundamentais de sistema, vizinhança, fronteira, propriedades e interações
+    de energia e massa com a vizinhança na fronteira: trabalho, calor e vazão
+    de massa, definimos a Termodinâmica de forma a satisfazer os nossos
+    propósitos. No \cref{chap:pureSubstances}, apresentamos de forma intuitiva
+    o comportamento das propriedades termodinâmicas mensuráveis pressão,
+    temperatura e volume específico da água considerada como uma substância
+    pura seja em uma única fase, seja na na forma de mistura heterogênea de
+    fases, com grande ênfase em líquido e vapor.  Elaboramos a respeito das
+    equações de estado, definimos o fator de compressibilidade e introduzimos o
+    conceito de que existem regiões onde a substância pura pode ser considerada
+    gás perfeito.  Finalmente, generalizamos o comportamento de líquido e vapor
+    para quaisquer substâncias puras e apresentamos a equação de estado
+    generalizada. De posse dessas ideias, analisamos o comportamento geral das
+    substâncias puras, dispensando algum espaço para a região em torno da
+    saturação líquido-vapor e salientamos, a partir do conceito de equação de
+    estado e de gás perfeito, que, para todas as substâncias puras haverá uma
+    região de comportamento de gás (quase) perfeito. Apresentamos em seguida,
+    no \cref{chap:theFirstLaw}, a Primeira Lei para sistema fechado e aberto,
+    com a qual definimos as propriedades energia interna e entalpia. Para que o
+    leitor se convença, de uma vez por todas, que uma lei não existe sem a
+    outra, abordamos imediatamente, no \cref{chap:theSecondLaw}, a Segunda Lei
+    para sistema fechado e aberto, abrindo caminho para a importante definição
+    de entropia. Nada mais natural, portanto, que analisemos a combinação da
+    Primeira e da Segunda lei, em seguida, no \cref{chap:exergyAnalysis},
+    quando apresentamos os conceitos de trabalho reversível, irreversibilidade
+    (trabalho perdido) e das propriedades --- combinadas com a vizinhança ---
+    exergia, tanto para fluxo, como não fluxo. Embora a fundamentação anterior
+    seja suficientemente geral, para que possamos resolver problemas de
+    modelagem de problemas que envolvem engenharia de energia,
+    particularizamos, no \cref{chap:thermodynamicProperties}, o nosso universo
+    de trabalho, para sistemas compressíveis simples e, com a ajuda do
+    Postulado dos Estados e de umas poucas ferramentas do Cálculo e de suas
+    consequências para a Termodinâmica, desenvolvemos a importante noção de
+    derivadas parciais, de relação funcional e de integral de linha entre as
+    propriedades termodinâmicas dependentes e independentes.  Definimos as
+    propriedades calores específicos respectivamente a pressão e a volume
+    contantes, expansividade  voumétrica, compressibilidades isotérmica e
+    adiabática, respectivamente e as relações entre elas. Com o objetivo de
+    determinarmos as propriedades não mensuráveis, obtemos então, no
+    \cref{chap:thermodynamicPropComputation}, as formas algébricas para as
+    diferenças (e os desvios residuais) das propriedades termodinâmicas para
+    qualquer substância pura: energia interna, entalpia e entropia, em
+    coordenadas adimensionais generalizadas, as propriedades reduzidas.
+    Desenvolvemos, assim, com o apoio da Regra dos Estados (quase)
+    Correspondentes, o fator de compressibilidade. Apresentamos algumas
+    equações de estado e, por escolha pessoal, nos fixamos na equação
+    generalizada de Lee-Kesler, que nos leva imediatamente ao fator acêntrico
+    de Pitzer e ao fator de correção \gls{WuPolarFactor} de Wu-Stiel, como uma
+    das estratégias para obter resultados que correspondam melhor aos dados
+    experimentais para as diversas substâncias puras.  Aproveitamos para
+    definir a fugacidade (e o coeficiente de fugacidade) de substâncias puras.
+    Imaginando que o leitor já está dotado da capacidade de obter as
+    (diferenças de) propriedades termodinâmicas de qualquer substância pura,
+    bem como as fugacidades, desde que lhe sejam fornecidos os seus dados do
+    ponto crítico, o fator de Pitzer e a correção de Wu-Stiel, apresentamos o
+    programa \command{\command{LK\_WS\_NR}} (substância pura generalizada) e o
+    pacote \command{\command{LK\_proptermo}}. Este útimo  foi desenvolvido a
+    partir da noção de que as propriedades termodinâmicas não mensuráveis de
+    qualquer substância pura não têm um valor absoluto e portanto dependem de
+    uma base arbitrária.  Utilizando uma base de dados efetivamente embutida no
+    programa e extensível, abrimos assim ao aluno um universo enorme de
+    aplicações envolvendo centenas de substâncias puras, sem a necessidade de
+    lançar mão de uma única tabela sequer. Como uma sequência natural,
+    abordamos, no \cref{chap:homogeneousMixtures}, as misturas homogêneas não
+    reativas de substâncias puras de uma forma bem geral, a partir do Postulado
+    Expandido dos Estados e da importante noção de propriedade molar parcial
+    (ou parcial molar) e da fugacidade do componente na mistura, todos como
+    propriedades intensivas da mistura. Com isso, abrimos espaço para a
+    apresentação dos modelos de soluções ideais e de mistura de gases
+    perfeitos, como casos particulares.  Para o caso destes modelos não se
+    aplicarem, ou até mesmo para a simplificação da resolução de problemas,
+    apresentamos ainda ao leitor o conceito de   pseudo-substância pura, com a
+    escolha de algum modelo pseudo-crítico desde o mais simples, como a regra
+    de Kay, ao razoavelmente sofisticado modelo de Lee-Kesler, que inclui os
+    fatores acêntricos e até mesmo os fatores de Wu-Stiel dos componentes da
+    mistura.  Sob o tópico de misturas reativas, no
+    \cref{chap:homogeneousReactiveMixtures}, discutimos o grau de reação e as
+    reações químicas e a necessidade de bases como as da entalpia de formação e
+    da entropia absoluta. Tomando como exemplo a combustão, incluímos em
+    detalhes uma discussão sobre reações reversíveis, equilíbrio químico e a
+    minimização da função de Gibbs. Assim, mostramos a aplicação do método dos
+    multiplicadores de Lagrange à mistura de produtos de combustão em
+    equilíbrio.  Definimos e discutimos os potenciais químicos e a sua relação
+    com as outras propriedades das misturas, bem como sua determinação por meio
+    das propriedades das substâncias puras em algum estado padrão. Estudamos em
+    seguida o método das constantes de equilíbrio e suas importantes
+    consequências, como o comportamento do equilíbrio químico sob alterações de
+    pressão e temperatura.  Posteriormente, analisamos com algum detalhe, no
+    \cref{chap:heterogeneousMixtures}, novamente a partir da minimização da
+    função de Gibbs, o equilíbrio de fases em misturas heterogêneas
+    multicomponentes, exibindo exemplos de diagramas de fases para misturas
+    binárias. Nesse ponto relembramos a propriedade fugacidade do componente na
+    mistura. Com isso, podemos  discutir o modelo de solução ideal para cada
+    fase da mistura e, finalmente, analisar o modelo extremamente simplificado
+    da regra de Raoult-gás perfeito, o qual pode ser utilizado no equilíbrio de
+    fases líquido-vapor  sob pressões moderadas. No
+    \cref{chap:thermodynamicCycles}, abordamos sucintamente o tópico de Ciclos
+    Termodinâmicos, que deve ser, na verdade, considerado como aplicações de
+    tudo o que foi visto nos capítulos anteriores. Dividimos, então, em: ciclos
+    com mudança de fase de Rankine e de refrigeração por compressão de vapor;
+    os ciclos padrão de ar de Otto, Diesel e Stirling, que modelam sob
+    determinadas limitações os motores de combustão interna; o ciclo padrão de
+    ar de Brayton, que modela os motores de jatos e as turbinas a gás; e os
+    ciclos mistos ou combinados.
+
+    Se seremos bem-sucedidos em nosso propósito de apresentar um texto compacto
+    de Termodinâmica Clássica que auxilie o leitor não especialista na
+    modelagem estruturada dos aspectos termodinâmicos não triviais da realidade
+    e que lhe desperte o interesse para aprender muito mais, só o tempo e a
+    experiência dirão. Porém, se isso porventura ocorrer, remetemos o leitor
+    para a curta Bibliografia comentada ao final da obra para auxiliar na
+    jornada.
+
+    Agradecemos aos colegas professores do Departamento de Engenharia Mecânica,
+    pelo apoio e pela oportunidade que tivemos de elaborar e submeter as
+    versões preliminares do presente texto a uma audiência que, embora de
+    formação em ciências exatas, ainda assim era relativamente heterogênea.
+    Agradecemos especialmente aos nossos amigos e ex-alunos, hoje cientistas,
+    Marcos e Colmeia por haverem respondido tão prontamente às demandas que
+    lhes impusemos quando do início do desenvolvimento dos códigos
+    computacionais em Python. Cremos que, além de
+    \command{\command{LK\_proptermo}} e talvez a clássica Refprop, ainda hoje
+    não existem outras bibliotecas para a determinação de propriedades
+    termodinâmicas de código completamente aberto, cuja fundamentação está ao
+    alcance de qualquer pessoa. Finalmente, estendemos nossos agradecimentos às
+    várias centenas de estudantes das disciplinas Termodinâmica I e II, do
+    Curso de Engenharia Mecânica, que, ao utilizarem o presente texto, nos
+    forneceram a oportunidade de continuamente aperfeiçoá-lo, assim como ao
+    código computacional correspondente.  \command{LK\_proptermo} é de fato uma
+    API de alto nível sobre o código original \command{\command{LK\_WS\_NR}}
+    cujo desenvolvimento foi instigado pelas demandas dos usuários.  Assim como
+    \command{\command{LK\_WS\_NR}}, é importante repetir que o código-fonte de
+    \command{\command{LK\_proptermo}} esteve desde o início disponível a todos
+    que o quisessem. Esperamos sinceramente corresponder às expectativas de
+    todos.
+
+    \begin{center}
+        \textit{Ilha Solteira, aos 07 dias de Janeiro de 2018.}
+
+        \textbf{Emanuel Rocha Woiski}
+    \end{center}

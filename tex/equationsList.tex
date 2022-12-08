@@ -1,0 +1,876 @@
+\chapter*{Formulários}
+\addcontentsline{toc}{chapter}{Formulários}
+
+    \section*{Formulário sobre a Primeira e a Segunda Leis}
+    \addcontentsline{toc}{section}{%
+        Formulário sobre a Primeira e a Segunda Leis%
+    }
+
+    Termodinâmica Computacional -- Prof. Emanuel Rocha Woiski -- UNESP -- Ilha
+    Solteira, SP -- 02/2020.
+
+    \begin{enumerate}
+        \item Primeira Lei da Termodinâmica
+
+        \begin{itemize}
+            \item Definições:
+
+                $
+                    \gls{totalEnergy}
+                    =
+                    \gls{internalEnergy}
+                    +
+                    \gls{kineticEnergy}
+                    +
+                    \gls{potentialEnergy}
+                $
+
+                $
+                    \gls{enthalpy}
+                    =
+                    \gls{intInternalEnergy}
+                    +
+                    \gls{pressure}
+                    \gls{volume}
+                $
+                $\gls{intTotalEnergy} = \frac{\gls{totalEnergy}}{\gls{mass}}$
+                $\gls{intInternalEnergy} = \frac{\gls{internalEnergy}}{\gls{mass}}$
+                $\gls{intEnthalpy} = \frac{\gls{enthalpy}}{\gls{mass}}$
+                $\gls{specificVolume} = \frac{\gls{volume}}{\gls{mass}}$
+
+            com \gls{internalEnergy} -- energia interna e \gls{enthalpy} --
+            entalpia.
+
+            \item Sistema fechado:
+
+                \begin{equation*}
+                    \underset{j}{\sum }{%
+                        \idiff{\gls{heatTransfer}}_j
+                    }
+                    -
+                    \idiff{\gls{workTransfer}}
+                    =
+                    \diff{\gls{totalEnergy}}
+                \end{equation*}
+
+                \begin{equation*}
+                    \underset{j}{\sum }{%
+                        \transferRate{heatTransfer}_j
+                    }
+                    -
+                    \transferRate{workTransfer}
+                    =
+                    \DDt{\gls{totalEnergy}}\,.
+                \end{equation*}
+
+                \begin{equation*}
+                    \underset{j}{\sum }{
+                        \oint{
+                            \idiff{\gls{heatTransfer}}_j
+                        }
+                    }
+                    =
+                    \oint{%
+                        \idiff{\gls{workTransfer}}
+                    }\,
+                    \,\,\,\,
+                    \text{processo cíclico}
+                \end{equation*}
+
+            \item Sistema aberto:
+
+                Conservação de massa:
+
+                \begin{equation*} \label{eq:massConvservationForms}
+                    \diff{\gsub{mass}{controlVolume}}
+                    =
+                    \underset{\gls{inlet}}{\sum }{
+                        \idiff{\gsub{mass}{inlet}}
+                    }
+                    -
+                    \underset{\gls{outlet}}{\sum }{
+                        \idiff{\gsub{mass}{outlet}}
+                    }
+                \end{equation*}
+                %
+                \begin{equation*} \label{eq:massConservationRateForms}
+                    \DDt{\gsub{mass}{controlVolume}}
+                    =
+                    \underset{\gls{inlet}}{\sum }{
+                        \transferRate{mass}_{\gls{inlet}}
+                    }
+                    -
+                    \underset{\gls{outlet}}{\sum }{
+                        \transferRate{mass}_{\gls{outlet}}
+                    }
+                \end{equation*}
+
+                Primeira lei:
+
+                \begin{equation*} \label{eq:firstLawDiffsForms}
+                    \begin{aligned}
+                    \diff{\gsub{totalEnergy}{controlVolume}}
+                    &=
+                    \diff
+                    \left(
+                        \gls{mass}
+                        \gls{intTotalEnergy}
+                    \right)_{\gls{controlVolume}} \\
+                    &=
+                    \underset{\gls{inlet}}{\sum }{
+                        \idiff\gsub{mass}{inlet}
+                        \left(
+                            \gls{intInternalEnergy}
+                            +
+                            \gls{pressure}
+                            \gls{specificVolume}
+                            +
+                            \frac{\gls{velocityComp}^2}{2}
+                            +
+                            \gls{gravityComp}
+                            \gls{zAxis}
+                        \right)_{\gls{inlet}}
+                    }
+                    -
+                    \underset{\gls{outlet}}{\sum }{
+                        \idiff\gsub{mass}{outlet}
+                        \left(
+                            \gls{intInternalEnergy}
+                            +
+                            \gls{pressure}
+                            \gls{specificVolume}
+                            +
+                            \frac{\gls{velocityComp}^2}{2}
+                            +
+                            \gls{gravityComp}
+                            \gls{zAxis}
+                        \right)_{\gls{outlet}}
+                    }
+                    +\\
+                    %
+                    &+
+                    \underset{j \neq 0}{\sum }{
+                        \idiff\gls{heatTransfer}_j
+                    }
+                    +
+                    \idiff\gsub{heatTransfer}{environmentState}
+                    -
+                    \idiff\gsub{workTransfer}{controlVolume}\\
+                    \end{aligned}
+                \end{equation*}
+                %
+                \begin{equation*} \label{eq:firstLawRateForms}
+                    \begin{aligned}
+                    \DDt{\gsub{totalEnergy}{controlVolume}}
+                    &=
+                    \DDt{}
+                    \left(
+                        \gls{mass}
+                        \gls{intTotalEnergy}
+                    \right)_{\gls{controlVolume}} \\
+                    &=
+                    \underset{\gls{inlet}}{\sum }{
+                        \gsub{massFlowRate}{inlet}
+                        \left(
+                            \gls{intInternalEnergy}
+                            +
+                            \gls{pressure}
+                            \gls{specificVolume}
+                            +
+                            \frac{\gls{velocityComp}^2}{2}
+                            +
+                            \gls{gravityComp}
+                            \gls{zAxis}
+                        \right)_{\gls{inlet}}
+                    }
+                    -
+                    \underset{\gls{outlet}}{\sum }{
+                        \gsub{massFlowRate}{outlet}
+                        \left(
+                            \gls{intInternalEnergy}
+                            +
+                            \gls{pressure}
+                            \gls{specificVolume}
+                            +
+                            \frac{\gls{velocityComp}^2}{2}
+                            +
+                            \gls{gravityComp}
+                            \gls{zAxis}
+                        \right)_{\gls{outlet}}
+                    }
+                    +\\
+                    %
+                    &+
+                    \underset{j \neq 0}{\sum }{
+                        \gls{heatTransferRate}_j
+                    }
+                    +
+                    \gsub{heatTransferRate}{environmentState}
+                    -
+                    \gsub{workTransferRate}{controlVolume}\,.\\
+                    \end{aligned}
+                \end{equation*}
+
+            \end{itemize}
+
+        \item Segunda Lei da Termodinâmica
+
+            \begin{itemize}
+                \item Sistema fechado:
+
+                \begin{equation*} \label{eq:secondLawDiffInequalityForms}
+                    \diff{\gls{entropy}}
+                    \ge
+                    \underset{j}{\sum }{
+                        \frac{
+                            \idiff{\gls{heatTransfer}_{j}}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }
+                    }
+                \end{equation*}
+
+                \begin{equation*} \label{eq:secondLawDiffForms}
+                    \diff{\gls{entropy}}
+                    =
+                    \underset{j}{\sum }{
+                        \frac{
+                            \idiff{\gls{heatTransfer}_{j}}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }
+                    }
+                    +
+                    \idiff{\gls{entropyCreated}}
+                    \,\,\,\,
+                    \text{tal que}
+                    \,\,\,\,
+                    \idiff{\gls{entropyCreated}} \ge 0\,.
+                \end{equation*}
+
+                \begin{equation*} \label{eq:secondLawFiniteProcForms}
+                    \Delta \gls{entropy}
+                    =
+                    \state{\gls{entropy}}{2}
+                    -
+                    \state{\gls{entropy}}{1}
+                    =
+                    \underset{j}{\sum }{
+                        \int\limits_1^2
+                        \frac{
+                            \idiff{\gls{heatTransfer}_{j}}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }\bigg)_A
+                    }
+                    +
+                    \frac{
+                        \fprocess{heatTransfer}{1}{2}{\gls{environmentState}}
+                    }{
+                        \gsub{temperature}{environmentState}
+                    }
+                    +
+                    \fprocess{entropyCreated}{1}{2}{A}\,,
+                \end{equation*}
+                %
+                com
+                %
+                \begin{equation*}
+                    \fprocess{entropyCreated}{1}{2}{A}
+                    \ge
+                    0\,.
+                \end{equation*}
+
+                \begin{equation*} \label{eq:secondLawFiniteProc2Forms}
+                    \Delta\gls{entropy}
+                    =
+                    \state{\gls{entropy}}{2}
+                    -
+                    \state{\gls{entropy}}{1}
+                    =
+                    \frac{
+                        \fprocess{heatTransfer}{1}{2}{}
+                    }{
+                        \gls{temperature}
+                    }\,,
+                \end{equation*}
+
+                \begin{equation*} \label{eq:secondLawCycleForms}
+                    0
+                    =
+                    \underset{j}{\sum }{
+                        \oint
+                        \frac{
+                            \idiff{\gls{heatTransfer}_{j}}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }
+                    }
+                    +
+                    \gls{entropyCreated}
+                    \,\,\,\,\,
+                    \text{com}
+                    \,\,\,\,
+                    \gls{entropyCreated} \ge 0 \,,
+                \end{equation*}
+
+                \begin{equation*}
+                    \underset{j}{\sum }{
+                        \oint
+                        \frac{
+                            \idiff{\gls{heatTransfer}_{j}}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }
+                    }
+                    \le
+                    0\,,
+                \end{equation*}
+
+                \item Sistema aberto:
+
+                \begin{equation*} \label{eq:secondLawOpenSystemForms}
+                    \diff{\gsub{entropy}{controlVolume}}
+                    =
+                    \diff
+                    \left(
+                        \gls{mass}
+                        \gls{entropy}
+                    \right)_{\gls{controlVolume}}
+                    =
+                    \underset{\gls{inlet}}{\sum }{
+                        \idiff{\gsub{mass}{inlet}}
+                        \gsub{intEntropy}{inlet}
+                    }
+                    -
+                    \underset{\gls{outlet}}{\sum }{
+                        \idiff{\gsub{mass}{outlet}}
+                        \gsub{intEntropy}{outlet}
+                    }
+                    +
+                    \underset{j \neq \gls{environmentState}}{\sum }{
+                        \frac{
+                            \idiff{\gls{heatTransfer}_{j}}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }
+                    }
+                    +
+                    \frac{
+                        \idiff{\gsub{heatTransfer}{environmentState}}
+                    }{
+                        \gsub{temperature}{environmentState}
+                    }
+                    +
+                    \idiff{\gls{entropyCreated}}\,,
+                    \,\,\,\,
+                    \idiff{\gls{entropyCreated}} \ge 0\,,
+                \end{equation*}
+
+                \begin{equation*} \label{eq:secondLawOpenSystemRateForms}
+                    \DDt{\gsub{entropy}{controlVolume}}
+                    =
+                    \DDt{}
+                    \left(
+                        \gls{mass}
+                        \gls{entropy}
+                    \right)_{\gls{controlVolume}}
+                    =
+                    \underset{\gls{inlet}}{\sum }{
+                        \gsub{massFlowRate}{inlet}
+                        \gsub{intEntropy}{inlet}
+                    }
+                    -
+                    \underset{\gls{outlet}}{\sum }{
+                        \gsub{massFlowRate}{outlet}
+                        \gsub{intEntropy}{outlet}
+                    }
+                    +
+                    \underset{j \neq \gls{environmentState}}{\sum }{
+                        \frac{
+                            \gls{heatTransferRate}_{j}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }
+                    }
+                    +
+                    \frac{
+                        \gsub{heatTransferRate}{environmentState}
+                    }{
+                        \gsub{temperature}{environmentState}
+                    }
+                    +
+                    \gls{entropyCreatedRate}\,,
+                    \,\,\,\,
+                    \gls{entropyCreatedRate} \ge 0\,.
+                \end{equation*}
+
+                \begin{equation*} \label{eq:secondLawIntegratedForms}
+                    \begin{aligned}
+                    \left(
+                        \state{\gls{mass}}{2}
+                        \state{\gls{intEntropy}}{2}
+                        -
+                        \state{\gls{mass}}{1}
+                        \state{\gls{intEntropy}}{1}
+                    \right)_{\gls{controlVolume}}
+                    &=
+                    \underset{\gls{inlet}}{\sum }{
+                        \int\limits_1^2{
+                            \gsub{intEntropy}{inlet}
+                        }\idiff\gsub{mass}{inlet}
+                    }
+                    -
+                    \underset{\gls{outlet}}{\sum }{
+                        \int\limits_1^2{
+                            \gsub{intEntropy}{outlet}
+                        }\idiff\gsub{mass}{outlet}
+                    }
+                    +\\
+                    %
+                    &+
+                    \underset{j \neq \gls{environmentState}}{\sum }{
+                        \int\limits_1^2
+                        \frac{
+                            \gls{heatTransferRate}_{j}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }\bigg)_A
+                    }
+                    +
+                    \frac{
+                        \fprocess{heatTransfer}{1}{2\gls{environmentState}}{A}
+                    }{
+                        \gsub{temperature}{environmentState}
+                    }
+                    +
+                    \fprocess{entropyCreated}{1}{2}{A}\,,
+                    \end{aligned}
+                \end{equation*}
+
+                \begin{equation*} \label{eq:secondLawSteadyStateForms}
+                    \gls{entropyCreatedRate}
+                    =
+                    \underset{\gls{inlet}}{\sum }{
+                        \gsub{massFlowRate}{inlet}
+                        \gsub{intEntropy}{inlet}
+                    }
+                    -
+                    \underset{\gls{outlet}}{\sum }{
+                        \gsub{massFlowRate}{outlet}
+                        \gsub{intEntropy}{outlet}
+                    }
+                    +
+                    \underset{j \neq \gls{environmentState}}{\sum }{
+                        \frac{
+                            \gls{heatTransferRate}_{j}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }
+                    }
+                    +
+                    \frac{
+                        \gsub{heatTransferRate}{environmentState}
+                    }{
+                        \gsub{temperature}{environmentState}
+                    }\,,
+                    \,\,\,\,
+                    \gls{entropyCreatedRate} \ge 0\,.
+                \end{equation*}
+        \end{itemize}
+
+    \end{enumerate}
+
+    \section*{%
+        Formulário sobre Trabalho Reversível, Exergia e Irreversibilidade
+    }
+    \addcontentsline{toc}{section}{%
+        Formulário sobre Trabalho Reversível, Exergia e Irreversibilidade
+    }
+
+    Termodinâmica Computacional --
+    Prof. Emanuel R Woiski -- UNESP -- Ilha Solteira, SP -- 02/2020.
+
+    \begin{enumerate}
+        \item Potência reversível, a mais geral possível:
+
+            \begin{equation*} \label{eq:reversibleWorkForms}
+            \begin{aligned}
+                \underset{\gls{inlet}}{\sum }{
+                    \gsub{massFlowRate}{inlet}
+                    \left(
+                        \gls{intEnthalpy}
+                        +
+                        \frac{
+                            \gls{velocityComp}^2
+                        }{
+                            2
+                        }
+                        +
+                        \gls{gravityComp}
+                        \gls{zAxis}
+                        -
+                        \gsub{temperature}{environmentState}
+                        \gls{intEntropy}
+                    \right)_{\gls{inlet}}
+                }
+                &-
+                \underset{\gls{outlet}}{\sum }{
+                    \gsub{massFlowRate}{outlet}
+                    \left(
+                        \gls{intEnthalpy}
+                        +
+                        \frac{
+                            \gls{velocityComp}^2
+                        }{
+                            2
+                        }
+                        +
+                        \gls{gravityComp}
+                        \gls{zAxis}
+                        -
+                        \gsub{temperature}{environmentState}
+                        \gls{intEntropy}
+                    \right)_{\gls{outlet}}
+                }
+                +\\
+                &+\underset{j \neq \gls{environmentState}}{\sum }{
+                    \gls{heatTransferRate}_{j}
+                    \left(
+                        1
+                        -
+                        \frac{
+                            \gsub{temperature}{environmentState}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }
+                    \right)
+                }
+                -
+                \DDt{}
+                \left(
+                    \gls{totalEnergy}
+                    -
+                    \gsub{temperature}{environmentState}
+                    \gls{entropy}
+                \right)_{\gls{controlVolume}}
+                =
+                \gsupsub{workTransferRate}{reversible}{controlVolume}\,.\\
+                \end{aligned}
+            \end{equation*}
+
+        \item Trabalho reversível, sistema fechado, regime transiente, forma
+            integrada:
+
+            \begin{equation*} \label{eq:reversibleWorkIntegratedForms}
+                \fprocess{workTransferRate}{1}{2}{}^{\gls{reversible}}
+                =
+                \gls{mass}
+                \left[
+                    \left(
+                        \gls{intInternalEnergy}
+                        +
+                        \frac{\gls{velocityComp}^2}{2}
+                        +
+                        \gls{gravityComp}
+                        \gls{zAxis}
+                        -
+                        \gsub{temperature}{environmentState}
+                        \gls{intEntropy}
+                    \right)^{(1)}
+                    -
+                    \left(
+                        \gls{intInternalEnergy}
+                        +
+                        \frac{\gls{velocityComp}^2}{2}
+                        +
+                        \gls{gravityComp}
+                        \gls{zAxis}
+                        -
+                        \gsub{temperature}{environmentState}
+                        \gls{intEntropy}
+                    \right)^{(2)}
+                \right]
+                +
+                \underset{j}{\sum }{
+                    \fprocess{heatTransferRate}{1}{2}{j}
+                    \left(
+                        1
+                        -
+                        \frac{
+                            \gsub{temperature}{environmentState}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }
+                    \right)
+                }\,.
+            \end{equation*}
+
+        \item Teorema do Trabalho Perdido, forma geral, com a definição de
+            irreversibilidade:
+
+            \begin{equation*} \label{eq:irreversibiltiyDefForms}
+                \gsub{temperature}{environmentState}
+                \gls{entropyCreatedRate}
+                =
+                \gsupsub{workTransferRate}{reversible}{controlVolume}
+                -
+                \gsub{workTransferRate}{controlVolume}
+                \equiv
+                \gls{irreversibilityRate}\,,
+            \end{equation*}
+
+        \item Exergia de fluxo por unidade de massa:
+
+            \begin{equation*} \label{eq:flowExergyDefForms}
+                \gls{intFlowExergy}
+                \equiv
+                \frac{
+                    \gsuper{workTransferRate}{reversible}_{
+                        \gls{controlVolume},\gls{maximum}
+                    }
+                }{
+                    \gls{massFlowRate}
+                }
+                =
+                \left(
+                    \gls{intEnthalpy}
+                    +
+                    \frac{\gls{velocityComp}^2}{2}
+                    +
+                    \gls{gravityComp}
+                    \gls{zAxis}
+                    -
+                    \gsub{temperature}{environmentState}
+                    \gls{intEntropy}
+                \right)
+                -
+                \left(
+                    \gsub{intEnthalpy}{environmentState}
+                    -
+                    \gsub{temperature}{environmentState}
+                    \gsub{intEntropy}{environmentState}
+                \right)
+                =
+                \left(
+                    \gls{intEnthalpy}
+                    +
+                    \frac{\gls{velocityComp}^2}{2}
+                    +
+                    \gls{gravityComp}
+                    \gls{zAxis}
+                    -
+                    \gsub{temperature}{environmentState}
+                    \gls{intEntropy}
+                \right)
+                -
+                \gsub{intGibbsFreeEnergy}{environmentState}\,,
+            \end{equation*}
+
+        \item Potência reversível, a mais geral na forma de exergias de fluxo:
+
+            \begin{equation*} \label{eq:reversibleWorkFlowExergyForms}
+                \gsupsub{workTransferRate}{reversible}{controlVolume}
+                =
+                \underset{\gls{inlet}}{\sum }{
+                    \gsub{massFlowRate}{inlet}
+                    \gsub{intFlowExergy}{inlet}
+                }
+                -
+                \underset{\gls{outlet}}{\sum }{
+                    \gsub{massFlowRate}{outlet}
+                    \gsub{intFlowExergy}{outlet}
+                }
+                +\underset{j}{\sum }{
+                    \gls{heatTransferRate}_{j}
+                    \left(
+                        1
+                        -
+                        \frac{
+                            \gsub{temperature}{environmentState}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }
+                    \right)
+                }
+                -
+                \DDt{}
+                \left\{
+                    \gsub{mass}{controlVolume}
+                    \left[
+                        \left(
+                            \gls{intTotalEnergy}
+                            -
+                            \gsub{temperature}{environmentState}
+                            \gls{intEntropy}
+                        \right)
+                        -
+                        \left(
+                            \gsub{intEnthalpy}{environmentState}
+                            -
+                            \gsub{temperature}{environmentState}
+                            \gsub{intEntropy}{environmentState}
+                        \right)
+                    \right]_{\gls{controlVolume}}
+                \right\}\,.
+            \end{equation*}
+
+        \item Exergia de não-fluxo por unidade de massa:
+
+            \begin{equation*} \label{eq:nonFlowExerfyDefForms}
+                \gls{intNonFlowExergy}
+                \equiv
+                \frac{
+                    \gsuper{workTransfer}{reversible}_{util,\gls{maximum}}
+                }{
+                    \gls{mass}
+                }
+                =
+                \left(
+                    \gls{intInternalEnergy}
+                    +
+                    \frac{\gls{velocityComp}^2}{2}
+                    +
+                    \gls{gravityComp}
+                    \gls{zAxis}
+                    -
+                    \gsub{temperature}{environmentState}
+                    \gls{intEntropy}
+                \right)
+                -
+                \left(
+                    \gsub{intInternalEnergy}{environmentState}
+                    -
+                    \gsub{temperature}{environmentState}
+                    \gsub{intEntropy}{environmentState}
+                \right)
+                -
+                \gsub{pressure}{environmentState}
+                \left(
+                    \gsub{specificVolume}{environmentState}
+                    -
+                    \gls{specificVolume}
+                \right)\,.
+            \end{equation*}
+
+        \item Exergia de não-fluxo, transiente:
+
+            \begin{equation*} \label{eq:nonFlowExergyRateForms}
+                \DDt{\gls{intNonFlowExergy}}
+                =
+                \DDt{}
+                \left(
+                    \gls{intTotalEnergy}
+                    -
+                    \gsub{temperature}{environmentState}
+                    \gls{intEntropy}
+                \right)
+                +
+                \gsub{pressure}{environmentState}
+                \DDt{
+                    \gls{specificVolume}
+                }
+                =
+                \DDt{}
+                \left(
+                    \gls{intTotalEnergy}
+                    +
+                    \gsub{pressure}{environmentState}
+                    \gls{specificVolume}
+                    -
+                    \gsub{temperature}{environmentState}
+                    \gls{intEntropy}
+                \right)\,.
+            \end{equation*}
+
+        \item Formas alternativas:
+
+            \begin{equation*} \label{eq:nonFlowExergyDef2Forms}
+                \gls{intNonFlowExergy}
+                =
+                \left(
+                    \gls{intTotalEnergy}
+                    +
+                    \gsub{pressure}{environmentState}
+                    \gls{specificVolume}
+                    -
+                    \gsub{temperature}{environmentState}
+                    \gls{intEntropy}
+                \right)
+                -
+                \left(
+                    \gsub{intInternalEnergy}{environmentState}
+                    +
+                    \gsub{pressure}{environmentState}
+                    \gsub{specificVolume}{environmentState}
+                    -
+                    \gsub{temperature}{environmentState}
+                    \gsub{intEntropy}{environmentState}
+                \right)
+                =
+                \left(
+                    \gls{intTotalEnergy}
+                    +
+                    \gsub{pressure}{environmentState}
+                    \gls{specificVolume}
+                    -
+                    \gsub{temperature}{environmentState}
+                    \gls{intEntropy}
+                \right)
+                -
+                \gsub{intGibbsFreeEnergy}{environmentState}\,,
+            \end{equation*}
+
+        \item Potência reversível, a mais geral, na forma de trocas de exergias
+            de fluxo e de não-fluxo:
+
+            \begin{equation*} \label{eq:reversibleWorkExergiesForms}
+                \gsupsub{workTransferRate}{reversible}{controlVolume}
+                =
+                \underset{\gls{inlet}}{\sum }{
+                    \gsub{massFlowRate}{inlet}
+                    \gsub{intFlowExergy}{inlet}
+                }
+                -
+                \underset{\gls{outlet}}{\sum }{
+                    \gsub{massFlowRate}{outlet}
+                    \gsub{intFlowExergy}{outlet}
+                }
+                +\underset{j}{\sum }{
+                    \gls{exergyRate}_{\gls{heatTransferRate}_{j}}
+                }
+                -
+                \DDt{}
+                \left[
+                    \gls{mass}
+                    \left(
+                        \gls{intNonFlowExergy}
+                        -
+                        \gsub{pressure}{environmentState}
+                        \gls{specificVolume}
+                    \right)
+                \right]_{\gls{controlVolume}}\,,
+            \end{equation*}
+
+        \item Exergia por unidade de tempo de cada reservatório térmico
+            \state{\gls{temperature}}{j} fornecendo
+            $\gls{heatTransferRate}_{j}$:
+
+            \begin{equation*} \label{eq:heatFlowExergyForms}
+                \underset{j \neq \gls{environmentState}}{\sum }{
+                    \gls{heatTransferRate}_{j}
+                    \left(
+                        1
+                        -
+                        \frac{
+                            \gsub{temperature}{environmentState}
+                        }{
+                            \state{\gls{temperature}}{j}
+                        }
+                    \right)
+                }
+                \equiv
+                \gls{exergyRate}_{\gls{heatTransferRate}_{j}}\,,
+            \end{equation*}
+
+    \end{enumerate}
