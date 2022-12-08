@@ -10,6 +10,20 @@ O código em LaTeX foi gerado por mim, Iago Lessa de Oliveira, com autorização
 do Prof. Woiski e seu conteúdo disponibilizado sob a licença cabível descrita
 abaixo. A compilação deve ser feita com o XeLaTeX.
 
+O documento em PDF está disponível nas Releases, para cada versão revisada. 
+
+---
+## Compilação
+
+Caso queira compilar o código localmente de uma maneira relativamente rápida,
+sugerimos utilizar o
+[Tectonic](https://github.com/tectonic-typesetting/tectonic), uma engine que
+compila códigos LaTeX sem precisar instalar toda uma distribuição TeX
+localmente. Ao fazer o download do Tectonic na sua máquina, utilize o seguinte
+comando para compilar o código:
+
+`tectonic TermodinamicaComputacional.tex`
+
 ---
 ## Licença
 
